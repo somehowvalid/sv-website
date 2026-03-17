@@ -89,6 +89,30 @@
   .statement-text em { font-style: italic; color: var(--taupe); }
   .statement-body { margin-top: 30px; font-size: 12px; color: var(--mid); line-height: 1.9; max-width: 420px; }
 
+  /* STORY */
+  #story {
+    background: var(--oat);
+    padding: 130px 52px;
+    border-top: 1px solid var(--border);
+  }
+  .story-inner { max-width: 840px; display: grid; grid-template-columns: 130px 1fr; gap: 0 64px; }
+  .story-heading {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(22px, 2.8vw, 34px);
+    font-weight: 300; font-style: italic;
+    color: var(--silhouette); line-height: 1.35;
+    margin-bottom: 36px;
+  }
+  .story-body { font-size: 12px; color: var(--mid); line-height: 1.95; max-width: 480px; }
+  .story-body p { margin-bottom: 22px; }
+  .story-body p:last-child { margin-bottom: 0; }
+  .story-close {
+    font-family: 'Cormorant', serif;
+    font-size: 15px; font-weight: 300; font-style: italic;
+    color: var(--taupe); line-height: 1.6;
+    margin-top: 32px; max-width: 420px;
+  }
+
   /* THEMES */
   #themes { padding: 130px 52px; }
   .themes-inner { max-width: 840px; }
@@ -99,6 +123,7 @@
   .section-title { font-family: 'Cormorant', serif; font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--charcoal); }
   .section-meta { font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); }
 
+  .collection-intro { font-size: 12px; color: var(--mid); line-height: 1.9; max-width: 520px; margin-bottom: 32px; }
   .theme-card { border: 1px solid var(--border); border-radius: 1px; background: var(--white); margin-bottom: 10px; overflow: hidden; transition: box-shadow 0.3s; }
   .theme-card:hover { box-shadow: 0 2px 18px rgba(46,37,32,0.06); }
   .theme-card-header { display: grid; grid-template-columns: 4px 1fr auto; cursor: pointer; user-select: none; }
@@ -164,10 +189,14 @@
   @media (max-width: 768px) {
     nav { padding: 18px 24px; }
     .nav-links { display: none; }
-    #hero { padding: 0 24px 60px; }
-    .hero-line { left: 24px; }
-    .hero-inner { padding-left: 24px; }
+
+    #hero { padding: 0 24px; justify-content: center; align-items: center; text-align: center; }
+    .hero-line { display: none; }
+    .hero-inner { padding-left: 0; display: flex; flex-direction: column; align-items: center; }
+    .hero-logo-large { width: min(280px, 75vw); margin-bottom: 20px; }
+    .hero-tagline { font-size: clamp(15px, 4vw, 18px); }
     .hero-scroll { display: none; }
+
     #statement { padding: 80px 24px; }
     .statement-inner { grid-template-columns: 1fr; }
     .aside-label { display: none; }
@@ -184,7 +213,8 @@
   <a href="#"><img class="nav-logo" src="somehow-valid-logo.svg" alt="somehow valid."></a>
   <ul class="nav-links">
     <li><a href="#statement">about</a></li>
-    <li><a href="#themes">themes</a></li>
+    <li><a href="#story">our story</a></li>
+    <li><a href="#themes">collections</a></li>
     <li><a href="#grid">journal</a></li>
     <li><a href="https://somehowvalid.gumroad.com" target="_blank">shop</a></li>
   </ul>
@@ -209,8 +239,23 @@
         only seeing — clearly, and without<br>the weight of what you were told to be.
       </p>
       <p class="statement-body reveal" style="transition-delay:0.18s">
-        we make guided journals and reflection tools for people who are already doing the work — and need somewhere to put it down for a moment.
+        somehow valid. is an editorial house for emotional clarity. we build complete collections — each one a 30-day arc designed to help you see what you've been carrying, where it started, and what it might feel like to set it down. a compass to move through. an anchor deck to return to. frames to keep close. nothing to perform. nothing to arrive at before you're ready.
       </p>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="story-inner">
+    <div class="reveal"><div class="aside-label">on making<br>this</div></div>
+    <div>
+      <p class="story-heading reveal" style="transition-delay:0.08s">this started as<br>something smaller.</p>
+      <div class="story-body">
+        <p class="reveal" style="transition-delay:0.12s">it began with a simple question: what is worth making? the first answer was easy — something sellable, something that worked. and it did work. but it was not the thing we wanted to leave behind.</p>
+        <p class="reveal" style="transition-delay:0.16s">mental health is not a trend. it is not a niche. it is the condition underneath every other condition — the thing that shapes how people move through their days, their relationships, their sense of what they deserve. we are not therapists. we are not here to fix anything. we built this space because we believe that seeing clearly — really seeing, without judgment or instruction — is its own kind of relief. you do not need to be told what to do next. you need to know that what you felt was real.</p>
+        <p class="reveal" style="transition-delay:0.20s">every word in every collection was held up to one question before it stayed: does this recognise something true? if it did not, it did not make it through. that is not a process. it is a position. nothing here is generic. nothing arrived by accident. the care in the making is the point.</p>
+        <p class="story-close reveal" style="transition-delay:0.24s">we built this to last. we built it to matter.<br>and we built it because someone needed to.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -218,11 +263,13 @@
 <section id="themes">
   <div class="themes-inner">
     <div class="section-header reveal">
-      <span class="section-title">a 30-day compass series</span>
-      <span class="section-meta">02 volumes</span>
+      <span class="section-title">the daily anchor™ — complete collections</span>
+      <span class="section-meta">02 themes</span>
     </div>
 
-    <div class="theme-card reveal" id="card-tcok">
+    <p class="collection-intro reveal" style="transition-delay:0.05s">each collection is a complete world. a compass to move through. an anchor deck to return to. frames to keep close. three parts, built to work alone — and better together.</p>
+
+    <div class="theme-card reveal" id="card-tcok" style="transition-delay:0.1s">
       <div class="theme-card-header" onclick="toggleCard('card-tcok')">
         <div class="theme-accent" style="background:#C2B4A3"></div>
         <div class="theme-card-main">
@@ -234,21 +281,25 @@
       </div>
       <div class="theme-body">
         <div>
-          <p class="theme-desc">for the ones who learned that being good meant being quiet. thirty days of prompts, observations, and moments of return — through the weight of it, the seeing of it, and the slow way back.</p>
+          <p class="theme-desc">for the ones who learned that being good meant being quiet. this is not a programme you complete — it is a space you move through. thirty days structured as a story arc: the weight of it, the seeing of it, and the slow way back. the complete collection includes a 30-day compass, a printable anchor deck of thirty cards, and thirty frames to keep close.</p>
           <div class="theme-arc-label">the arc</div>
           <div class="theme-arc-item">The Weight — days 1–10</div>
           <div class="theme-arc-item">The Seeing — days 11–20</div>
           <div class="theme-arc-item">The Return — days 21–30</div>
+          <div class="theme-arc-label" style="margin-top:16px">the collection</div>
+          <div class="theme-arc-item">the compass — 30-day arc, read on any device</div>
+          <div class="theme-arc-item">the anchor deck — 30 printable cards to return to</div>
+          <div class="theme-arc-item">the frames — 30 images for your screen or wall</div>
         </div>
         <div>
           <a class="theme-cta" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
-            get the compass <span class="theme-cta-price">$27</span>
+            begin the arc <span class="theme-cta-price">$27</span>
           </a>
         </div>
       </div>
     </div>
 
-    <div class="theme-card soon reveal" style="transition-delay:0.1s">
+    <div class="theme-card soon reveal" style="transition-delay:0.15s">
       <div class="theme-card-header">
         <div class="theme-accent" style="background:#F0EAE0"></div>
         <div class="theme-card-main">
