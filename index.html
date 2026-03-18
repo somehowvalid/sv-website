@@ -3,8 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>somehow valid. — editorial house for emotional clarity</title>
-<meta name="description" content="somehow valid. is an editorial house for emotional clarity. nothing to fix. everything to see.">
+<title>somehow valid. — Reflections for People Who Give Too Much</title>
+<meta name="description" content="somehow valid. is an editorial house for emotional clarity. The Daily Anchor™ is a complete collection — a 30-day compass, anchor deck, and frames — for people who have spent a long time being kind to everyone except themselves.">
+<meta name="keywords" content="self-reflection journal, people pleaser, emotional clarity, 30-day compass, self-care, burnout recovery, somehow valid, the cost of kind, daily anchor">
+<link rel="canonical" href="https://somehowvalid.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://somehowvalid.com/">
+<meta property="og:title" content="somehow valid. — Reflections for People Who Give Too Much">
+<meta property="og:description" content="A 30-day arc designed to help you see what you've been carrying, where it started, and what it might feel like to set it down. nothing to fix. everything to see.">
+<meta property="og:image" content="https://somehowvalid.com/the-cost-of-kind-compass.png">
+<meta property="og:site_name" content="somehow valid.">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="somehow valid. — Reflections for People Who Give Too Much">
+<meta name="twitter:description" content="A 30-day arc for people who have spent a long time being kind to everyone except themselves.">
+<meta name="twitter:image" content="https://somehowvalid.com/the-cost-of-kind-compass.png">
+
+<!-- Schema: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "somehow valid.",
+  "url": "https://somehowvalid.com",
+  "description": "An editorial house for emotional clarity. We build complete collections — each one a 30-day arc designed to help you see what you've been carrying and what it might feel like to set it down.",
+  "sameAs": ["https://instagram.com/somehow.valid"]
+}
+</script>
+
+<!-- Schema: Product -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "The Cost of Kind — A 30-Day Compass",
+  "description": "A complete 30-day self-reflection collection for people who have been kind to everyone except themselves. Includes a 30-day compass, printable anchor deck of 30 cards, and 30 digital frames.",
+  "brand": { "@type": "Brand", "name": "somehow valid." },
+  "offers": {
+    "@type": "Offer",
+    "price": "27.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection"
+  },
+  "image": "https://somehowvalid.com/the-cost-of-kind-compass.png"
+}
+</script>
+
+<!-- Schema: FAQPage for AEO/AI search -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is somehow valid.?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "somehow valid. is an editorial house for emotional clarity. We make complete collections — each one a 30-day arc designed to help you see what you've been carrying, where it started, and what it might feel like to set it down. We are not therapists. We don't tell you what to do. We believe that seeing clearly is its own kind of relief."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is The Daily Anchor™?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Daily Anchor™ is a complete collection format created by somehow valid. Each collection includes three parts: a 30-day compass to read on any device, a printable anchor deck of 30 cards to carry with you, and 30 digital frames for your screen or wall. Three parts, built to work alone and better together."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is The Cost of Kind?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Cost of Kind is a 30-day self-reflection compass for people who have spent a long time being kind to everyone except themselves. It is structured as a story arc across three phases: The Weight (days 1–10), The Seeing (days 11–20), and The Return (days 21–30). The complete collection is $27 and includes the compass, anchor deck, and frames."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is The Cost of Kind for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Cost of Kind is for people who have learned to put everyone else first — people pleasers, quiet givers, and those who arrive somewhere already tired. It is for anyone who has been so focused on being good that they forgot to include themselves in their own kindness."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -26,8 +115,8 @@
     color: var(--charcoal);
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    font-size: 13px;
-    line-height: 1.75;
+    font-size: 15px;
+    line-height: 1.8;
     overflow-x: hidden;
   }
 
@@ -51,17 +140,18 @@
   /* HERO */
   #hero {
     min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 0 52px 80px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 0 52px;
     position: relative;
+    text-align: center;
   }
-  .hero-line { position: absolute; top: 0; bottom: 0; left: 52px; width: 1px; background: var(--border); opacity: 0.5; }
-  .hero-inner { position: relative; padding-left: 40px; }
-  .hero-logo-large { display: block; width: min(500px, 70vw); height: auto; margin-bottom: 28px; }
+  .hero-line { display: none; }
+  .hero-inner { position: relative; padding-left: 0; display: flex; flex-direction: column; align-items: center; }
+  .hero-logo-large { display: block; width: min(480px, 68vw); height: auto; margin-bottom: 28px; }
   .hero-tagline {
     font-family: 'Playfair Display', serif;
     font-size: clamp(16px, 1.8vw, 21px);
-    font-weight: 300; font-style: italic;
+    font-weight: 400; font-style: italic;
     color: var(--taupe); letter-spacing: 0.02em;
   }
   .hero-scroll {
@@ -89,7 +179,7 @@
     font-weight: 300; line-height: 1.55; color: var(--silhouette);
   }
   .statement-text em { font-style: italic; color: var(--taupe); }
-  .statement-body { margin-top: 30px; font-size: 12px; color: var(--mid); line-height: 1.9; max-width: 420px; }
+  .statement-body { margin-top: 30px; font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 420px; }
 
   /* STORY */
   #story {
@@ -105,7 +195,7 @@
     color: var(--silhouette); line-height: 1.35;
     margin-bottom: 36px;
   }
-  .story-body { font-size: 12px; color: var(--mid); line-height: 1.95; max-width: 480px; }
+  .story-body { font-size: 14px; color: var(--mid); line-height: 1.95; max-width: 480px; }
   .story-body p { margin-bottom: 22px; }
   .story-body p:last-child { margin-bottom: 0; }
   .story-close {
@@ -128,7 +218,7 @@
   .themes-title-block { margin-bottom: 20px; }
   .themes-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 38px); font-weight: 300; color: var(--silhouette); line-height: 1.2; }
   .themes-title-sub { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--taupe); margin-top: 6px; }
-  .collection-intro { font-size: 12px; color: var(--mid); line-height: 1.9; max-width: 520px; margin-bottom: 32px; }
+  .collection-intro { font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 520px; margin-bottom: 32px; }
   .theme-card { border: 1px solid var(--border); border-radius: 1px; background: var(--white); margin-bottom: 10px; overflow: hidden; transition: box-shadow 0.3s; }
   .theme-card:hover { box-shadow: 0 2px 18px rgba(46,37,32,0.06); }
   .theme-card-header { display: grid; grid-template-columns: 4px 1fr 92px 40px; cursor: pointer; user-select: none; min-height: 110px; align-items: center; }
@@ -143,9 +233,9 @@
   .theme-card.open .theme-toggle { transform: rotate(45deg); color: var(--mid); }
   .theme-body { display: none; border-top: 1px solid var(--border); padding: 24px 24px 28px; background: var(--oat); }
   .theme-card.open .theme-body { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: start; }
-  .theme-desc { font-size: 12px; color: var(--mid); line-height: 1.9; margin-bottom: 20px; max-width: 400px; }
+  .theme-desc { font-size: 14px; color: var(--mid); line-height: 1.9; margin-bottom: 20px; max-width: 400px; }
   .theme-arc-label { font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--charcoal); opacity: 0.55; margin-bottom: 9px; }
-  .theme-arc-item { font-size: 12px; color: var(--charcoal); margin-bottom: 6px; display: flex; align-items: baseline; gap: 10px; }
+  .theme-arc-item { font-size: 13px; color: var(--charcoal); margin-bottom: 6px; display: flex; align-items: baseline; gap: 10px; }
   .theme-arc-item::before { content: ''; width: 14px; height: 1px; background: var(--taupe); flex-shrink: 0; position: relative; top: -3px; }
   .theme-cta {
     display: inline-flex; align-items: center; gap: 12px;
@@ -200,7 +290,7 @@
   .preview-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 16px; }
   .preview-heading { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.8vw, 34px); font-weight: 400; line-height: 1.35; color: var(--silhouette); margin-bottom: 24px; }
   .preview-heading strong { font-weight: 700; color: var(--silhouette); }
-  .preview-body { font-size: 12px; color: var(--mid); line-height: 1.95; max-width: 480px; margin-bottom: 28px; }
+  .preview-body { font-size: 14px; color: var(--mid); line-height: 1.95; max-width: 480px; margin-bottom: 28px; }
   .preview-prompt { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--charcoal); line-height: 1.6; margin-bottom: 24px; max-width: 420px; }
   .preview-write { max-width: 480px; }
   .preview-textarea { width: 100%; background: var(--oat); border: 1px solid var(--border); border-radius: 1px; padding: 16px 18px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 300; color: var(--charcoal); line-height: 1.75; resize: none; outline: none; transition: border-color 0.2s; }
@@ -219,11 +309,9 @@
     .nav-links { display: none; }
     .nav-logo { height: 28px; }
 
-    #hero { padding: 0 24px; justify-content: center; align-items: center; text-align: center; }
-    .hero-line { display: none; }
-    .hero-inner { padding-left: 0; display: flex; flex-direction: column; align-items: center; }
-    .hero-logo-large { width: min(280px, 75vw); margin-bottom: 20px; }
-    .hero-tagline { font-size: clamp(15px, 4vw, 18px); }
+    #hero { padding: 0 24px; }
+    .hero-logo-large { width: min(260px, 72vw); margin-bottom: 20px; }
+    .hero-tagline { font-size: clamp(14px, 4vw, 17px); }
     .hero-scroll { display: none; }
 
     #statement { padding: 80px 24px; }
@@ -259,8 +347,8 @@
 <section id="hero">
   <div class="hero-line"></div>
   <div class="hero-inner">
-    <img class="hero-logo-large reveal" src="somehow-valid-logo.svg" alt="somehow valid.">
-    <p class="hero-tagline reveal" style="transition-delay:0.15s">nothing to fix. everything to see.</p>
+    <img class="hero-logo-large reveal" src="somehow-valid-logo.svg" alt="somehow valid. — editorial house for emotional clarity">
+    <h1 class="hero-tagline reveal" style="transition-delay:0.15s">nothing to fix. everything to see.</h1>
   </div>
   <div class="hero-scroll">scroll</div>
 </section>
@@ -269,11 +357,11 @@
   <div class="statement-inner">
     <div class="reveal"><div class="aside-label">editorial<br>house</div></div>
     <div>
-      <p class="statement-text reveal" style="transition-delay:0.08s">
+      <h2 class="statement-text reveal" style="transition-delay:0.08s">
         a space that asks <em>nothing</em> of you.<br>
         no fixing. no optimising. no becoming.<br>
         only seeing — clearly, and without<br>the weight of what you were told to be.
-      </p>
+      </h2>
       <p class="statement-body reveal" style="transition-delay:0.18s">
         somehow valid. is an editorial house for emotional clarity. we build complete collections — each one a 30-day arc designed to help you see what you've been carrying, where it started, and what it might feel like to set it down. a compass to move through. an anchor deck to return to. frames to keep close. nothing to perform. nothing to arrive at before you're ready.
       </p>
@@ -285,7 +373,7 @@
   <div class="story-inner">
     <div class="reveal"><div class="aside-label">on making<br>this</div></div>
     <div>
-      <p class="story-heading reveal" style="transition-delay:0.08s">this started as<br>something smaller.</p>
+      <h2 class="story-heading reveal" style="transition-delay:0.08s">this started as<br>something smaller.</h2>
       <div class="story-body">
         <p class="reveal" style="transition-delay:0.12s">it began with a simple question: what is worth making? the first answer was easy — something sellable, something that worked. and it did work. but it was not the thing we wanted to leave behind.</p>
         <p class="reveal" style="transition-delay:0.16s">mental health is not a trend. it is not a niche. it is the condition underneath every other condition — the thing that shapes how people move through their days, their relationships, their sense of what they deserve. we are not therapists. we are not here to fix anything. we built this space because we believe that seeing clearly — really seeing, without judgment or instruction — is its own kind of relief. you do not need to be told what to do next. you need to know that what you felt was real.</p>
@@ -315,7 +403,7 @@
         <div class="theme-accent" style="background:#C2B4A3"></div>
         <div class="theme-card-main">
           <div class="theme-cat">theme 01 · held · vol. 01</div>
-          <div class="theme-name">The Cost of Kind</div>
+          <h3 class="theme-name">The Cost of Kind</h3>
           <div class="theme-sub">A 30-Day Compass to the Self You Gave Away</div>
         </div>
         <div class="theme-cover-container">
@@ -325,7 +413,7 @@
       </div>
       <div class="theme-body">
         <div>
-          <p class="theme-desc">for the ones who learned that being good meant being quiet. this is not a programme you complete — it is a space you move through. thirty days structured as a story arc: the weight of it, the seeing of it, and the slow way back. the complete collection includes a 30-day compass, a printable anchor deck of thirty cards, and thirty frames to keep close.</p>
+          <p class="theme-desc">you have been kind to everyone. everyone except yourself. this is not a programme you complete — it is a space you move through. thirty days structured as a story arc: the weight of it, the seeing of it, and the slow way back. the complete collection includes a 30-day compass, a printable anchor deck of thirty cards, and thirty frames to keep close.</p>
           <div class="theme-arc-label">the arc</div>
           <div class="theme-arc-item">The Weight — days 1–10</div>
           <div class="theme-arc-item">The Seeing — days 11–20</div>
@@ -348,7 +436,7 @@
         <div class="theme-accent" style="background:#F0EAE0"></div>
         <div class="theme-card-main">
           <div class="theme-cat">theme 02 · spent · vol. 01</div>
-          <div class="theme-name">The Life That Disappeared</div>
+          <h3 class="theme-name">The Life That Disappeared</h3>
           <div class="theme-sub">A 30-Day Compass to the Self You Never Got To</div>
         </div>
         <div class="soon-tag">coming soon</div>
