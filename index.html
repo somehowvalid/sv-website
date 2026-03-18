@@ -206,14 +206,14 @@
   }
 
   /* THEMES */
-  #themes { padding: 130px 52px; }
+  #themes { background: var(--white); padding: 130px 52px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .themes-inner { max-width: 840px; }
   .section-header {
     display: flex; align-items: baseline; justify-content: space-between;
     margin-bottom: 48px; padding-bottom: 16px; border-bottom: 1px solid var(--border);
   }
-  .section-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: rgba(245,241,235,0.75); }
-  .section-meta { font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,241,235,0.55); }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--mid); }
+  .section-meta { font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); }
 
   .themes-title-block { margin-bottom: 20px; }
   .themes-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 38px); font-weight: 300; color: var(--silhouette); line-height: 1.2; }
@@ -283,7 +283,7 @@
   }
 
   /* PREVIEW */
-  #preview { background: var(--white); padding: 130px 52px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  #preview { background: var(--oat); padding: 130px 52px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .preview-inner { max-width: 840px; display: grid; grid-template-columns: 130px 1fr; gap: 0 64px; }
   .preview-context { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 6px; }
   .preview-context-sub { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--mid); margin-bottom: 28px; }
@@ -293,7 +293,7 @@
   .preview-body { font-size: 14px; color: var(--mid); line-height: 1.95; max-width: 480px; margin-bottom: 28px; }
   .preview-prompt { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--charcoal); line-height: 1.6; margin-bottom: 24px; max-width: 420px; }
   .preview-write { max-width: 480px; }
-  .preview-textarea { width: 100%; background: var(--oat); border: 1px solid var(--border); border-radius: 1px; padding: 16px 18px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 300; color: var(--charcoal); line-height: 1.75; resize: none; outline: none; transition: border-color 0.2s; }
+  .preview-textarea { width: 100%; background: var(--white); border: 1px solid var(--border); border-radius: 1px; padding: 16px 18px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 300; color: var(--charcoal); line-height: 1.75; resize: none; outline: none; transition: border-color 0.2s; }
   .preview-textarea:focus { border-color: var(--taupe); }
   .preview-textarea::placeholder { color: var(--border); }
   .preview-note { font-size: 9px; letter-spacing: 0.08em; color: var(--border); margin-top: 10px; }
@@ -314,19 +314,19 @@
     .hero-tagline { font-size: clamp(14px, 4vw, 17px); }
     .hero-scroll { display: none; }
 
-    #statement { padding: 80px 24px; }
+    #statement { padding: 72px 24px; }
     .statement-inner { grid-template-columns: 1fr; }
     .aside-label { display: none; }
-    #story { padding: 80px 24px; }
+    #story { padding: 72px 24px; }
     .story-inner { grid-template-columns: 1fr; }
-    #themes { padding: 80px 24px; }
+    #themes { padding: 72px 24px; }
     .theme-card.open .theme-body { grid-template-columns: 1fr; }
     .theme-cover-container { width: 68px; }
     .theme-card-header { grid-template-columns: 4px 1fr 68px 36px; min-height: 100px; }
     .soon-tag { font-size: 7px; padding: 20px 10px; }
-    #grid { padding: 80px 24px; }
+    #grid { padding: 72px 24px; }
     footer { padding: 36px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
-    #preview { padding: 80px 24px; }
+    #preview { padding: 72px 24px; }
     .preview-inner { grid-template-columns: 1fr; }
   }
 </style>
