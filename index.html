@@ -25,6 +25,11 @@
 <meta name="twitter:description" content="A 30-day arc for people who have spent a long time being kind to everyone except themselves.">
 <meta name="twitter:image" content="https://somehowvalid.com/og-image.png">
 
+<!-- Pinterest Rich Pins -->
+<meta property="og:type" content="product" />
+<meta property="product:price:amount" content="27.00" />
+<meta property="product:price:currency" content="USD" />
+
 <!-- Schema: Organization -->
 <script type="application/ld+json">
 {
@@ -33,7 +38,7 @@
   "name": "somehow valid.",
   "url": "https://somehowvalid.com",
   "description": "An editorial house for emotional clarity. We build complete collections — each one a 30-day arc designed to help you see what you've been carrying and what it might feel like to set it down.",
-  "sameAs": ["https://instagram.com/somehow.valid"]
+  "sameAs": ["https://instagram.com/somehow.valid", "https://pinterest.com/somehowvalid"]
 }
 </script>
 
@@ -92,6 +97,46 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The Cost of Kind is for people who have learned to put everyone else first — people pleasers, quiet givers, and those who arrive somewhere already tired. It is for anyone who has been so focused on being good that they forgot to include themselves in their own kindness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is somehow valid. a mental health resource?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "somehow valid. is not a clinical resource and is not a substitute for therapy or professional mental health support. It is an editorial house — we make collections designed to help you see what you've been carrying, through writing and reflection. We are not therapists. We don't diagnose, treat, or advise. We believe that clarity is its own kind of relief, and we build spaces for that."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is included in The Cost of Kind?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Cost of Kind includes three parts: a 30-day compass (a daily arc structured across three phases — The Weight, The Seeing, and The Return), a printable anchor deck of 30 reflection cards, and 30 digital frames for your screen or wall. All three are delivered as digital downloads. The complete collection is $27."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does The Daily Anchor™ work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Daily Anchor™ is a 30-day format. Each day has a compass entry — a piece of writing structured around a single emotional truth. You read it, sit with it, and write if you want to. The anchor deck gives you one card per day to carry. The frames give you one image per day to keep on your screen or wall. You move through it at your own pace. There is nothing to complete correctly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I buy The Cost of Kind?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Cost of Kind is available on Gumroad at somehowvalid.gumroad.com for $27. It is a digital download — you receive all three parts immediately after purchase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is somehow valid. good for people who overthink or people-pleasers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. somehow valid. collections are built specifically for people who have spent a long time prioritising others — people pleasers, overthinkers, quiet givers, and those who arrive somewhere already tired. The Cost of Kind was made for anyone who has been so focused on being good that they forgot to include themselves in their own kindness."
       }
     }
   ]
@@ -285,6 +330,44 @@
     .grid-note { display: none; }
   }
 
+  /* NOTIFY */
+  #notify {
+    background: var(--oat);
+    padding: 80px 52px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .notify-inner { max-width: 480px; margin: 0 auto; }
+  .notify-copy {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(15px, 1.6vw, 18px);
+    font-weight: 300; font-style: italic;
+    color: var(--charcoal); line-height: 1.65;
+    margin-bottom: 28px;
+  }
+  .notify-form { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 1px; overflow: hidden; }
+  .notify-input {
+    flex: 1; padding: 12px 16px;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 300;
+    color: var(--charcoal); background: var(--white);
+    border: none; outline: none;
+  }
+  .notify-input::placeholder { color: var(--border); }
+  .notify-btn {
+    padding: 12px 20px;
+    font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--white); background: var(--silhouette);
+    border: none; cursor: pointer; transition: background 0.2s; white-space: nowrap;
+  }
+  .notify-btn:hover { background: var(--charcoal); }
+  .notify-msg { font-size: 12px; color: var(--mid); margin-top: 14px; font-style: italic; min-height: 18px; }
+  @media (max-width: 768px) {
+    #notify { padding: 60px 24px; }
+    .notify-form { flex-direction: column; }
+    .notify-btn { padding: 12px; }
+  }
+
   /* PREVIEW */
   #preview { background: var(--oat); padding: 130px 52px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .preview-inner { max-width: 840px; display: grid; grid-template-columns: 130px 1fr; gap: 0 64px; }
@@ -448,6 +531,17 @@
   </div>
 </section>
 
+<section id="notify">
+  <div class="notify-inner reveal">
+    <p class="notify-copy">something is coming.<br>leave your address here and we will tell you when it arrives.</p>
+    <form class="notify-form" id="notify-form">
+      <input type="email" class="notify-input" placeholder="your address" required autocomplete="email">
+      <button type="submit" class="notify-btn">keep me informed</button>
+    </form>
+    <p class="notify-msg" id="notify-msg"></p>
+  </div>
+</section>
+
 <section id="preview">
   <div class="preview-inner">
     <div class="reveal"><div class="aside-label">a day from<br>the compass</div></div>
@@ -473,7 +567,10 @@
   <div class="grid-inner">
     <div class="grid-header reveal">
       <a class="grid-label" href="https://instagram.com/somehow.valid" target="_blank">@somehow.valid</a>
-      <a class="grid-ig" href="https://instagram.com/somehow.valid" target="_blank">follow on instagram</a>
+      <div style="display:flex;gap:28px;align-items:center;">
+        <a class="grid-ig" href="https://pinterest.com/somehowvalid" target="_blank">pinterest</a>
+        <a class="grid-ig" href="https://instagram.com/somehow.valid" target="_blank">follow on instagram</a>
+      </div>
     </div>
     <div class="reveal" style="transition-delay:0.08s">
       <behold-widget feed-id="4frQaVbwHPSTzNM73MEd"></behold-widget>
@@ -498,6 +595,30 @@ const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) 
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 document.querySelectorAll('#hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 300 + i * 150));
 function toggleCard(id) { document.getElementById(id).classList.toggle('open'); }
+
+// Email capture
+document.getElementById('notify-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = this.querySelector('input[type=email]').value;
+  const msg = document.getElementById('notify-msg');
+  const btn = this.querySelector('button');
+  btn.disabled = true;
+  btn.textContent = '...';
+  const url = 'https://us16.list-manage.com/subscribe/post-json?u=dc9aed9483c690c8eae48b725&id=ac9e7ec38d&EMAIL=' + encodeURIComponent(email) + '&c=notifyCallback';
+  window.notifyCallback = function(data) {
+    if (data.result === 'success') {
+      msg.textContent = 'noted.';
+      document.getElementById('notify-form').style.display = 'none';
+    } else {
+      msg.textContent = data.msg.replace(/<[^>]*>/g, '').split('.')[0].toLowerCase() + '.';
+      btn.disabled = false;
+      btn.textContent = 'keep me informed';
+    }
+  };
+  const s = document.createElement('script');
+  s.src = url;
+  document.head.appendChild(s);
+});
 </script>
 </body>
 </html>
