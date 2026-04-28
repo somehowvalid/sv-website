@@ -15,11 +15,10 @@
 <meta property="og:url" content="https://somehowvalid.com/the-cost-of-kind/">
 <meta property="og:title" content="The Cost of Kind — A 30-Day Compass to the Self You Gave Away">
 <meta property="og:description" content="A 30-day self-reflection collection for people who have spent a long time being kind to everyone except themselves. Compass · Anchor Deck · Frames. $27.">
-<meta property="og:image" content="https://somehowvalid.com/og-image.png">
+<meta property="og:image" content="https://somehowvalid.com/the-cost-of-kind-compass.png">
 <meta property="og:site_name" content="somehow valid.">
 
 <!-- Pinterest Rich Pins -->
-<meta property="og:type" content="product" />
 <meta property="product:price:amount" content="27.00" />
 <meta property="product:price:currency" content="USD" />
 
@@ -117,6 +116,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
+    /* Base SV palette */
     --oat:        #F5F1EB;
     --linen:      #F0EAE0;
     --taupe:      #C2B4A3;
@@ -126,7 +126,16 @@
     --white:      #FFFFFF;
     --mid:        #8C8880;
     --border:     #DDD8D0;
+
+    /* Cost of Kind — HELD collection palette */
+    --ck-warm:    #EAE0D4;   /* warm antique linen — hero + for sections */
+    --ck-parchment: #F4EDE4; /* lighter warm ground — alt sections */
+    --ck-accent:  #C2B4A3;   /* HELD signature — taupe, accent bars, borders */
+    --ck-deep:    #9A8B7A;   /* warm mid-brown — labels, secondary text */
+    --ck-border:  #D3C7B5;   /* warmer border than --border */
+    --ck-mark:    #B09A84;   /* decorative warm gold — accent lines, dividers */
   }
+
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
@@ -141,7 +150,7 @@
   .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.9s ease, transform 0.9s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* NAV */
+  /* ── NAV ─────────────────────────────────────────── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 22px 52px;
@@ -149,43 +158,70 @@
     background: var(--oat);
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo { display: block; height: 60px; width: auto; opacity: 0.8; transition: opacity 0.2s; }
-  .nav-logo:hover { opacity: 1; }
+  .nav-logo-link { display: block; opacity: 0.8; transition: opacity 0.2s; }
+  .nav-logo-link:hover { opacity: 1; }
+  .nav-logo { display: block; height: 60px; width: auto; }
   .nav-links { display: flex; gap: 36px; list-style: none; }
   .nav-links a { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--charcoal); }
 
-  /* BREADCRUMB */
+  /* ── BREADCRUMB ──────────────────────────────────── */
+  .breadcrumb-wrap {
+    padding: 108px 52px 0;
+    background: var(--ck-warm);
+  }
   .breadcrumb {
-    padding: 110px 52px 0;
-    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--border);
+    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ck-deep);
   }
-  .breadcrumb a { color: var(--border); text-decoration: none; transition: color 0.2s; }
-  .breadcrumb a:hover { color: var(--mid); }
-  .breadcrumb span { margin: 0 8px; }
+  .breadcrumb a { color: var(--ck-deep); text-decoration: none; transition: color 0.2s; opacity: 0.7; }
+  .breadcrumb a:hover { opacity: 1; }
+  .breadcrumb span { margin: 0 8px; opacity: 0.4; }
 
-  /* HERO */
+  /* ── HERO ────────────────────────────────────────── */
   #hero {
-    padding: 48px 52px 100px;
-    display: grid; grid-template-columns: 130px 1fr; gap: 0 64px;
-    max-width: 840px;
+    background: var(--ck-warm);
+    border-bottom: 1px solid var(--ck-border);
+    overflow: hidden;
   }
-  .hero-aside { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); line-height: 2.2; padding-top: 8px; }
-  .hero-cat { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 12px; }
+  .hero-wrap {
+    padding: 52px 52px 0;
+    display: grid;
+    grid-template-columns: 130px 1fr 320px;
+    gap: 0 48px;
+    align-items: start;
+  }
+  .hero-aside {
+    font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ck-deep); line-height: 2.4; padding-top: 10px;
+    opacity: 0.75;
+  }
+  .hero-aside-rule {
+    display: block; width: 18px; height: 1px;
+    background: var(--ck-accent); margin-bottom: 14px;
+  }
+  .hero-cat {
+    font-family: 'Cormorant', serif;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ck-deep); margin-bottom: 14px; font-style: italic;
+  }
   .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 52px);
-    font-weight: 400; line-height: 1.1;
-    color: var(--silhouette); margin-bottom: 10px;
+    font-size: clamp(30px, 4.2vw, 56px);
+    font-weight: 400; line-height: 1.05;
+    color: var(--silhouette); margin-bottom: 12px;
   }
   .hero-sub {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(15px, 1.8vw, 20px);
+    font-size: clamp(14px, 1.6vw, 18px);
     font-style: italic; font-weight: 300;
-    color: var(--taupe); margin-bottom: 28px;
+    color: var(--ck-deep); margin-bottom: 30px;
+    line-height: 1.5;
   }
-  .hero-intro { font-size: 14px; color: var(--mid); line-height: 1.95; max-width: 480px; margin-bottom: 36px; }
-  .cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .hero-intro {
+    font-size: 14px; color: var(--mid); line-height: 1.95;
+    max-width: 460px; margin-bottom: 36px;
+  }
+  .cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-bottom: 60px; }
   .cta-primary {
     display: inline-flex; align-items: center; gap: 12px;
     padding: 13px 26px; border: 1px solid var(--silhouette); border-radius: 1px;
@@ -193,58 +229,137 @@
     color: var(--silhouette); text-decoration: none; transition: all 0.2s; white-space: nowrap;
   }
   .cta-primary:hover { background: var(--silhouette); color: var(--oat); }
-  .cta-price { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--taupe); font-weight: 300; letter-spacing: 0; text-transform: none; }
-  .cta-note { font-size: 10px; color: var(--border); letter-spacing: 0.06em; }
+  .cta-price { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--ck-accent); font-weight: 300; letter-spacing: 0; text-transform: none; }
+  .cta-note { font-size: 10px; color: var(--ck-border); letter-spacing: 0.06em; }
 
-  /* DIVIDER */
-  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-
-  /* WHAT'S INSIDE */
-  #inside {
-    padding: 100px 52px;
-    display: grid; grid-template-columns: 130px 1fr; gap: 0 64px;
-    max-width: 840px;
-    border-bottom: 1px solid var(--border);
-    background: var(--white);
+  /* Hero cover — image column */
+  .hero-cover {
+    align-self: stretch;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    overflow: hidden;
+    min-height: 440px;
   }
-  .section-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); line-height: 2.2; padding-top: 6px; }
+  .hero-cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 1px 1px 0 0;
+    box-shadow: -8px 0 32px rgba(46,37,32,0.08);
+  }
+
+  /* ── COLLECTION STRIP ────────────────────────────── */
+  #collection-strip {
+    background: var(--silhouette);
+    border-bottom: 1px solid rgba(245,241,235,0.06);
+    padding: 0 52px;
+  }
+  .strip-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-left: 1px solid rgba(245,241,235,0.06);
+  }
+  .strip-item {
+    padding: 36px 32px;
+    border-right: 1px solid rgba(245,241,235,0.06);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .strip-item-label {
+    font-family: 'Cormorant', serif;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ck-accent); font-style: italic;
+  }
+  .strip-item-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 400;
+    color: rgba(245,241,235,0.85); line-height: 1.2;
+  }
+  .strip-item-detail {
+    font-size: 11px; color: rgba(245,241,235,0.35);
+    letter-spacing: 0.06em; line-height: 1.7;
+  }
+  .strip-item-cover {
+    margin-top: 16px;
+    border-radius: 1px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  }
+  .strip-item-cover img {
+    display: block; width: 100%; height: auto;
+  }
+
+  /* ── INSIDE (WHAT'S IN THE COLLECTION) ──────────── */
+  #inside {
+    background: var(--ck-parchment);
+    border-bottom: 1px solid var(--ck-border);
+  }
+  .section-wrap {
+    padding: 100px 52px;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 0 64px;
+    max-width: 960px;
+  }
+  .section-label {
+    font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ck-deep); line-height: 2.2; padding-top: 6px;
+    opacity: 0.7;
+  }
   .section-heading {
     font-family: 'Playfair Display', serif;
     font-size: clamp(20px, 2.4vw, 28px);
     font-weight: 300; color: var(--silhouette);
-    margin-bottom: 32px; line-height: 1.3;
+    margin-bottom: 36px; line-height: 1.3;
   }
-  .component { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
-  .component:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .component {
+    margin-bottom: 0; padding: 28px 0 28px 20px;
+    border-bottom: 1px solid var(--ck-border);
+    border-left: 2px solid var(--ck-accent);
+    display: grid; grid-template-columns: 1fr auto; gap: 0 24px; align-items: start;
+  }
+  .component:last-child { border-bottom: none; }
+  .component:first-child { border-top: 1px solid var(--ck-border); }
   .component-name {
     font-family: 'Playfair Display', serif;
     font-size: 18px; font-weight: 400;
     color: var(--silhouette); margin-bottom: 4px;
   }
-  .component-detail { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); margin-bottom: 12px; }
-  .component-body { font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 440px; }
-
-  /* THE ARC */
-  #arc {
-    padding: 100px 52px;
-    display: grid; grid-template-columns: 130px 1fr; gap: 0 64px;
-    max-width: 840px;
+  .component-detail {
+    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ck-deep); margin-bottom: 12px;
   }
+  .component-body { font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 400px; }
+  .component-tag {
+    font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ck-accent); border: 1px solid var(--ck-border);
+    padding: 5px 10px; border-radius: 1px; white-space: nowrap; align-self: center;
+    font-family: 'Cormorant', serif; font-style: italic; font-size: 10px;
+  }
+
+  /* ── ARC ─────────────────────────────────────────── */
+  #arc { background: var(--oat); border-bottom: 1px solid var(--border); }
   .arc-phases { display: flex; flex-direction: column; gap: 0; }
-  .arc-phase { padding: 28px 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 80px 1fr; gap: 0 32px; align-items: start; }
-  .arc-phase:first-child { border-top: 1px solid var(--border); }
-  .arc-days { font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--border); padding-top: 4px; }
-  .arc-phase-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--silhouette); margin-bottom: 6px; }
+  .arc-phase {
+    padding: 30px 0; border-bottom: 1px solid var(--ck-border);
+    display: grid; grid-template-columns: 80px 1fr; gap: 0 32px; align-items: start;
+  }
+  .arc-phase:first-child { border-top: 1px solid var(--ck-border); }
+  .arc-days {
+    font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ck-accent); padding-top: 5px;
+  }
+  .arc-phase-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 400; color: var(--silhouette); margin-bottom: 8px;
+  }
   .arc-phase-body { font-size: 13px; color: var(--mid); line-height: 1.85; max-width: 360px; }
 
-  /* FOR */
+  /* ── FOR ─────────────────────────────────────────── */
   #for {
-    padding: 100px 52px;
-    display: grid; grid-template-columns: 130px 1fr; gap: 0 64px;
-    max-width: 840px;
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background: var(--ck-warm);
+    border-bottom: 1px solid var(--ck-border);
   }
   .for-body { font-size: 14px; color: var(--mid); line-height: 1.95; max-width: 480px; }
   .for-body p { margin-bottom: 20px; }
@@ -256,66 +371,108 @@
     margin-top: 28px; max-width: 420px;
   }
 
-  /* PREVIEW */
-  #preview {
-    padding: 100px 52px;
-    display: grid; grid-template-columns: 130px 1fr; gap: 0 64px;
-    max-width: 840px;
-    border-bottom: 1px solid var(--border);
+  /* ── PREVIEW ─────────────────────────────────────── */
+  #preview { background: var(--white); border-bottom: 1px solid var(--border); }
+  .preview-context {
+    font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ck-accent); margin-bottom: 6px;
   }
-  .preview-context { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 6px; }
-  .preview-context-sub { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--mid); margin-bottom: 28px; }
+  .preview-context-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-style: italic; color: var(--mid); margin-bottom: 28px;
+  }
   .preview-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 16px; }
-  .preview-heading { font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.6vw, 32px); font-weight: 400; line-height: 1.35; color: var(--silhouette); margin-bottom: 24px; }
+  .preview-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.6vw, 32px);
+    font-weight: 400; line-height: 1.35; color: var(--silhouette); margin-bottom: 24px;
+  }
   .preview-heading strong { font-weight: 700; }
   .preview-body { font-size: 14px; color: var(--mid); line-height: 1.95; max-width: 480px; margin-bottom: 28px; }
-  .preview-prompt { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--charcoal); line-height: 1.6; margin-bottom: 24px; max-width: 420px; }
-  .preview-note { font-size: 9px; letter-spacing: 0.08em; color: var(--border); margin-top: 10px; }
-  .preview-textarea { width: 100%; max-width: 480px; background: var(--white); border: 1px solid var(--border); border-radius: 1px; padding: 16px 18px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 300; color: var(--charcoal); line-height: 1.75; resize: none; outline: none; transition: border-color 0.2s; }
-  .preview-textarea:focus { border-color: var(--taupe); }
-  .preview-textarea::placeholder { color: var(--border); }
-
-  /* CTA CLOSE */
-  #cta-close {
-    padding: 100px 52px;
-    display: grid; grid-template-columns: 130px 1fr; gap: 0 64px;
-    max-width: 840px;
-    background: var(--silhouette);
+  .preview-prompt {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-style: italic; color: var(--charcoal);
+    line-height: 1.6; margin-bottom: 24px; max-width: 420px;
+    padding-left: 16px; border-left: 2px solid var(--ck-accent);
   }
-  .cta-close-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,241,235,0.35); line-height: 2.2; padding-top: 6px; }
+  .preview-note { font-size: 9px; letter-spacing: 0.08em; color: var(--border); margin-top: 10px; }
+  .preview-textarea {
+    width: 100%; max-width: 480px;
+    background: var(--ck-parchment); border: 1px solid var(--ck-border); border-radius: 1px;
+    padding: 16px 18px; font-family: 'Inter', sans-serif; font-size: 12px;
+    font-weight: 300; color: var(--charcoal); line-height: 1.75; resize: none; outline: none;
+    transition: border-color 0.2s;
+  }
+  .preview-textarea:focus { border-color: var(--ck-accent); }
+  .preview-textarea::placeholder { color: var(--ck-border); }
+
+  /* ── CTA CLOSE ───────────────────────────────────── */
+  #cta-close { background: var(--silhouette); }
+  .cta-close-label {
+    font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,241,235,0.3); line-height: 2.2; padding-top: 6px;
+  }
   .cta-close-heading {
     font-family: 'Playfair Display', serif;
     font-size: clamp(20px, 2.4vw, 30px);
     font-weight: 300; font-style: italic;
-    color: rgba(245,241,235,0.85); margin-bottom: 28px; line-height: 1.4;
+    color: rgba(245,241,235,0.85); margin-bottom: 8px; line-height: 1.4;
+  }
+  .cta-close-sub {
+    font-size: 11px; color: rgba(194,180,163,0.7);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 28px;
   }
   .cta-close-primary {
     display: inline-flex; align-items: center; gap: 12px;
-    padding: 13px 26px; border: 1px solid rgba(245,241,235,0.35); border-radius: 1px;
+    padding: 13px 26px; border: 1px solid rgba(194,180,163,0.4); border-radius: 1px;
     font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
     color: rgba(245,241,235,0.75); text-decoration: none; transition: all 0.2s; white-space: nowrap;
   }
-  .cta-close-primary:hover { border-color: rgba(245,241,235,0.75); color: rgba(245,241,235,1); }
-  .cta-close-price { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--taupe); font-weight: 300; letter-spacing: 0; text-transform: none; }
-  .cta-close-note { font-size: 9px; letter-spacing: 0.08em; color: rgba(245,241,235,0.3); margin-top: 14px; }
+  .cta-close-primary:hover { border-color: rgba(194,180,163,0.8); color: rgba(245,241,235,1); }
+  .cta-close-price {
+    font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic;
+    color: var(--ck-accent); font-weight: 300; letter-spacing: 0; text-transform: none;
+  }
+  .cta-close-note { font-size: 9px; letter-spacing: 0.08em; color: rgba(245,241,235,0.25); margin-top: 14px; }
 
-  /* FOOTER */
+  /* ── FOOTER ──────────────────────────────────────── */
   footer {
     background: var(--silhouette);
     border-top: 1px solid rgba(245,241,235,0.04);
     padding: 42px 52px;
     display: flex; align-items: center; justify-content: space-between;
   }
-  .footer-logo-text { font-family: 'Cormorant', serif; font-size: 16px; font-weight: 300; color: rgba(245,241,235,0.45); letter-spacing: 0.04em; }
-  .footer-tagline { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: rgba(245,241,235,0.45); }
+  .footer-logo-text {
+    font-family: 'Cormorant', serif; font-size: 16px; font-weight: 300;
+    color: rgba(245,241,235,0.45); letter-spacing: 0.04em;
+  }
+  .footer-tagline {
+    font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic;
+    color: rgba(245,241,235,0.45);
+  }
   .footer-copy { font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,235,0.35); }
 
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 900px) {
+    .hero-wrap { grid-template-columns: 130px 1fr; }
+    .hero-cover { display: none; }
+    .strip-inner { grid-template-columns: 1fr; }
+    .strip-item { padding: 24px 32px; }
+    .strip-item-cover { display: none; }
+  }
   @media (max-width: 768px) {
     nav { padding: 18px 24px; }
     .nav-links { display: none; }
-    .breadcrumb { padding: 100px 24px 0; }
-    #hero, #inside, #arc, #for, #preview, #cta-close { padding: 60px 24px; grid-template-columns: 1fr; }
-    .hero-aside, .section-label, .arc-days { display: none; }
+    .breadcrumb-wrap { padding: 100px 24px 0; }
+    .hero-wrap { padding: 40px 24px 0; grid-template-columns: 1fr; }
+    .hero-aside { display: none; }
+    .hero-cover { display: none; }
+    .cta-row { padding-bottom: 40px; }
+    #collection-strip { padding: 0 24px; }
+    .section-wrap { padding: 60px 24px; grid-template-columns: 1fr; }
+    .section-label { display: none; }
+    .arc-days { display: none; }
     footer { padding: 36px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
   }
 </style>
@@ -323,7 +480,7 @@
 <body>
 
 <nav>
-  <a href="/"><img class="nav-logo" src="/somehow-valid-logo.svg" alt="somehow valid."></a>
+  <a href="/" class="nav-logo-link"><img class="nav-logo" src="/somehow-valid-logo.svg" alt="somehow valid."></a>
   <ul class="nav-links">
     <li><a href="/#statement">about</a></li>
     <li><a href="/#story">our story</a></li>
@@ -332,77 +489,121 @@
   </ul>
 </nav>
 
-<div class="breadcrumb reveal">
-  <a href="/">somehow valid.</a><span>·</span>the cost of kind
+<div class="breadcrumb-wrap reveal">
+  <div class="breadcrumb">
+    <a href="/">somehow valid.</a><span>·</span>the daily anchor™<span>·</span>the cost of kind
+  </div>
 </div>
 
 <section id="hero">
-  <div class="hero-aside reveal">the daily<br>anchor™<br><br>theme 01<br>held · vol. 01</div>
-  <div>
-    <p class="hero-cat reveal" style="transition-delay:0.04s">a 30-day compass</p>
-    <h1 class="hero-title reveal" style="transition-delay:0.08s">The Cost of Kind</h1>
-    <p class="hero-sub reveal" style="transition-delay:0.12s">A 30-Day Compass to the Self You Gave Away</p>
-    <p class="hero-intro reveal" style="transition-delay:0.16s">There is something you have been carrying quietly — the weight of every yes that cost you more than it gave. This is a 30-day self-reflection collection to help you see what that has cost, and what it is time to reclaim. Not a programme you complete. A space you move through.</p>
-    <div class="cta-row reveal" style="transition-delay:0.20s">
-      <a class="cta-primary" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
-        begin the arc <span class="cta-price">$27</span>
-      </a>
-      <span class="cta-note">digital download — delivered instantly</span>
+  <div class="hero-wrap">
+    <div class="hero-aside reveal">
+      <span class="hero-aside-rule"></span>
+      the daily<br>anchor™<br><br>theme 01<br>held · vol. 01
+    </div>
+    <div>
+      <p class="hero-cat reveal" style="transition-delay:0.04s">the cost of kind</p>
+      <h1 class="hero-title reveal" style="transition-delay:0.08s">A 30-Day Compass<br>to the Self<br>You Gave Away</h1>
+      <p class="hero-sub reveal" style="transition-delay:0.12s">for people who have been kind to everyone except themselves.</p>
+      <p class="hero-intro reveal" style="transition-delay:0.16s">There is something you have been carrying quietly — the weight of every yes that cost you more than it gave. This is a 30-day self-reflection collection to help you see what that has cost, and what it is time to reclaim. Not a programme you complete. A space you move through.</p>
+      <div class="cta-row reveal" style="transition-delay:0.20s">
+        <a class="cta-primary" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
+          begin the arc <span class="cta-price">$27</span>
+        </a>
+        <span class="cta-note">digital download — delivered instantly</span>
+      </div>
+    </div>
+    <div class="hero-cover reveal" style="transition-delay:0.10s">
+      <img src="/the-cost-of-kind-compass.png" alt="The Cost of Kind — compass cover">
     </div>
   </div>
 </section>
 
-<hr class="divider">
+<section id="collection-strip">
+  <div class="strip-inner">
+    <div class="strip-item reveal">
+      <span class="strip-item-label">the compass</span>
+      <span class="strip-item-name">30-Day Arc</span>
+      <span class="strip-item-detail">39-page guided PDF<br>one entry per day, any device</span>
+      <div class="strip-item-cover">
+        <img src="/the-cost-of-kind-compass.png" alt="The Cost of Kind Compass">
+      </div>
+    </div>
+    <div class="strip-item reveal" style="transition-delay:0.06s">
+      <span class="strip-item-label">the anchor deck</span>
+      <span class="strip-item-name">30 Reflection Cards</span>
+      <span class="strip-item-detail">printable PDF<br>cut and carry — one card per day</span>
+    </div>
+    <div class="strip-item reveal" style="transition-delay:0.12s">
+      <span class="strip-item-label">the frames</span>
+      <span class="strip-item-name">30 Digital Images</span>
+      <span class="strip-item-detail">PNG · ZIP<br>lock screen, desktop, or wall</span>
+    </div>
+  </div>
+</section>
 
 <section id="inside">
-  <div class="section-label reveal">the<br>collection</div>
-  <div>
-    <h2 class="section-heading reveal" style="transition-delay:0.06s">three parts.<br>one world.</h2>
+  <div class="section-wrap">
+    <div class="section-label reveal">the<br>collection</div>
+    <div>
+      <h2 class="section-heading reveal" style="transition-delay:0.06s">three parts.<br>one world.</h2>
 
-    <div class="component reveal" style="transition-delay:0.10s">
-      <p class="component-name">The Compass</p>
-      <p class="component-detail">39-page guided PDF · one page per day</p>
-      <p class="component-body">Each page opens with a quote, a paragraph that names what you have been carrying, and one question that does not rush you toward an answer. Read on any device. Move through it at whatever pace is yours. This is not a productivity system. It is thirty days of permission to see what has always been there.</p>
-    </div>
+      <div class="component reveal" style="transition-delay:0.10s">
+        <div>
+          <p class="component-name">The Compass</p>
+          <p class="component-detail">39-page guided PDF · one page per day</p>
+          <p class="component-body">Each page opens with a quote, a paragraph that names what you have been carrying, and one question that does not rush you toward an answer. Read on any device. Move through it at whatever pace is yours. This is not a productivity system. It is thirty days of permission to see what has always been there.</p>
+        </div>
+        <span class="component-tag">compass</span>
+      </div>
 
-    <div class="component reveal" style="transition-delay:0.14s">
-      <p class="component-name">The Anchor Deck</p>
-      <p class="component-detail">30 reflection cards · printable PDF</p>
-      <p class="component-body">Each card carries the full quote from that day's compass entry — printed four to a page, cut to size. Place one where your eye naturally lands. Your desk. A wall. Somewhere you return to. The deck is the compass, made portable.</p>
-    </div>
+      <div class="component reveal" style="transition-delay:0.14s">
+        <div>
+          <p class="component-name">The Anchor Deck</p>
+          <p class="component-detail">30 reflection cards · printable PDF</p>
+          <p class="component-body">Each card carries the full quote from that day's compass entry — printed four to a page, cut to size. Place one where your eye naturally lands. Your desk. A wall. Somewhere you return to. The deck is the compass, made portable.</p>
+        </div>
+        <span class="component-tag">anchor deck</span>
+      </div>
 
-    <div class="component reveal" style="transition-delay:0.18s">
-      <p class="component-name">The Frames</p>
-      <p class="component-detail">30 digital images · PNG · ZIP</p>
-      <p class="component-body">One image for each day of the arc. Your phone lock screen. Your desktop. A printed square on a wall. Each frame keeps the day's anchor close without requiring you to open anything. The collection, made visible.</p>
+      <div class="component reveal" style="transition-delay:0.18s">
+        <div>
+          <p class="component-name">The Frames</p>
+          <p class="component-detail">30 digital images · PNG · ZIP</p>
+          <p class="component-body">One image for each day of the arc. Your phone lock screen. Your desktop. A printed square on a wall. Each frame keeps the day's anchor close without requiring you to open anything. The collection, made visible.</p>
+        </div>
+        <span class="component-tag">frames</span>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="arc">
-  <div class="section-label reveal">the arc</div>
-  <div>
-    <h2 class="section-heading reveal" style="transition-delay:0.06s">thirty days,<br>structured as a story.</h2>
-    <div class="arc-phases">
-      <div class="arc-phase reveal" style="transition-delay:0.10s">
-        <p class="arc-days">days 1–10</p>
-        <div>
-          <p class="arc-phase-name">The Weight</p>
-          <p class="arc-phase-body">No reframing yet. No fixing. Just the honest weight of it — named, seen, and given room. The first ten days meet you where you are, not where you think you should be.</p>
+  <div class="section-wrap">
+    <div class="section-label reveal">the arc</div>
+    <div>
+      <h2 class="section-heading reveal" style="transition-delay:0.06s">thirty days,<br>structured as a story.</h2>
+      <div class="arc-phases">
+        <div class="arc-phase reveal" style="transition-delay:0.10s">
+          <p class="arc-days">days 1–10</p>
+          <div>
+            <p class="arc-phase-name">The Weight</p>
+            <p class="arc-phase-body">No reframing yet. No fixing. Just the honest weight of it — named, seen, and given room. The first ten days meet you where you are, not where you think you should be.</p>
+          </div>
         </div>
-      </div>
-      <div class="arc-phase reveal" style="transition-delay:0.14s">
-        <p class="arc-days">days 11–20</p>
-        <div>
-          <p class="arc-phase-name">The Seeing</p>
-          <p class="arc-phase-body">The lens shifts. Where did this pattern begin? What has it actually cost? Not a diagnosis — a clearer look. The kind that only becomes possible once you have stopped carrying the weight long enough to see it.</p>
+        <div class="arc-phase reveal" style="transition-delay:0.14s">
+          <p class="arc-days">days 11–20</p>
+          <div>
+            <p class="arc-phase-name">The Seeing</p>
+            <p class="arc-phase-body">The lens shifts. Where did this pattern begin? What has it actually cost? Not a diagnosis — a clearer look. The kind that only becomes possible once you have stopped carrying the weight long enough to see it.</p>
+          </div>
         </div>
-      </div>
-      <div class="arc-phase reveal" style="transition-delay:0.18s">
-        <p class="arc-days">days 21–30</p>
-        <div>
-          <p class="arc-phase-name">The Return</p>
-          <p class="arc-phase-body">Not a transformation. Not an arrival. A slow reclamation of what was always yours — the permission to include yourself in your own kindness. The arc does not end with answers. It ends with clearer ground.</p>
+        <div class="arc-phase reveal" style="transition-delay:0.18s">
+          <p class="arc-days">days 21–30</p>
+          <div>
+            <p class="arc-phase-name">The Return</p>
+            <p class="arc-phase-body">Not a transformation. Not an arrival. A slow reclamation of what was always yours — the permission to include yourself in your own kindness. The arc does not end with answers. It ends with clearer ground.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -410,42 +611,49 @@
 </section>
 
 <section id="for">
-  <div class="section-label reveal">who<br>this is for</div>
-  <div>
-    <h2 class="section-heading reveal" style="transition-delay:0.06s">for the one<br>who has given<br>too much<br>for too long.</h2>
-    <div class="for-body">
-      <p class="reveal" style="transition-delay:0.10s">This is for the person who has spent so long being what everyone else needed that they have lost track of what they actually feel. The one who apologizes before they have done anything wrong. Who keeps the peace at the cost of their own.</p>
-      <p class="reveal" style="transition-delay:0.14s">For people pleasers, quiet givers, and those who arrive somewhere already tired. For anyone who has been so focused on being good that they forgot to include themselves in their own kindness.</p>
-      <p class="for-close reveal" style="transition-delay:0.18s">this is not a fix. it is thirty days of permission to see what has always been there.</p>
+  <div class="section-wrap">
+    <div class="section-label reveal">who<br>this is for</div>
+    <div>
+      <h2 class="section-heading reveal" style="transition-delay:0.06s">for the one<br>who has given<br>too much<br>for too long.</h2>
+      <div class="for-body">
+        <p class="reveal" style="transition-delay:0.10s">This is for the person who has spent so long being what everyone else needed that they have lost track of what they actually feel. The one who apologizes before they have done anything wrong. Who keeps the peace at the cost of their own.</p>
+        <p class="reveal" style="transition-delay:0.14s">For people pleasers, quiet givers, and those who arrive somewhere already tired. For anyone who has been so focused on being good that they forgot to include themselves in their own kindness.</p>
+        <p class="for-close reveal" style="transition-delay:0.18s">this is not a fix. it is thirty days of permission to see what has always been there.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="preview">
-  <div class="reveal"><div class="section-label">a day from<br>the compass</div></div>
-  <div>
-    <p class="preview-context reveal" style="transition-delay:0.05s">the cost of kind, vol. 01 — the compass</p>
-    <p class="preview-context-sub reveal" style="transition-delay:0.08s">this is what it feels like inside.</p>
-    <p class="preview-label reveal" style="transition-delay:0.12s">day 01 — the weight</p>
-    <p class="preview-heading reveal" style="transition-delay:0.16s"><strong>Kindness</strong> becomes a cage<br>when it never includes you.</p>
-    <p class="preview-body reveal" style="transition-delay:0.20s">there is a kind of giving that looks generous from the outside and costs everything from the inside. you have been doing it for so long that it no longer feels like a choice — it feels like who you are. but kindness that never turns inward is not a virtue. it is a pattern. and patterns carry a particular weight, even long before they have been seen clearly enough to name.</p>
-    <p class="preview-prompt reveal" style="transition-delay:0.24s">where has your kindness been most consistently directed away from yourself?</p>
-    <div class="reveal" style="transition-delay:0.28s">
-      <textarea class="preview-textarea" placeholder="this space is only for you. nothing leaves here." rows="4"></textarea>
-      <p class="preview-note">your words stay here. they are not saved or sent anywhere.</p>
+  <div class="section-wrap">
+    <div class="reveal"><div class="section-label">a day from<br>the compass</div></div>
+    <div>
+      <p class="preview-context reveal" style="transition-delay:0.05s">the cost of kind, vol. 01 — the compass</p>
+      <p class="preview-context-sub reveal" style="transition-delay:0.08s">this is what it feels like inside.</p>
+      <p class="preview-label reveal" style="transition-delay:0.12s">day 01 — the weight</p>
+      <p class="preview-heading reveal" style="transition-delay:0.16s"><strong>Kindness</strong> becomes a cage<br>when it never includes you.</p>
+      <p class="preview-body reveal" style="transition-delay:0.20s">there is a kind of giving that looks generous from the outside and costs everything from the inside. you have been doing it for so long that it no longer feels like a choice — it feels like who you are. but kindness that never turns inward is not a virtue. it is a pattern. and patterns carry a particular weight, even long before they have been seen clearly enough to name.</p>
+      <p class="preview-prompt reveal" style="transition-delay:0.24s">where has your kindness been most consistently directed away from yourself?</p>
+      <div class="reveal" style="transition-delay:0.28s">
+        <textarea class="preview-textarea" placeholder="this space is only for you. nothing leaves here." rows="4"></textarea>
+        <p class="preview-note">your words stay here. they are not saved or sent anywhere.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="cta-close">
-  <div class="cta-close-label reveal">the daily<br>anchor™<br><br>$27</div>
-  <div>
-    <p class="cta-close-heading reveal" style="transition-delay:0.06s">compass · anchor deck · frames.<br>thirty days, built to stay with you.</p>
-    <div class="reveal" style="transition-delay:0.12s">
-      <a class="cta-close-primary" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
-        begin the arc <span class="cta-close-price">$27</span>
-      </a>
-      <p class="cta-close-note">digital download — compass · anchor deck · frames — delivered instantly</p>
+  <div class="section-wrap">
+    <div class="cta-close-label reveal">the daily<br>anchor™<br><br>$27</div>
+    <div>
+      <p class="cta-close-heading reveal" style="transition-delay:0.06s">compass · anchor deck · frames.<br>thirty days, built to stay with you.</p>
+      <p class="cta-close-sub reveal" style="transition-delay:0.09s">somehow valid. · the cost of kind · held vol. 01</p>
+      <div class="reveal" style="transition-delay:0.12s">
+        <a class="cta-close-primary" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
+          begin the arc <span class="cta-close-price">$27</span>
+        </a>
+        <p class="cta-close-note">digital download — compass · anchor deck · frames — delivered instantly</p>
+      </div>
     </div>
   </div>
 </section>
@@ -459,7 +667,7 @@
 <script>
 const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-document.querySelectorAll('.breadcrumb, #hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 200 + i * 120));
+document.querySelectorAll('.breadcrumb-wrap, #hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 200 + i * 120));
 </script>
 </body>
 </html>
