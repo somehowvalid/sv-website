@@ -95,6 +95,46 @@
         "@type": "Answer",
         "text": "Yes. The Cost of Kind was built specifically for people who have spent a long time prioritising others at the cost of themselves — people pleasers, overthinkers, quiet givers. It names the experience precisely and moves through it without rushing toward a fix."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a journal specifically for people pleasers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Cost of Kind by somehow valid. is a 30-day self-reflection collection made specifically for people pleasers — people who have spent a long time being kind to everyone except themselves. It does not give advice or prescribe change. It creates space to see the pattern clearly: where it came from, what it has cost, and what reclaiming yourself might feel like."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good 30-day journal for burnout or emotional exhaustion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Cost of Kind is a 30-day self-reflection compass for people experiencing burnout, emotional exhaustion, or the specific tiredness of giving too much for too long. It moves through three phases — The Weight (naming what is happening), The Seeing (understanding where it started), and The Return (slow reclamation) — and asks nothing of you except that you look. $27, digital download, no app required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I do The Cost of Kind if I have never journaled before?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Cost of Kind is not a journaling programme — it is a reading and reflection collection. Each day has one compass entry to read and one question to sit with. Writing is optional. There is nothing to complete correctly and no format to follow. It works at whatever pace is yours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes somehow valid. different from a regular self-help journal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "somehow valid. is not a self-help brand. It is an editorial house for emotional clarity. The collections do not advise, instruct, or tell you what to do next. They are built to help you see what you have been carrying — clearly, and without judgment. The writing treats readers as people who already know what is true, not as problems to be fixed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if The Cost of Kind is right for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you have spent a long time being what everyone else needed — apologising before you have done anything wrong, keeping the peace at the cost of your own, arriving somewhere already tired — The Cost of Kind was made for you. It names that experience precisely. It does not rush you toward a fix. It gives you thirty days to see what has always been there."
+      }
     }
   ]
 }
@@ -452,6 +492,71 @@
   }
   .footer-copy { font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,235,0.35); }
 
+  /* ── NOTIFY ──────────────────────────────────────── */
+  #notify {
+    background: var(--ck-warm);
+    border-top: 1px solid var(--ck-border);
+    border-bottom: 1px solid var(--ck-border);
+  }
+  .notify-inner { max-width: 520px; }
+  .notify-eyebrow {
+    font-family: 'Cormorant', serif;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ck-deep); font-style: italic; margin-bottom: 14px;
+  }
+  .notify-copy {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(16px, 1.8vw, 20px);
+    font-weight: 300; font-style: italic;
+    color: var(--charcoal); line-height: 1.6; margin-bottom: 28px;
+  }
+  .notify-form {
+    display: flex; gap: 0;
+    border: 1px solid var(--ck-border); border-radius: 1px; overflow: hidden;
+  }
+  .notify-input {
+    flex: 1; padding: 12px 16px;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 300;
+    color: var(--charcoal); background: var(--white);
+    border: none; outline: none;
+  }
+  .notify-input::placeholder { color: var(--ck-border); }
+  .notify-btn {
+    padding: 12px 22px;
+    font-family: 'Inter', sans-serif; font-size: 9px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--white); background: var(--silhouette);
+    border: none; cursor: pointer; transition: background 0.2s; white-space: nowrap;
+  }
+  .notify-btn:hover { background: var(--charcoal); }
+  .notify-msg { font-size: 12px; color: var(--ck-deep); margin-top: 14px; font-style: italic; min-height: 18px; }
+
+  /* ── FAQ ─────────────────────────────────────────── */
+  #faq { background: var(--white); border-bottom: 1px solid var(--border); }
+  .faq-item {
+    border-bottom: 1px solid var(--ck-border);
+    overflow: hidden;
+  }
+  .faq-item:first-child { border-top: 1px solid var(--ck-border); }
+  .faq-q {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 24px; padding: 22px 0; cursor: pointer; user-select: none;
+  }
+  .faq-q-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 400; color: var(--silhouette); line-height: 1.4;
+  }
+  .faq-toggle {
+    font-size: 18px; color: var(--ck-accent);
+    transition: transform 0.3s; flex-shrink: 0; line-height: 1;
+  }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+  .faq-a {
+    display: none; padding: 0 0 22px;
+    font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 520px;
+  }
+  .faq-item.open .faq-a { display: block; }
+
   /* ── RESPONSIVE ──────────────────────────────────── */
   @media (max-width: 900px) {
     .hero-wrap { grid-template-columns: 130px 1fr; }
@@ -472,6 +577,8 @@
     .section-wrap { padding: 60px 24px; grid-template-columns: 1fr; }
     .section-label { display: none; }
     .arc-days { display: none; }
+    .notify-form { flex-direction: column; }
+    .notify-btn { padding: 12px; }
     footer { padding: 36px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
   }
 </style>
@@ -546,6 +653,13 @@
     </a>
   </div>
 </section>
+
+<!-- GEO lede: machine-readable entity definition for AI/generative search engines -->
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:32px 52px;">
+  <p style="max-width:840px;font-size:13px;color:var(--mid);line-height:1.9;" class="reveal">
+    <strong style="color:var(--charcoal);font-weight:400;">The Cost of Kind</strong> is a 30-day self-reflection collection by <strong style="color:var(--charcoal);font-weight:400;">somehow valid.</strong>, an editorial house for emotional clarity. It is designed for people who have spent a long time being kind to everyone except themselves — people pleasers, quiet givers, and those who arrive somewhere already tired. The collection moves through three stages: The Weight (days 1–10), The Seeing (days 11–20), and The Return (days 21–30). It includes three digital products: a 30-day compass (39-page PDF), a printable anchor deck of 30 cards, and 30 digital frames. Price: $27. Digital download, delivered instantly.
+  </p>
+</div>
 
 <section id="inside">
   <div class="section-wrap">
@@ -629,6 +743,21 @@
   </div>
 </section>
 
+<section id="notify">
+  <div class="section-wrap">
+    <div class="section-label reveal">stay<br>close</div>
+    <div class="notify-inner">
+      <p class="notify-eyebrow reveal">somehow valid. · new collections</p>
+      <p class="notify-copy reveal" style="transition-delay:0.06s">not ready yet.<br>leave your address and we will find you when the next one arrives.</p>
+      <form class="notify-form reveal" id="ck-notify-form" style="transition-delay:0.12s">
+        <input type="email" class="notify-input" placeholder="your address" required autocomplete="email">
+        <button type="submit" class="notify-btn">keep me informed</button>
+      </form>
+      <p class="notify-msg" id="ck-notify-msg"></p>
+    </div>
+  </div>
+</section>
+
 <section id="preview">
   <div class="section-wrap">
     <div class="reveal"><div class="section-label">a day from<br>the compass</div></div>
@@ -643,6 +772,56 @@
         <textarea class="preview-textarea" placeholder="this space is only for you. nothing leaves here." rows="4"></textarea>
         <p class="preview-note">your words stay here. they are not saved or sent anywhere.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="section-wrap">
+    <div class="section-label reveal">questions</div>
+    <div style="max-width:560px;">
+      <h2 class="section-heading reveal" style="transition-delay:0.04s;margin-bottom:8px;">common questions.</h2>
+
+      <div class="faq-item reveal" style="transition-delay:0.08s">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is there a journal specifically for people pleasers?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">The Cost of Kind was made specifically for people pleasers — people who have spent a long time being kind to everyone except themselves. It does not give advice or prescribe change. It creates space to see the pattern clearly: where it came from, what it has cost, and what reclaiming yourself might feel like. Thirty days. No pressure to arrive anywhere.</p>
+      </div>
+
+      <div class="faq-item reveal" style="transition-delay:0.10s">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What if I have never journaled before?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">The Cost of Kind is not a journaling programme. Each day has one compass entry to read and one question to sit with. Writing is optional — the space is there if you want it, and not required if you don't. There is nothing to complete correctly. It works at whatever pace is yours.</p>
+      </div>
+
+      <div class="faq-item reveal" style="transition-delay:0.12s">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What makes this different from a regular self-help book?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">somehow valid. is not a self-help brand. The collections do not advise, instruct, or tell you what to do next. They are built to help you see what you have been carrying — clearly, and without judgment. There are no tips, no action plans, no before-and-after. The writing treats you as someone who already knows what is true. It simply creates space for you to look at it.</p>
+      </div>
+
+      <div class="faq-item reveal" style="transition-delay:0.14s">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can I do this if I am going through burnout or exhaustion?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">Yes — this collection was made for exactly that. The first ten days (The Weight) ask nothing of you except to look. No reframing, no fixing. Just the honest weight of it, named and given room. You do not need energy to begin. You need only the willingness to see.</p>
+      </div>
+
+      <div class="faq-item reveal" style="transition-delay:0.16s">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is this a physical book or a digital download?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">Everything is digital, delivered instantly after purchase. The Compass and Anchor Deck are PDF files — read on any device or print at home. The Frames are a ZIP of 30 PNG images for your lock screen, desktop, or wall. No app required. $27 total for all three parts.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -673,6 +852,35 @@
 const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 document.querySelectorAll('.breadcrumb-wrap, #hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 200 + i * 120));
+
+// Email capture
+document.getElementById('ck-notify-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = this.querySelector('input[type=email]').value;
+  const msg = document.getElementById('ck-notify-msg');
+  const btn = this.querySelector('button');
+  btn.disabled = true;
+  btn.textContent = '...';
+  const url = 'https://us16.list-manage.com/subscribe/post-json?u=dc9aed9483c690c8eae48b725&id=ac9e7ec38d&EMAIL=' + encodeURIComponent(email) + '&c=ckNotifyCallback';
+  window.ckNotifyCallback = function(data) {
+    if (data.result === 'success') {
+      msg.textContent = 'noted.';
+      document.getElementById('ck-notify-form').style.display = 'none';
+    } else {
+      msg.textContent = data.msg.replace(/<[^>]*>/g, '').split('.')[0].toLowerCase() + '.';
+      btn.disabled = false;
+      btn.textContent = 'keep me informed';
+    }
+  };
+  const s = document.createElement('script');
+  s.src = url;
+  document.head.appendChild(s);
+});
+
+// FAQ accordion
+function toggleFaq(el) {
+  el.closest('.faq-item').classList.toggle('open');
+}
 </script>
 </body>
 </html>
