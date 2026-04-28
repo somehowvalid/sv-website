@@ -173,9 +173,9 @@
   .breadcrumb {
     font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ck-deep);
   }
-  .breadcrumb a { color: var(--ck-deep); text-decoration: none; transition: color 0.2s; opacity: 0.7; }
-  .breadcrumb a:hover { opacity: 1; }
-  .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+  .breadcrumb a { color: var(--ck-deep); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--charcoal); }
+  .breadcrumb span { margin: 0 8px; color: var(--ck-accent); }
 
   /* ── HERO ────────────────────────────────────────── */
   #hero {
@@ -193,7 +193,6 @@
   .hero-aside {
     font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--ck-deep); line-height: 2.4; padding-top: 10px;
-    opacity: 0.75;
   }
   .hero-aside-rule {
     display: block; width: 18px; height: 1px;
@@ -230,21 +229,18 @@
   }
   .cta-primary:hover { background: var(--silhouette); color: var(--oat); }
   .cta-price { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--ck-accent); font-weight: 300; letter-spacing: 0; text-transform: none; }
-  .cta-note { font-size: 10px; color: var(--ck-border); letter-spacing: 0.06em; }
+  .cta-note { font-size: 10px; color: var(--ck-deep); letter-spacing: 0.06em; }
 
   /* Hero cover — image column */
   .hero-cover {
-    align-self: stretch;
-    display: flex; flex-direction: column; justify-content: flex-end;
+    align-self: end;
     overflow: hidden;
-    min-height: 440px;
   }
   .hero-cover img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    height: auto;
+    object-fit: contain;
     border-radius: 1px 1px 0 0;
     box-shadow: -8px 0 32px rgba(46,37,32,0.08);
   }
@@ -265,7 +261,10 @@
     padding: 36px 32px;
     border-right: 1px solid rgba(245,241,235,0.06);
     display: flex; flex-direction: column; gap: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
   }
+  .strip-item:hover { background: rgba(245,241,235,0.03); }
   .strip-item-label {
     font-family: 'Cormorant', serif;
     font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
@@ -277,7 +276,7 @@
     color: rgba(245,241,235,0.85); line-height: 1.2;
   }
   .strip-item-detail {
-    font-size: 11px; color: rgba(245,241,235,0.35);
+    font-size: 11px; color: rgba(245,241,235,0.55);
     letter-spacing: 0.06em; line-height: 1.7;
   }
   .strip-item-cover {
@@ -521,24 +520,30 @@
 
 <section id="collection-strip">
   <div class="strip-inner">
-    <div class="strip-item reveal">
+    <a class="strip-item reveal" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
       <span class="strip-item-label">the compass</span>
       <span class="strip-item-name">30-Day Arc</span>
       <span class="strip-item-detail">39-page guided PDF<br>one entry per day, any device</span>
       <div class="strip-item-cover">
         <img src="/the-cost-of-kind-compass.png" alt="The Cost of Kind Compass">
       </div>
-    </div>
-    <div class="strip-item reveal" style="transition-delay:0.06s">
+    </a>
+    <a class="strip-item reveal" style="transition-delay:0.06s" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
       <span class="strip-item-label">the anchor deck</span>
       <span class="strip-item-name">30 Reflection Cards</span>
       <span class="strip-item-detail">printable PDF<br>cut and carry — one card per day</span>
-    </div>
-    <div class="strip-item reveal" style="transition-delay:0.12s">
+      <div class="strip-item-cover">
+        <img src="/the-cost-of-kind-anchor-deck.png" alt="The Cost of Kind Anchor Deck">
+      </div>
+    </a>
+    <a class="strip-item reveal" style="transition-delay:0.12s" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
       <span class="strip-item-label">the frames</span>
       <span class="strip-item-name">30 Digital Images</span>
       <span class="strip-item-detail">PNG · ZIP<br>lock screen, desktop, or wall</span>
-    </div>
+      <div class="strip-item-cover">
+        <img src="/the-cost-of-kind-frames.png" alt="The Cost of Kind Frames">
+      </div>
+    </a>
   </div>
 </section>
 
