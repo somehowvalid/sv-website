@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Mirror Ball — somehow valid.</title>
-<meta name="description" content="A private reflective space for readers of somehow valid. Bring one moment from the day and receive a quiet theme-aware reflection.">
+<meta name="description" content="A private reflective chamber from somehow valid. Bring one moment from the day and receive an angle you may not have been able to see yet.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" href="/favicon-32x32.png">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://somehowvalid.com/themirrorball/">
 <meta property="og:title" content="The Mirror Ball — somehow valid.">
-<meta property="og:description" content="A private reflective space for one real moment from the day.">
+<meta property="og:description" content="A private reflective chamber for the moments that do not fit cleanly into advice.">
 <meta property="og:image" content="https://somehowvalid.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -81,9 +81,9 @@
   .nav-link:hover { color: var(--charcoal); }
 
   main {
-    width: min(100%, 920px);
+    width: min(100%, 1080px);
     margin: 0 auto;
-    padding: 44px clamp(22px, 5vw, 52px) 72px;
+    padding: 32px clamp(22px, 5vw, 52px) 72px;
     display: flex;
     align-items: center;
   }
@@ -91,13 +91,110 @@
   .mirror {
     width: 100%;
     display: grid;
-    grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.58fr);
-    gap: clamp(36px, 7vw, 88px);
+    grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.58fr);
+    gap: clamp(34px, 6vw, 78px);
     align-items: start;
   }
 
   .intro {
-    padding-top: 16px;
+    padding-top: 4px;
+  }
+
+  .object-stage {
+    width: min(100%, 520px);
+    min-height: clamp(260px, 43vw, 430px);
+    display: grid;
+    place-items: center;
+    margin-bottom: clamp(18px, 3vw, 30px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .object-stage::before {
+    content: "";
+    position: absolute;
+    inset: 5% 9% 7%;
+    background:
+      radial-gradient(ellipse at 28% 18%, rgba(255,255,255,0.7), transparent 32%),
+      radial-gradient(ellipse at 76% 34%, rgba(74,70,63,0.12), transparent 30%),
+      linear-gradient(115deg, rgba(255,255,255,0.28), rgba(194,180,163,0.18), rgba(74,70,63,0.05));
+    filter: blur(28px);
+    opacity: 0.62;
+  }
+
+  .master-object {
+    width: clamp(188px, 31vw, 332px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(circle at 32% 24%, rgba(255,255,255,0.95) 0 7%, transparent 17%),
+      radial-gradient(circle at 70% 72%, rgba(46,37,32,0.28), transparent 34%),
+      radial-gradient(circle at 42% 45%, rgba(234,224,212,0.78), rgba(140,136,128,0.6) 48%, rgba(46,37,32,0.42) 100%);
+    box-shadow:
+      inset -28px -34px 52px rgba(46,37,32,0.28),
+      inset 26px 18px 46px rgba(255,255,255,0.34),
+      0 34px 74px rgba(74,70,63,0.18);
+    transform: translateZ(0);
+  }
+
+  .master-object::before,
+  .master-object::after {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .master-object::before {
+    background:
+      repeating-conic-gradient(from 4deg,
+        rgba(255,255,255,0.38) 0deg 3deg,
+        rgba(194,180,163,0.38) 3deg 7deg,
+        rgba(74,70,63,0.22) 7deg 10deg,
+        rgba(240,234,224,0.42) 10deg 14deg),
+      repeating-linear-gradient(84deg,
+        transparent 0 14px,
+        rgba(255,255,255,0.22) 14px 15px,
+        transparent 15px 29px),
+      repeating-linear-gradient(174deg,
+        transparent 0 16px,
+        rgba(46,37,32,0.11) 16px 17px,
+        transparent 17px 32px);
+    mix-blend-mode: soft-light;
+    opacity: 0.86;
+    animation: mirrorDrift 48s linear infinite;
+  }
+
+  .master-object::after {
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.72), transparent 18%),
+      linear-gradient(112deg, transparent 0 37%, rgba(255,255,255,0.3) 44%, transparent 52%),
+      radial-gradient(circle at 58% 62%, transparent 0 48%, rgba(46,37,32,0.2) 100%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+  }
+
+  .object-shadow {
+    width: clamp(160px, 26vw, 286px);
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(74,70,63,0.18), transparent 68%);
+    position: absolute;
+    bottom: 9%;
+    filter: blur(7px);
+    transform: translateY(18px);
+  }
+
+  @keyframes mirrorDrift {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .master-object::before { animation: none; }
   }
 
   .eyebrow {
@@ -124,6 +221,44 @@
     color: var(--mid);
     font-size: 14px;
     line-height: 1.95;
+  }
+
+  .premise {
+    margin-top: 26px;
+    display: grid;
+    gap: 12px;
+    max-width: 470px;
+  }
+
+  .premise p {
+    color: var(--charcoal);
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .premise p:first-child {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(21px, 2.8vw, 30px);
+    line-height: 1.34;
+  }
+
+  .ritual {
+    margin-top: 28px;
+    max-width: 500px;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ritual span {
+    display: block;
+    color: var(--mid);
+    font-size: 8px;
+    line-height: 1.55;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
 
   .access,
@@ -322,6 +457,14 @@
     }
     .intro { padding-top: 0; }
     .intro-copy { margin-top: 22px; }
+    .object-stage {
+      min-height: 282px;
+      margin-bottom: 16px;
+    }
+    .ritual {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
     .actions {
       align-items: stretch;
       flex-direction: column;
@@ -348,16 +491,31 @@
       <div class="intro">
         <p class="eyebrow">private reflection</p>
         <h1 id="mirror-title">The Mirror Ball</h1>
+        <div class="object-stage" aria-hidden="true">
+          <div class="master-object"></div>
+          <div class="object-shadow"></div>
+        </div>
         <p class="intro-copy">
-          a quiet space for one real moment from the day. no day selector. no diagnosis. no advice. the lens is carried by your access code.
+          a private reflective chamber for the moments that do not fit cleanly into advice.
         </p>
+        <div class="premise">
+          <p>It does not tell you who to become. It turns the room until another angle of you becomes visible.</p>
+          <p>The Mirror Ball stays the same. The lens changes with your access code, carrying the theme you entered through. Bring one real moment, not the whole story. The chamber reads the emotional pattern underneath it and returns an angle you may not have been able to see yet.</p>
+        </div>
+        <div class="ritual" aria-label="how to use The Mirror Ball">
+          <span>open the chamber</span>
+          <span>bring one real moment</span>
+          <span>write it as it happened</span>
+          <span>receive the angle</span>
+          <span>leave before it becomes noise</span>
+        </div>
       </div>
 
       <section class="access" id="access-panel" aria-label="access">
         <p class="panel-label">access</p>
         <div class="field">
           <label for="token">access code</label>
-          <input id="token" autocomplete="one-time-code" spellcheck="false" placeholder="TCOK-0000-0000">
+          <input id="token" autocomplete="one-time-code" spellcheck="false" placeholder="ACCESS-0000-0000">
         </div>
         <div class="actions">
           <button id="validate-button" type="button">enter</button>
