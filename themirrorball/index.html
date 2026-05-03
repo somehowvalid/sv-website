@@ -418,6 +418,58 @@
     transform: translateY(0);
   }
 
+  .related {
+    margin-top: 28px;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 700ms ease, transform 700ms ease;
+  }
+
+  .related.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .related[hidden] {
+    display: none;
+  }
+
+  .related-label {
+    color: var(--mid);
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .related-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .related-link {
+    display: block;
+    color: var(--charcoal);
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(216,208,197,0.66);
+  }
+
+  .related-title {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .related-copy {
+    color: var(--mid);
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
   footer {
     padding: 0 clamp(22px, 5vw, 52px) 28px;
     color: var(--mid);
@@ -534,6 +586,10 @@
         </div>
         <p class="status" id="reflect-status" aria-live="polite"></p>
         <article class="reflection" id="reflection" aria-live="polite"></article>
+        <aside class="related" id="related" aria-label="related lenses" hidden>
+          <p class="related-label">related lenses</p>
+          <div class="related-list" id="related-list"></div>
+        </aside>
       </section>
     </section>
   </main>
@@ -729,6 +785,8 @@
   const remaining = document.getElementById('remaining');
   const count = document.getElementById('count');
   const reflection = document.getElementById('reflection');
+  const related = document.getElementById('related');
+  const relatedList = document.getElementById('related-list');
 
   let activeToken = '';
 
@@ -743,6 +801,35 @@
 
   function updateRemaining(data) {
     remaining.textContent = `${data.remaining} reflections remaining`;
+  }
+
+  function renderRelated(lenses) {
+    relatedList.textContent = '';
+    related.classList.remove('visible');
+    if (!Array.isArray(lenses) || lenses.length === 0) {
+      related.hidden = true;
+      return;
+    }
+
+    for (const lens of lenses.slice(0, 3)) {
+      const item = document.createElement(lens.url ? 'a' : 'div');
+      item.className = 'related-link';
+      if (lens.url) item.href = lens.url;
+
+      const title = document.createElement('p');
+      title.className = 'related-title';
+      title.textContent = lens.title || 'related lens';
+
+      const copy = document.createElement('p');
+      copy.className = 'related-copy';
+      copy.textContent = lens.description || '';
+
+      item.append(title, copy);
+      relatedList.appendChild(item);
+    }
+
+    related.hidden = false;
+    requestAnimationFrame(() => related.classList.add('visible'));
   }
 
   function showChamber(data) {
@@ -803,12 +890,15 @@
     }
     reflectButton.disabled = true;
     reflection.classList.remove('visible');
+    related.classList.remove('visible');
+    related.hidden = true;
     setStatus(reflectStatus, 'holding the moment.');
     try {
       const data = await post('/mirror/reflect', { token: activeToken, input });
       updateRemaining(data);
       reflection.textContent = data.reflection;
       requestAnimationFrame(() => reflection.classList.add('visible'));
+      renderRelated(data.related_lenses);
       setStatus(reflectStatus, '');
     } catch (error) {
       setStatus(reflectStatus, error.message, true);
@@ -824,6 +914,9 @@
     accessPanel.hidden = false;
     reflection.textContent = '';
     reflection.classList.remove('visible');
+    related.classList.remove('visible');
+    related.hidden = true;
+    relatedList.textContent = '';
     setStatus(reflectStatus, '');
     setTimeout(() => tokenInput.focus(), 60);
   }
