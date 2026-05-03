@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mirror Ball — somehow valid.</title>
+<meta name="description" content="A private reflective space for readers of somehow valid. Bring one moment from the day and receive a quiet theme-aware reflection.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/favicon-32x32.png">
+<link rel="canonical" href="https://somehowvalid.com/themirrorball/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://somehowvalid.com/themirrorball/">
+<meta property="og:title" content="The Mirror Ball — somehow valid.">
+<meta property="og:description" content="A private reflective space for one real moment from the day.">
+<meta property="og:image" content="https://somehowvalid.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --oat: #F5F1EB;
+    --linen: #F0EAE0;
+    --taupe: #C2B4A3;
+    --warm: #EAE0D4;
+    --charcoal: #4A463F;
+    --silhouette: #2E2520;
+    --mid: #8C8880;
+    --border: #D8D0C5;
+    --white: #FFFFFF;
+    --danger: #78534F;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    background:
+      linear-gradient(180deg, rgba(245,241,235,0.96), rgba(240,234,224,0.94)),
+      radial-gradient(circle at 50% 18%, rgba(194,180,163,0.28), transparent 34%),
+      var(--oat);
+    color: var(--charcoal);
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px clamp(22px, 5vw, 52px);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    color: var(--charcoal);
+    text-decoration: none;
+    opacity: 0.78;
+    transition: opacity 180ms ease;
+  }
+
+  .brand:hover { opacity: 1; }
+  .brand img { width: auto; height: 58px; display: block; }
+
+  .nav-link {
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: color 180ms ease;
+  }
+
+  .nav-link:hover { color: var(--charcoal); }
+
+  main {
+    width: min(100%, 920px);
+    margin: 0 auto;
+    padding: 44px clamp(22px, 5vw, 52px) 72px;
+    display: flex;
+    align-items: center;
+  }
+
+  .mirror {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.58fr);
+    gap: clamp(36px, 7vw, 88px);
+    align-items: start;
+  }
+
+  .intro {
+    padding-top: 16px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(54px, 9vw, 104px);
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: 0;
+    color: var(--charcoal);
+    max-width: 520px;
+  }
+
+  .intro-copy {
+    margin-top: 28px;
+    max-width: 460px;
+    color: var(--mid);
+    font-size: 14px;
+    line-height: 1.95;
+  }
+
+  .access,
+  .chamber {
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+  }
+
+  .panel-label {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 16px;
+  }
+
+  .field {
+    display: grid;
+    gap: 10px;
+  }
+
+  label {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.45);
+    color: var(--charcoal);
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    border-radius: 0;
+    outline: none;
+    transition: border-color 180ms ease, background 180ms ease;
+  }
+
+  input {
+    height: 48px;
+    padding: 0 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  textarea {
+    min-height: 164px;
+    resize: vertical;
+    padding: 14px 15px;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: var(--taupe);
+    background: rgba(255,255,255,0.68);
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  button {
+    min-height: 46px;
+    border: 1px solid var(--charcoal);
+    background: var(--charcoal);
+    color: var(--oat);
+    padding: 0 22px;
+    font-family: Inter, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 180ms ease, color 180ms ease, border-color 180ms ease, opacity 180ms ease;
+  }
+
+  button.secondary {
+    background: transparent;
+    color: var(--mid);
+    border-color: var(--border);
+  }
+
+  button:hover:not(:disabled) {
+    background: var(--silhouette);
+    border-color: var(--silhouette);
+  }
+
+  button.secondary:hover:not(:disabled) {
+    background: transparent;
+    color: var(--charcoal);
+    border-color: var(--taupe);
+  }
+
+  button:disabled {
+    opacity: 0.48;
+    cursor: not-allowed;
+  }
+
+  .status {
+    min-height: 24px;
+    margin-top: 14px;
+    color: var(--mid);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .status.error { color: var(--danger); }
+
+  .chamber[hidden],
+  .access[hidden] {
+    display: none;
+  }
+
+  .counter {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .counter-text {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    color: var(--charcoal);
+  }
+
+  .counter-meta {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    white-space: nowrap;
+  }
+
+  .char-count {
+    margin-top: 8px;
+    color: var(--mid);
+    font-size: 11px;
+    text-align: right;
+  }
+
+  .reflection {
+    margin-top: 28px;
+    border-top: 1px solid var(--border);
+    padding-top: 26px;
+    color: var(--charcoal);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(18px, 2.4vw, 25px);
+    line-height: 1.62;
+    white-space: pre-wrap;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 700ms ease, transform 700ms ease;
+  }
+
+  .reflection.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  footer {
+    padding: 0 clamp(22px, 5vw, 52px) 28px;
+    color: var(--mid);
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  footer a {
+    color: var(--mid);
+    text-decoration: none;
+  }
+
+  @media (max-width: 760px) {
+    nav { padding-top: 18px; }
+    .brand img { height: 50px; }
+    main {
+      align-items: start;
+      padding-top: 28px;
+      padding-bottom: 52px;
+    }
+    .mirror {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+    .intro { padding-top: 0; }
+    .intro-copy { margin-top: 22px; }
+    .actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+    button { width: 100%; }
+    footer {
+      flex-direction: column;
+      padding-bottom: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav>
+    <a class="brand" href="/" aria-label="somehow valid.">
+      <img src="/somehow-valid-logo.svg" alt="somehow valid.">
+    </a>
+    <a class="nav-link" href="/the-cost-of-kind/">the cost of kind</a>
+  </nav>
+
+  <main>
+    <section class="mirror" aria-labelledby="mirror-title">
+      <div class="intro">
+        <p class="eyebrow">private reflection</p>
+        <h1 id="mirror-title">The Mirror Ball</h1>
+        <p class="intro-copy">
+          a quiet space for one real moment from the day. no day selector. no diagnosis. no advice. the lens is carried by your access code.
+        </p>
+      </div>
+
+      <section class="access" id="access-panel" aria-label="access">
+        <p class="panel-label">access</p>
+        <div class="field">
+          <label for="token">access code</label>
+          <input id="token" autocomplete="one-time-code" spellcheck="false" placeholder="TCOK-0000-0000">
+        </div>
+        <div class="actions">
+          <button id="validate-button" type="button">enter</button>
+        </div>
+        <p class="status" id="access-status" aria-live="polite"></p>
+      </section>
+
+      <section class="chamber" id="chamber-panel" aria-label="reflection chamber" hidden>
+        <div class="counter">
+          <p class="counter-text">what are you carrying today?</p>
+          <p class="counter-meta" id="remaining">—</p>
+        </div>
+
+        <div class="field">
+          <label for="moment">one moment</label>
+          <textarea id="moment" maxlength="500" spellcheck="true"></textarea>
+          <p class="char-count"><span id="count">0</span>/500</p>
+        </div>
+
+        <div class="actions">
+          <button id="reflect-button" type="button">reflect</button>
+          <button class="secondary" id="change-code-button" type="button">change code</button>
+        </div>
+        <p class="status" id="reflect-status" aria-live="polite"></p>
+        <article class="reflection" id="reflection" aria-live="polite"></article>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <span>somehow valid.</span>
+    <a href="/">editorial house for emotional clarity</a>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const API_BASE = window.MIRROR_API_BASE ||
+    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+      ? 'http://127.0.0.1:8001'
+      : 'https://api.somehowvalid.com');
+  const tokenInput = document.getElementById('token');
+  const accessPanel = document.getElementById('access-panel');
+  const chamberPanel = document.getElementById('chamber-panel');
+  const validateButton = document.getElementById('validate-button');
+  const accessStatus = document.getElementById('access-status');
+  const momentInput = document.getElementById('moment');
+  const reflectButton = document.getElementById('reflect-button');
+  const reflectStatus = document.getElementById('reflect-status');
+  const changeCodeButton = document.getElementById('change-code-button');
+  const remaining = document.getElementById('remaining');
+  const count = document.getElementById('count');
+  const reflection = document.getElementById('reflection');
+
+  let activeToken = '';
+
+  function setStatus(node, message, isError = false) {
+    node.textContent = message || '';
+    node.classList.toggle('error', Boolean(isError));
+  }
+
+  function normalizeToken(value) {
+    return value.trim().toUpperCase();
+  }
+
+  function updateRemaining(data) {
+    remaining.textContent = `${data.remaining} reflections remaining`;
+  }
+
+  function showChamber(data) {
+    updateRemaining(data);
+    accessPanel.hidden = true;
+    chamberPanel.hidden = false;
+    setStatus(accessStatus, '');
+    setTimeout(() => momentInput.focus(), 60);
+  }
+
+  async function post(path, payload) {
+    const response = await fetch(`${API_BASE}${path}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    let data = {};
+    try {
+      data = await response.json();
+    } catch (_error) {
+      data = {};
+    }
+    if (!response.ok) {
+      throw new Error(data.detail || data.message || 'the mirror ball is unavailable for a moment.');
+    }
+    return data;
+  }
+
+  async function validateToken() {
+    const token = normalizeToken(tokenInput.value);
+    if (!token) {
+      setStatus(accessStatus, 'enter the access code from your email.', true);
+      return;
+    }
+    validateButton.disabled = true;
+    setStatus(accessStatus, 'checking access.');
+    try {
+      const data = await post('/mirror/validate', { token });
+      if (!data.valid) {
+        setStatus(accessStatus, data.message || 'this access code is not active.', true);
+        return;
+      }
+      activeToken = token;
+      localStorage.setItem('sv_mirror_token', token);
+      showChamber(data);
+    } catch (error) {
+      setStatus(accessStatus, error.message, true);
+    } finally {
+      validateButton.disabled = false;
+    }
+  }
+
+  async function reflect() {
+    const input = momentInput.value.trim();
+    if (!input) {
+      setStatus(reflectStatus, 'bring one moment from today.', true);
+      return;
+    }
+    reflectButton.disabled = true;
+    reflection.classList.remove('visible');
+    setStatus(reflectStatus, 'holding the moment.');
+    try {
+      const data = await post('/mirror/reflect', { token: activeToken, input });
+      updateRemaining(data);
+      reflection.textContent = data.reflection;
+      requestAnimationFrame(() => reflection.classList.add('visible'));
+      setStatus(reflectStatus, '');
+    } catch (error) {
+      setStatus(reflectStatus, error.message, true);
+    } finally {
+      reflectButton.disabled = false;
+    }
+  }
+
+  function resetAccess() {
+    activeToken = '';
+    localStorage.removeItem('sv_mirror_token');
+    chamberPanel.hidden = true;
+    accessPanel.hidden = false;
+    reflection.textContent = '';
+    reflection.classList.remove('visible');
+    setStatus(reflectStatus, '');
+    setTimeout(() => tokenInput.focus(), 60);
+  }
+
+  validateButton.addEventListener('click', validateToken);
+  tokenInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') validateToken();
+  });
+  reflectButton.addEventListener('click', reflect);
+  changeCodeButton.addEventListener('click', resetAccess);
+  momentInput.addEventListener('input', () => {
+    count.textContent = momentInput.value.length;
+  });
+
+  const params = new URLSearchParams(window.location.search);
+  const queryToken = params.get('code') || params.get('token');
+  const storedToken = localStorage.getItem('sv_mirror_token');
+  if (queryToken || storedToken) {
+    tokenInput.value = queryToken || storedToken;
+    validateToken();
+  }
+})();
+</script>
+</body>
+</html>
