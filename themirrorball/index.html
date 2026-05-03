@@ -122,7 +122,7 @@
     opacity: 0.62;
   }
 
-  .master-object {
+  .master-object-frame {
     width: clamp(188px, 31vw, 332px);
     aspect-ratio: 1;
     border-radius: 50%;
@@ -130,52 +130,43 @@
     overflow: hidden;
     isolation: isolate;
     background:
-      radial-gradient(circle at 32% 24%, rgba(255,255,255,0.95) 0 7%, transparent 17%),
-      radial-gradient(circle at 70% 72%, rgba(46,37,32,0.28), transparent 34%),
-      radial-gradient(circle at 42% 45%, rgba(234,224,212,0.78), rgba(140,136,128,0.6) 48%, rgba(46,37,32,0.42) 100%);
+      radial-gradient(circle at 30% 22%, rgba(255,255,255,0.6), transparent 22%),
+      radial-gradient(circle at 48% 54%, rgba(205,196,184,0.48), rgba(92,87,80,0.26) 68%, rgba(46,37,32,0.44));
     box-shadow:
-      inset -28px -34px 52px rgba(46,37,32,0.28),
-      inset 26px 18px 46px rgba(255,255,255,0.34),
+      inset -30px -34px 56px rgba(46,37,32,0.28),
+      inset 22px 18px 46px rgba(255,255,255,0.28),
       0 34px 74px rgba(74,70,63,0.18);
     transform: translateZ(0);
   }
 
-  .master-object::before,
-  .master-object::after {
+  .master-object-frame::before,
+  .master-object-frame::after {
     content: "";
     position: absolute;
-    inset: -18%;
+    inset: 0;
     border-radius: 50%;
     pointer-events: none;
   }
 
-  .master-object::before {
+  .master-object-frame::before {
     background:
-      repeating-conic-gradient(from 4deg,
-        rgba(255,255,255,0.38) 0deg 3deg,
-        rgba(194,180,163,0.38) 3deg 7deg,
-        rgba(74,70,63,0.22) 7deg 10deg,
-        rgba(240,234,224,0.42) 10deg 14deg),
-      repeating-linear-gradient(84deg,
-        transparent 0 14px,
-        rgba(255,255,255,0.22) 14px 15px,
-        transparent 15px 29px),
-      repeating-linear-gradient(174deg,
-        transparent 0 16px,
-        rgba(46,37,32,0.11) 16px 17px,
-        transparent 17px 32px);
-    mix-blend-mode: soft-light;
-    opacity: 0.86;
-    animation: mirrorDrift 48s linear infinite;
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.72), transparent 13%),
+      linear-gradient(112deg, transparent 0 38%, rgba(255,255,255,0.26) 45%, transparent 54%),
+      radial-gradient(circle at 58% 62%, transparent 0 48%, rgba(46,37,32,0.2) 100%);
+    z-index: 2;
   }
 
-  .master-object::after {
-    inset: 0;
-    background:
-      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.72), transparent 18%),
-      linear-gradient(112deg, transparent 0 37%, rgba(255,255,255,0.3) 44%, transparent 52%),
-      radial-gradient(circle at 58% 62%, transparent 0 48%, rgba(46,37,32,0.2) 100%);
+  .master-object-frame::after {
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+    z-index: 3;
+  }
+
+  .master-object {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
   }
 
   .object-shadow {
@@ -194,7 +185,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .master-object::before { animation: none; }
+    .master-object { opacity: 0.96; }
   }
 
   .eyebrow {
@@ -492,7 +483,9 @@
         <p class="eyebrow">private reflection</p>
         <h1 id="mirror-title">The Mirror Ball</h1>
         <div class="object-stage" aria-hidden="true">
-          <div class="master-object"></div>
+          <div class="master-object-frame">
+            <canvas class="master-object" id="mirrorball-object" width="720" height="720"></canvas>
+          </div>
           <div class="object-shadow"></div>
         </div>
         <p class="intro-copy">
@@ -553,6 +546,157 @@
 
 <script>
 (() => {
+  function initMirrorBallObject() {
+    const canvas = document.getElementById('mirrorball-object');
+    if (!canvas) return;
+    const context = canvas.getContext('2d');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let size = 0;
+    let facets = [];
+
+    const palette = {
+      bright: [242, 238, 231],
+      light: [210, 201, 188],
+      mid: [156, 149, 138],
+      dark: [72, 67, 60],
+      line: [245, 241, 235]
+    };
+
+    function mix(a, b, t) {
+      return a.map((value, index) => Math.round(value + (b[index] - value) * t));
+    }
+
+    function rgba(rgb, alpha) {
+      return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${alpha})`;
+    }
+
+    function project(theta, phi, rotation) {
+      const cosPhi = Math.cos(phi);
+      let x = cosPhi * Math.cos(theta);
+      const y = Math.sin(phi);
+      let z = cosPhi * Math.sin(theta);
+      const cosR = Math.cos(rotation);
+      const sinR = Math.sin(rotation);
+      const xr = x * cosR + z * sinR;
+      const zr = -x * sinR + z * cosR;
+      return { x: xr, y, z: zr };
+    }
+
+    function makeFacets() {
+      const rows = 15;
+      const cols = 28;
+      const items = [];
+      for (let row = 0; row < rows; row += 1) {
+        const phi1 = -Math.PI / 2 + (row / rows) * Math.PI;
+        const phi2 = -Math.PI / 2 + ((row + 1) / rows) * Math.PI;
+        const offset = row % 2 ? Math.PI / cols : 0;
+        for (let col = 0; col < cols; col += 1) {
+          const theta1 = (col / cols) * Math.PI * 2 + offset;
+          const theta2 = ((col + 1) / cols) * Math.PI * 2 + offset;
+          items.push({ theta1, theta2, phi1, phi2, row, col });
+        }
+      }
+      facets = items;
+    }
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      size = Math.max(1, Math.floor(rect.width));
+      canvas.width = Math.floor(size * dpr);
+      canvas.height = Math.floor(size * dpr);
+      context.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function drawFacet(points, normal, row, col) {
+      const radius = size * 0.465;
+      const center = size / 2;
+      const projected = points.map((point) => ({
+        x: center + point.x * radius,
+        y: center - point.y * radius
+      }));
+      const light = Math.max(0, normal.x * -0.42 + normal.y * 0.55 + normal.z * 0.72);
+      const reflection = 0.5 + 0.5 * Math.sin(row * 1.7 + col * 0.83 + normal.x * 4);
+      const tone = Math.min(1, Math.max(0, light * 0.72 + reflection * 0.28));
+      const base = tone > 0.72
+        ? mix(palette.light, palette.bright, (tone - 0.72) / 0.28)
+        : mix(palette.dark, palette.light, tone / 0.72);
+
+      context.beginPath();
+      projected.forEach((point, index) => {
+        if (index === 0) context.moveTo(point.x, point.y);
+        else context.lineTo(point.x, point.y);
+      });
+      context.closePath();
+      context.fillStyle = rgba(base, 0.78);
+      context.fill();
+      context.strokeStyle = rgba(palette.line, 0.12 + tone * 0.12);
+      context.lineWidth = 0.55;
+      context.stroke();
+    }
+
+    function draw(time) {
+      const t = prefersReducedMotion ? 0.18 : time * 0.000045;
+      const radius = size * 0.465;
+      const center = size / 2;
+      context.clearRect(0, 0, size, size);
+
+      const base = context.createRadialGradient(center * 0.72, center * 0.64, radius * 0.08, center, center, radius);
+      base.addColorStop(0, 'rgba(226, 218, 206, 0.9)');
+      base.addColorStop(0.58, 'rgba(142, 135, 125, 0.66)');
+      base.addColorStop(1, 'rgba(54, 48, 42, 0.78)');
+      context.beginPath();
+      context.arc(center, center, radius, 0, Math.PI * 2);
+      context.fillStyle = base;
+      context.fill();
+      context.save();
+      context.clip();
+
+      const visible = [];
+      for (const facet of facets) {
+        const points = [
+          project(facet.theta1, facet.phi1, t),
+          project(facet.theta2, facet.phi1, t),
+          project(facet.theta2, facet.phi2, t),
+          project(facet.theta1, facet.phi2, t)
+        ];
+        const normal = project(
+          (facet.theta1 + facet.theta2) / 2,
+          (facet.phi1 + facet.phi2) / 2,
+          t
+        );
+        if (normal.z > -0.08) visible.push({ facet, points, normal });
+      }
+
+      visible
+        .sort((a, b) => a.normal.z - b.normal.z)
+        .forEach(({ facet, points, normal }) => drawFacet(points, normal, facet.row, facet.col));
+
+      const glint = context.createLinearGradient(size * 0.18, size * 0.08, size * 0.78, size * 0.76);
+      glint.addColorStop(0, 'rgba(255, 255, 255, 0)');
+      glint.addColorStop(0.46, 'rgba(255, 255, 255, 0.22)');
+      glint.addColorStop(0.56, 'rgba(255, 255, 255, 0)');
+      context.fillStyle = glint;
+      context.fillRect(0, 0, size, size);
+      context.restore();
+
+      context.beginPath();
+      context.arc(center, center, radius, 0, Math.PI * 2);
+      context.strokeStyle = 'rgba(255, 255, 255, 0.22)';
+      context.lineWidth = 1;
+      context.stroke();
+
+      if (!prefersReducedMotion) requestAnimationFrame(draw);
+    }
+
+    makeFacets();
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+    requestAnimationFrame(draw);
+  }
+
+  initMirrorBallObject();
+
   const API_BASE = window.MIRROR_API_BASE ||
     ((location.hostname === 'localhost' || location.hostname === '127.0.0.1')
       ? 'http://127.0.0.1:8001'
