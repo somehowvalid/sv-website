@@ -88,7 +88,7 @@
     align-items: center;
   }
 
-  .mirror {
+  .mirrorball {
     width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.58fr);
@@ -494,7 +494,7 @@
       padding-top: 28px;
       padding-bottom: 52px;
     }
-    .mirror {
+    .mirrorball {
       grid-template-columns: 1fr;
       gap: 38px;
     }
@@ -530,10 +530,10 @@
   </nav>
 
   <main>
-    <section class="mirror" aria-labelledby="mirror-title">
+    <section class="mirrorball" aria-labelledby="mirrorball-title">
       <div class="intro">
         <p class="eyebrow">private reflection</p>
-        <h1 id="mirror-title">The Mirror Ball</h1>
+        <h1 id="mirrorball-title">The Mirror Ball</h1>
         <div class="object-stage" aria-hidden="true">
           <div class="master-object-frame">
             <canvas class="master-object" id="mirrorball-object" width="720" height="720"></canvas>
@@ -769,7 +769,7 @@
 
   initMirrorBallObject();
 
-  const API_BASE = window.MIRROR_API_BASE ||
+  const API_BASE = window.MIRRORBALL_API_BASE ||
     ((location.hostname === 'localhost' || location.hostname === '127.0.0.1')
       ? 'http://127.0.0.1:8001'
       : 'https://api.somehowvalid.com');
@@ -867,13 +867,13 @@
     validateButton.disabled = true;
     setStatus(accessStatus, 'checking access.');
     try {
-      const data = await post('/mirror/validate', { token });
+      const data = await post('/mirrorball/validate', { token });
       if (!data.valid) {
         setStatus(accessStatus, data.message || 'this access code is not active.', true);
         return;
       }
       activeToken = token;
-      localStorage.setItem('sv_mirror_token', token);
+      localStorage.setItem('sv_mirrorball_token', token);
       showChamber(data);
     } catch (error) {
       setStatus(accessStatus, error.message, true);
@@ -894,7 +894,7 @@
     related.hidden = true;
     setStatus(reflectStatus, 'holding the moment.');
     try {
-      const data = await post('/mirror/reflect', { token: activeToken, input });
+      const data = await post('/mirrorball/reflect', { token: activeToken, input });
       updateRemaining(data);
       reflection.textContent = data.reflection;
       requestAnimationFrame(() => reflection.classList.add('visible'));
@@ -909,7 +909,7 @@
 
   function resetAccess() {
     activeToken = '';
-    localStorage.removeItem('sv_mirror_token');
+    localStorage.removeItem('sv_mirrorball_token');
     chamberPanel.hidden = true;
     accessPanel.hidden = false;
     reflection.textContent = '';
@@ -933,7 +933,7 @@
 
   const params = new URLSearchParams(window.location.search);
   const queryToken = params.get('code') || params.get('token');
-  const storedToken = localStorage.getItem('sv_mirror_token');
+  const storedToken = localStorage.getItem('sv_mirrorball_token');
   if (queryToken || storedToken) {
     tokenInput.value = queryToken || storedToken;
     validateToken();
