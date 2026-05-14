@@ -361,7 +361,7 @@
     margin-bottom: 0; padding: 28px 0 28px 20px;
     border-bottom: 1px solid var(--ck-border);
     border-left: 2px solid var(--ck-accent);
-    display: grid; grid-template-columns: 1fr auto; gap: 0 24px; align-items: start;
+    display: grid; grid-template-columns: minmax(0, 1fr) 180px; gap: 0 28px; align-items: center;
   }
   .component:last-child { border-bottom: none; }
   .component:first-child { border-top: 1px solid var(--ck-border); }
@@ -375,11 +375,9 @@
     color: var(--ck-deep); margin-bottom: 12px;
   }
   .component-body { font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 400px; }
-  .component-tag {
-    font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--ck-accent); border: 1px solid var(--ck-border);
-    padding: 5px 10px; border-radius: 1px; white-space: nowrap; align-self: center;
-    font-family: 'Cormorant', serif; font-style: italic; font-size: 10px;
+  .component-preview {
+    display: block; width: 180px; aspect-ratio: 1; object-fit: cover;
+    border-radius: 1px; box-shadow: 0 5px 22px rgba(46,37,32,0.09);
   }
 
   /* ── ARC ─────────────────────────────────────────── */
@@ -571,6 +569,8 @@
     #collection-strip { padding: 0 24px; }
     .section-wrap { padding: 60px 24px; grid-template-columns: 1fr; }
     .section-label { display: none; }
+    .component { grid-template-columns: 1fr; gap: 22px; padding-right: 0; }
+    .component-preview { width: min(100%, 320px); }
     .arc-days { display: none; }
     .notify-form { flex-direction: column; }
     .notify-btn { padding: 12px; }
@@ -668,7 +668,7 @@
           <p class="component-detail">39-page PDF · one page per day</p>
           <p class="component-body">Each page opens with a quote, a paragraph that names what you have been carrying, and one question that does not rush you toward an answer. Read on any device. Move through it at whatever pace is yours. The Compass lets the pattern become visible without turning it into a verdict on who you are.</p>
         </div>
-        <span class="component-tag">compass</span>
+        <img class="component-preview" src="/tcok-listing-06-compass-pdf.png" alt="The Cost of Kind Compass PDF preview">
       </div>
 
       <div class="component reveal" style="transition-delay:0.14s">
@@ -677,7 +677,7 @@
           <p class="component-detail">30 phone wallpapers · PNG · ZIP</p>
           <p class="component-body">One lock screen for each day of the arc. Your phone becomes the place the day's line returns to you without requiring you to open anything. The language stays close for the moments when the old pattern starts to feel familiar again.</p>
         </div>
-        <span class="component-tag">wallpapers</span>
+        <img class="component-preview" src="/tcok-listing-07-wallpapers-preview.png" alt="The Cost of Kind Wallpapers preview">
       </div>
 
       <div class="component reveal" style="transition-delay:0.18s">
@@ -686,7 +686,7 @@
           <p class="component-detail">30 anchor cards · printable PDF</p>
           <p class="component-body">Each card carries the full quote from that day's compass entry — printed four to a page, cut to size. Place one where your eye naturally lands. Your desk. A wall. Somewhere you return to when you need one sentence to hold the thread.</p>
         </div>
-        <span class="component-tag">anchor deck</span>
+        <img class="component-preview" src="/tcok-listing-08-anchor-cards-preview.png" alt="The Cost of Kind Anchor Deck preview">
       </div>
     </div>
   </div>
