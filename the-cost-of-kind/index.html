@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Cost of Kind — 30-Day Self-Reflection Collection | somehow valid.</title>
-<meta name="description" content="The Cost of Kind gives language to the quiet place where kindness became a way to disappear — and to what might still be yours underneath it. Digital collection, $27.">
+<meta name="description" content="The Cost of Kind gives language to the quiet place where kindness became a way to disappear — and to what might still be yours underneath it. Digital collection, $14.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" href="/favicon-32x32.png">
@@ -14,12 +14,12 @@
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://somehowvalid.com/the-cost-of-kind/">
 <meta property="og:title" content="The Cost of Kind — 30-Day Self-Reflection Collection">
-<meta property="og:description" content="Language for the quiet place where kindness became a way to disappear — and for what might still be yours underneath it. Compass · Wallpapers · Anchor Deck. $27.">
+<meta property="og:description" content="Language for the quiet place where kindness became a way to disappear — and for what might still be yours underneath it. Compass · Wallpapers · Anchor Deck. $14.">
 <meta property="og:image" content="https://somehowvalid.com/the-cost-of-kind-compass.png">
 <meta property="og:site_name" content="somehow valid.">
 
 <!-- Pinterest Rich Pins -->
-<meta property="product:price:amount" content="27.00" />
+<meta property="product:price:amount" content="14.00" />
 <meta property="product:price:currency" content="USD" />
 
 <!-- Schema: Product -->
@@ -32,7 +32,7 @@
   "brand": { "@type": "Brand", "name": "somehow valid." },
   "offers": {
     "@type": "Offer",
-    "price": "27.00",
+    "price": "14.00",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
     "url": "https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection"
@@ -53,7 +53,7 @@
       "name": "What is The Cost of Kind?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Cost of Kind is a 30-day self-reflection collection for people who have spent a long time being kind to everyone except themselves. It gives language to the quiet place where kindness became a way to disappear — and to what might still be theirs underneath it. The collection is $27 and includes the Compass, Wallpapers, and Anchor Deck."
+        "text": "The Cost of Kind is a 30-day self-reflection collection for people who have spent a long time being kind to everyone except themselves. It gives language to the quiet place where kindness became a way to disappear — and to what might still be theirs underneath it. The collection is $14 and includes the Compass, Wallpapers, and Anchor Deck."
       }
     },
     {
@@ -228,7 +228,7 @@
     display: grid;
     grid-template-columns: 130px 1fr 320px;
     gap: 0 48px;
-    align-items: start;
+    align-items: center;
   }
   .hero-aside {
     font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
@@ -245,8 +245,8 @@
   }
   .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 4.2vw, 56px);
-    font-weight: 400; line-height: 1.05;
+    font-size: clamp(34px, 5.2vw, 64px);
+    font-weight: 400; line-height: 1.05; white-space: nowrap;
     color: var(--silhouette); margin-bottom: 12px;
   }
   .hero-sub {
@@ -273,12 +273,14 @@
 
   /* Hero cover — image column */
   .hero-cover {
-    align-self: end;
+    align-self: center;
     overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
   }
   .hero-cover img {
     display: block;
     width: 100%;
+    max-height: 560px;
     height: auto;
     object-fit: contain;
     border-radius: 1px 1px 0 0;
@@ -306,27 +308,30 @@
   }
   .strip-item:hover { background: rgba(245,241,235,0.03); }
   .strip-item-label {
-    font-family: 'Cormorant', serif;
-    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--ck-accent); font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.2vw, 30px); letter-spacing: 0; text-transform: none;
+    color: rgba(245,241,235,0.9); font-style: normal; line-height: 1.12;
   }
   .strip-item-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px; font-weight: 400;
-    color: rgba(245,241,235,0.85); line-height: 1.2;
+    font-family: 'Cormorant', serif;
+    font-size: 10px; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ck-accent); line-height: 1.4; font-style: italic; order: -1;
   }
   .strip-item-detail {
     font-size: 11px; color: rgba(245,241,235,0.55);
     letter-spacing: 0.06em; line-height: 1.7;
   }
   .strip-item-cover {
-    margin-top: 16px;
+    margin-top: 18px;
     border-radius: 1px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   }
   .strip-item-cover img {
-    display: block; width: 100%; height: auto;
+    display: block; width: 100%; aspect-ratio: 1; height: auto; object-fit: cover;
+  }
+  @media (max-width: 900px) {
+    .strip-item-cover { max-width: 360px; }
   }
 
   /* ── INSIDE (WHAT'S IN THE COLLECTION) ──────────── */
@@ -554,7 +559,6 @@
     .hero-cover { display: none; }
     .strip-inner { grid-template-columns: 1fr; }
     .strip-item { padding: 24px 32px; }
-    .strip-item-cover { display: none; }
   }
   @media (max-width: 768px) {
     nav { padding: 18px 24px; }
@@ -599,13 +603,13 @@
       the daily<br>anchor™<br><br>theme 01<br>held · vol. 01
     </div>
     <div>
-      <p class="hero-cat reveal" style="transition-delay:0.04s">the cost of kind</p>
-      <h1 class="hero-title reveal" style="transition-delay:0.08s">The Cost<br>of Kind</h1>
+      <p class="hero-cat reveal" style="transition-delay:0.04s">the daily anchor™</p>
+      <h1 class="hero-title reveal" style="transition-delay:0.08s">The Cost of Kind</h1>
       <p class="hero-sub reveal" style="transition-delay:0.12s">A 30-day self-reflection collection for people who became easy to love by leaving themselves out.</p>
       <p class="hero-intro reveal" style="transition-delay:0.16s">There is something you have been carrying quietly — the weight of every yes that cost you more than it gave. The Cost of Kind gives language to the quiet place where kindness became a way to disappear, and to what might still be yours underneath it. Not advice. Not affirmation. Perspective you can return to.</p>
       <div class="cta-row reveal" style="transition-delay:0.20s">
         <a class="cta-primary" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
-          view on gumroad <span class="cta-price">$27</span>
+          view on gumroad <span class="cta-price">$14</span>
         </a>
         <span class="cta-note">digital download — delivered instantly</span>
       </div>
@@ -620,26 +624,26 @@
   <div class="strip-inner">
     <a class="strip-item reveal" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
       <span class="strip-item-label">the compass</span>
-      <span class="strip-item-name">30-Day Arc</span>
+      <span class="strip-item-name">30-day arc</span>
       <span class="strip-item-detail">39-page PDF<br>one entry per day, any device</span>
       <div class="strip-item-cover">
-        <img src="/the-cost-of-kind-compass.png" alt="The Cost of Kind Compass">
+        <img src="/tcok-listing-03-self-reflection-journal-ipad.png" alt="The Cost of Kind self-reflection journal preview">
       </div>
     </a>
     <a class="strip-item reveal" style="transition-delay:0.06s" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
       <span class="strip-item-label">the wallpapers</span>
-      <span class="strip-item-name">30 Lock Screens</span>
+      <span class="strip-item-name">30 lock screens</span>
       <span class="strip-item-detail">PNG · ZIP<br>phone wallpaper for each day</span>
       <div class="strip-item-cover">
-        <img src="/the-cost-of-kind-wallpapers.png" alt="The Cost of Kind Wallpapers">
+        <img src="/tcok-listing-04-wallpaper-lock-screen.png" alt="The Cost of Kind wallpaper preview">
       </div>
     </a>
     <a class="strip-item reveal" style="transition-delay:0.12s" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
       <span class="strip-item-label">the anchor deck</span>
-      <span class="strip-item-name">30 Anchor Cards</span>
+      <span class="strip-item-name">30 anchor cards</span>
       <span class="strip-item-detail">printable PDF<br>cut and carry — one card per day</span>
       <div class="strip-item-cover">
-        <img src="/the-cost-of-kind-anchor-deck.png" alt="The Cost of Kind Anchor Deck">
+        <img src="/tcok-listing-05-anchor-deck-box.png" alt="The Cost of Kind printable card deck preview">
       </div>
     </a>
   </div>
@@ -648,7 +652,7 @@
 <!-- GEO lede: machine-readable entity definition for AI/generative search engines -->
 <div style="background:var(--white);border-bottom:1px solid var(--border);padding:32px 52px;">
   <p style="max-width:840px;font-size:13px;color:var(--mid);line-height:1.9;" class="reveal">
-    <strong style="color:var(--charcoal);font-weight:400;">The Cost of Kind</strong> is a 30-day self-reflection collection by <strong style="color:var(--charcoal);font-weight:400;">somehow valid.</strong>, an emotional clarity studio making tools for what you can't quite name. It gives language to the quiet place where kindness became a way to disappear, and to what might still be underneath it. It does not advise, prescribe, diagnose, or decide for the reader. It includes three surfaces: Compass, Wallpapers, and Anchor Deck. Price: $27. Digital download, delivered instantly.
+    <strong style="color:var(--charcoal);font-weight:400;">The Cost of Kind</strong> is a 30-day self-reflection collection by <strong style="color:var(--charcoal);font-weight:400;">somehow valid.</strong>, an emotional clarity studio making tools for what you can't quite name. It gives language to the quiet place where kindness became a way to disappear, and to what might still be underneath it. It does not advise, prescribe, diagnose, or decide for the reader. It includes three surfaces: Compass, Wallpapers, and Anchor Deck. Price: $14. Digital download, delivered instantly.
   </p>
 </div>
 
@@ -807,7 +811,7 @@
           <span class="faq-q-text">Is this a physical book or a digital download?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <p class="faq-a">Everything is digital, delivered instantly after purchase. The Compass is a PDF file, the Wallpapers are a ZIP of 30 PNG images for your phone lock screen, and the Anchor Deck is a printable PDF. No app required. $27 total for all three parts.</p>
+        <p class="faq-a">Everything is digital, delivered instantly after purchase. The Compass is a PDF file, the Wallpapers are a ZIP of 30 PNG images for your phone lock screen, and the Anchor Deck is a printable PDF. No app required. $14 total for all three parts.</p>
       </div>
 
     </div>
@@ -816,13 +820,13 @@
 
 <section id="cta-close">
   <div class="section-wrap">
-    <div class="cta-close-label reveal">the daily<br>anchor™<br><br>$27</div>
+    <div class="cta-close-label reveal">the daily<br>anchor™<br><br>$14</div>
     <div>
       <p class="cta-close-heading reveal" style="transition-delay:0.06s">for the quiet place where kindness became a way to disappear.<br>and for what might still be yours underneath it.</p>
       <p class="cta-close-sub reveal" style="transition-delay:0.09s">somehow valid. · the cost of kind · held vol. 01</p>
       <div class="reveal" style="transition-delay:0.12s">
         <a class="cta-close-primary" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
-          view on gumroad <span class="cta-close-price">$27</span>
+          view on gumroad <span class="cta-close-price">$14</span>
         </a>
         <p class="cta-close-note">digital download — 39-page compass · 30 wallpapers · printable anchor deck — delivered instantly</p>
       </div>
