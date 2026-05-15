@@ -513,25 +513,36 @@
 	    position: absolute;
 	    z-index: 2;
 	    left: 50%;
-	    top: 52%;
+	    top: 58%;
 	    transform: translate(-50%, -50%);
-	    width: min(760px, calc(100% - 48px));
+	    width: min(680px, calc(100% - 48px));
 	    text-align: center;
 	    color: rgba(245,241,235,0.92);
 	  }
-	  .hero-mark {
-	    display: block;
-	    margin-bottom: 30px;
+	  .hero-masthead {
+	    position: absolute;
+	    z-index: 2;
+	    left: 50%;
+	    top: clamp(38px, 7.5vh, 76px);
+	    transform: translateX(-50%);
+	    width: min(980px, calc(100% - 42px));
+	    text-align: center;
 	    font-family: 'Cormorant', serif;
-	    font-size: 18px;
-	    letter-spacing: 0.04em;
-	    color: rgba(245,241,235,0.70);
+	    font-size: clamp(60px, 8.8vw, 124px);
+	    font-weight: 400;
+	    line-height: 0.9;
+	    letter-spacing: 0;
+	    color: rgba(245,241,235,0.90);
+	    white-space: nowrap;
 	  }
+	  .hero-masthead.reveal { transform: translateX(-50%) translateY(16px); }
+	  .hero-masthead.reveal.visible { transform: translateX(-50%) translateY(0); }
+	  .hero-masthead span + span::before { content: ' '; }
 	  .hero-statement h1 {
 	    font-family: 'Playfair Display', serif;
-	    font-size: clamp(42px, 6vw, 78px);
+	    font-size: clamp(34px, 4.8vw, 58px);
 	    font-weight: 400;
-	    line-height: 1.04;
+	    line-height: 1.08;
 	    color: rgba(245,241,235,0.95);
 	  }
 	  .hero-line {
@@ -658,7 +669,20 @@
 	  @media (max-width: 768px) {
 	    .brand-entry #hero { padding-top: 96px; }
 	    .hero-film { min-height: calc(100vh - 96px); }
-	    .hero-statement { top: 54%; }
+	    .hero-masthead {
+	      top: 36px;
+	      width: min(360px, calc(100% - 32px));
+	      font-size: clamp(60px, 18vw, 76px);
+	      line-height: 0.92;
+	      white-space: normal;
+	    }
+	    .hero-masthead span { display: block; }
+	    .hero-masthead span + span::before { content: ''; }
+	    .hero-statement {
+	      top: 59%;
+	      width: min(380px, calc(100% - 40px));
+	    }
+	    .hero-statement h1 { font-size: clamp(31px, 10vw, 42px); }
 	    .hero-line { font-size: 12px; }
 	    .pillow { padding: 62px 24px; }
 	    .brand-module { padding: 76px 24px; }
@@ -693,8 +717,8 @@
 
 	<section id="hero">
 	  <div class="hero-film" aria-label="Abstract editorial surface for somehow valid.">
+	    <div class="hero-masthead reveal"><span>somehow</span><span>valid.</span></div>
 	    <div class="hero-statement">
-	      <span class="hero-mark reveal">somehow valid.</span>
 	      <h1 class="reveal" style="transition-delay:0.08s">reflective language for what is hard to name from the inside.</h1>
 	      <p class="hero-line reveal" style="transition-delay:0.14s">nothing to fix. everything to see.</p>
 	    </div>
@@ -707,7 +731,7 @@
 
 	<section class="brand-module">
 	  <div class="module-grid">
-	    <p class="module-label reveal">brand level</p>
+	    <p class="module-label reveal">the premise</p>
 	    <div>
 	      <h2 class="module-title reveal" style="transition-delay:0.06s">For the patterns you have been living inside, before you knew what to call them.</h2>
 	      <p class="module-copy reveal" style="transition-delay:0.12s">somehow valid. makes reflective language for emotional patterns that are hard to name from the inside. It is not here to diagnose, coach, optimize, or turn your life into a project. It gives shape to what has been carried quietly, so the next choice can come from clearer ground.</p>
@@ -731,7 +755,7 @@
 
 	<section class="brand-module alt" id="daily-anchor">
 	  <div class="module-grid">
-	    <p class="module-label reveal">series level</p>
+	    <p class="module-label reveal">the form</p>
 	    <div>
 	      <h2 class="module-title reveal" style="transition-delay:0.06s">The Daily Anchor™ holds one emotional pattern across thirty days.</h2>
 	      <div class="series-panel">
@@ -751,7 +775,7 @@
 
 	<section class="brand-module" id="available">
 	  <div class="module-grid">
-	    <p class="module-label reveal">current theme</p>
+	    <p class="module-label reveal">the first entry</p>
 	    <div>
 	      <h2 class="module-title reveal" style="transition-delay:0.06s">The Cost of Kind</h2>
 	      <p class="module-copy reveal" style="transition-delay:0.12s">For the places where care, guilt, generosity, and self-erasure begin to blur.</p>
