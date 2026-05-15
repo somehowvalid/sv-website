@@ -14,7 +14,7 @@
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://somehowvalid.com/the-cost-of-kind/">
 <meta property="og:title" content="The Cost of Kind — 30-Day Self-Reflection Collection">
-<meta property="og:description" content="For the quiet place where kindness became a way to disappear — and for what might still be yours underneath it. Compass · Wallpapers · Anchor Deck. $14.">
+<meta property="og:description" content="For the quiet place where kindness became a way to disappear — and for what might still be yours underneath it. A Compass-led digital collection with companion pieces included. $14.">
 <meta property="og:image" content="https://somehowvalid.com/the-cost-of-kind-compass.png">
 <meta property="og:site_name" content="somehow valid.">
 
@@ -83,7 +83,7 @@
       "name": "How does The Daily Anchor™ work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Daily Anchor collection moves through one emotional pattern across thirty days. The Compass gives you the words, the Wallpapers keep them close, and the Anchor Deck brings them back."
+        "text": "A Daily Anchor collection moves through one emotional pattern across thirty days. The Compass is the main read; the Wallpapers and Anchor Deck are included companion pieces that help the language stay close after reading."
       }
     },
     {
@@ -115,7 +115,7 @@
       "name": "Is this physical or digital?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Everything is digital and delivered after purchase. The Compass is a PDF, the Wallpapers are PNG files, and the Anchor Deck includes a printable 30-card PDF plus a cardstock box template."
+        "text": "Everything is digital and delivered after purchase. The main file is the Compass PDF. Companion pieces include phone wallpapers as PNG files and an optional printable Anchor Deck with a cardstock box template."
       }
     },
     {
@@ -336,7 +336,7 @@
   }
   .strip-inner {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr);
     gap: 0;
     border-left: 1px solid rgba(245,241,235,0.06);
   }
@@ -348,6 +348,30 @@
     transition: background 0.2s;
   }
   .strip-item:hover { background: rgba(245,241,235,0.03); }
+  .strip-item-primary { padding: 44px 38px; }
+  .strip-item-companions {
+    background: rgba(245,241,235,0.025);
+  }
+  .strip-companion-list {
+    display: grid;
+    gap: 18px;
+    margin-top: 18px;
+  }
+  .strip-companion {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 18px;
+    align-items: center;
+    padding-top: 18px;
+    border-top: 1px solid rgba(245,241,235,0.08);
+  }
+  .strip-companion img {
+    display: block;
+    width: 92px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+  }
   .strip-item-label {
     font-family: 'Playfair Display', serif;
     font-size: clamp(22px, 2.2vw, 30px); letter-spacing: 0; text-transform: none;
@@ -403,6 +427,22 @@
     border-bottom: 1px solid var(--ck-border);
     border-left: 2px solid var(--ck-accent);
     display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 0 34px; align-items: center;
+  }
+  .component.component-primary {
+    padding: 38px 0 38px 24px;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    border-left-width: 3px;
+  }
+  .component-primary .component-name { font-size: 24px; }
+  .component-primary .component-preview { width: 280px; }
+  .component.companion-component {
+    border-left-color: rgba(194,180,163,0.45);
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+  .companion-component .component-name {
+    font-size: 16px;
+    color: var(--charcoal);
   }
   .component:last-child { border-bottom: none; }
   .component:first-child { border-top: 1px solid var(--ck-border); }
@@ -634,8 +674,9 @@
     #collection-strip { padding: 0 24px; }
     .section-wrap { padding: 60px 24px; grid-template-columns: 1fr; }
     .section-label { display: none; }
-    .component { grid-template-columns: 1fr; gap: 22px; padding-right: 0; }
+    .component, .component.component-primary { grid-template-columns: 1fr; gap: 22px; padding-right: 0; }
     .component-preview { width: min(100%, 320px); }
+    .component-primary .component-preview { width: min(100%, 320px); }
     .arc-phase { grid-template-columns: 1fr; }
     .arc-days { display: none; }
     .notify-form { flex-direction: column; }
@@ -682,7 +723,7 @@
       <p class="hero-cat reveal" style="transition-delay:0.04s"><a href="/the-daily-anchor/" style="color:inherit;text-decoration:none;">The Daily Anchor™</a> · The Cost of Kind</p>
       <h1 class="hero-title reveal" style="transition-delay:0.08s">The Cost of Kind</h1>
       <p class="hero-sub reveal" style="transition-delay:0.12s">For seeing how kindness became a place to disappear.</p>
-      <p class="hero-intro reveal" style="transition-delay:0.16s">The Cost of Kind helps you see how kindness became a place to disappear, what it has quietly cost, and what it could feel like to include yourself again. At the center is the Compass; the Wallpapers and Anchor Deck keep the language close after reading.</p>
+      <p class="hero-intro reveal" style="transition-delay:0.16s">The Cost of Kind helps you see how kindness became a place to disappear, what it has quietly cost, and what it could feel like to include yourself again. At the center is the Compass; the included Wallpapers and Anchor Deck help the language stay close after reading.</p>
       <img class="hero-mobile-cover reveal" style="transition-delay:0.18s" src="/the-cost-of-kind-compass.png" alt="The Cost of Kind — compass cover">
       <div class="cta-row reveal" style="transition-delay:0.20s">
         <a class="cta-primary" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
@@ -714,28 +755,33 @@
 
 <section id="collection-strip">
   <div class="strip-inner">
-    <a class="strip-item reveal" href="#inside">
+    <a class="strip-item strip-item-primary reveal" href="#inside">
       <span class="strip-item-label">The Compass</span>
-      <span class="strip-item-name">Thirty days.</span>
-      <span class="strip-item-detail">At whatever pace is yours.</span>
+      <span class="strip-item-name">the main read</span>
+      <span class="strip-item-detail">Thirty days of language for seeing the pattern clearly, at whatever pace is yours.</span>
       <div class="strip-item-cover">
         <img src="/tcok-listing-03-self-reflection-journal-ipad.png" alt="The Cost of Kind Compass preview">
       </div>
     </a>
-    <a class="strip-item reveal" style="transition-delay:0.06s" href="#inside">
-      <span class="strip-item-label">The Wallpapers</span>
-      <span class="strip-item-name">Thirty anchors.</span>
-      <span class="strip-item-detail">Always within reach.</span>
-      <div class="strip-item-cover">
-        <img src="/tcok-listing-04-wallpaper-lock-screen.png" alt="The Cost of Kind wallpaper preview">
-      </div>
-    </a>
-    <a class="strip-item reveal" style="transition-delay:0.12s" href="#inside">
-      <span class="strip-item-label">The Anchor Deck</span>
-      <span class="strip-item-name">Thirty words.</span>
-      <span class="strip-item-detail">To return to.</span>
-      <div class="strip-item-cover">
-        <img src="/tcok-listing-05-anchor-deck-box.png" alt="The Cost of Kind printable card deck preview">
+    <a class="strip-item strip-item-companions reveal" style="transition-delay:0.06s" href="#inside">
+      <span class="strip-item-label">Included companions</span>
+      <span class="strip-item-name">after the reading</span>
+      <span class="strip-item-detail">The Wallpapers and Anchor Deck are support pieces, made to keep the Compass language close.</span>
+      <div class="strip-companion-list">
+        <div class="strip-companion">
+          <img src="/tcok-listing-04-wallpaper-lock-screen.png" alt="The Cost of Kind wallpaper preview">
+          <div>
+            <span class="strip-item-name">Wallpapers</span>
+            <span class="strip-item-detail">Thirty anchors within reach.</span>
+          </div>
+        </div>
+        <div class="strip-companion">
+          <img src="/tcok-listing-05-anchor-deck-box.png" alt="The Cost of Kind printable card deck preview">
+          <div>
+            <span class="strip-item-name">Anchor Deck</span>
+            <span class="strip-item-detail">Optional tactile return points.</span>
+          </div>
+        </div>
       </div>
     </a>
   </div>
@@ -745,30 +791,30 @@
   <div class="section-wrap">
     <div class="section-label reveal">the<br>collection</div>
     <div>
-      <h2 class="section-heading reveal" style="transition-delay:0.06s">The Compass gives you the words.<br>The Wallpapers keep them close.<br>The Anchor Deck brings them back.</h2>
+      <h2 class="section-heading reveal" style="transition-delay:0.06s">The Compass is the center.<br>The companions help it stay with you.</h2>
 
-      <div class="component reveal" style="transition-delay:0.10s">
+      <div class="component component-primary reveal" style="transition-delay:0.10s">
         <div>
           <p class="component-name">The Compass</p>
-          <p class="component-detail">Thirty days. At whatever pace is yours.</p>
+          <p class="component-detail">the main read · thirty days</p>
           <p class="component-body">Each page opens with a quote, a paragraph that names what you have been carrying, and one question that does not rush you toward an answer. Read on any device. Move through it at whatever pace is yours. The Compass lets the pattern become visible without turning it into a verdict.</p>
         </div>
         <img class="component-preview" src="/tcok-component-compass-device.png" alt="The Cost of Kind Compass device preview">
       </div>
 
-      <div class="component reveal" style="transition-delay:0.14s">
+      <div class="component companion-component reveal" style="transition-delay:0.14s">
         <div>
-          <p class="component-name">The Wallpapers</p>
-          <p class="component-detail">Thirty anchors. Always within reach.</p>
+          <p class="component-name">Companion wallpapers</p>
+          <p class="component-detail">included support</p>
           <p class="component-body">Thirty anchors, one for each day of the arc. Save the one you want to your phone and set it on your lock screen. The language stays close for the moments when the old pattern starts to feel familiar again.</p>
         </div>
         <img class="component-preview" src="/tcok-component-wallpaper-phone.png" alt="The Cost of Kind wallpaper phone preview">
       </div>
 
-      <div class="component reveal" style="transition-delay:0.18s">
+      <div class="component companion-component reveal" style="transition-delay:0.18s">
         <div>
-          <p class="component-name">The Anchor Deck</p>
-          <p class="component-detail">Thirty words to return to.</p>
+          <p class="component-name">Companion Anchor Deck</p>
+          <p class="component-detail">included support · optional to print</p>
           <p class="component-body">Each card carries the anchor word and quote from that day's Compass entry. Print the thirty-card deck and fold the box template if you want the language to live somewhere close.</p>
         </div>
         <img class="component-preview" src="/tcok-component-anchor-cards.png" alt="The Cost of Kind Anchor Deck card stack preview">
@@ -865,7 +911,7 @@
           <span class="faq-q-text">How does The Daily Anchor™ work?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <p class="faq-a">A Daily Anchor collection moves through one emotional pattern across thirty days. The Compass gives you the words. The Wallpapers keep them close. The Anchor Deck brings them back.</p>
+        <p class="faq-a">A Daily Anchor collection moves through one emotional pattern across thirty days. The Compass is the main read. The Wallpapers and Anchor Deck are included companion pieces that help the language stay close after reading.</p>
       </div>
 
       <div class="faq-item reveal" style="transition-delay:0.14s">
@@ -881,7 +927,7 @@
           <span class="faq-q-text">Is this physical or digital?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <p class="faq-a">Everything is digital and delivered after purchase. The Compass is a PDF file, the Wallpapers are PNG images for your phone lock screen, and the Anchor Deck includes a printable 30-card PDF plus a cardstock box template.</p>
+        <p class="faq-a">Everything is digital and delivered after purchase. The main file is the Compass PDF. Companion pieces include phone wallpapers as PNG images and an optional printable Anchor Deck with a cardstock box template.</p>
       </div>
 
       <div class="faq-item reveal" style="transition-delay:0.18s">
@@ -927,7 +973,7 @@
             purchase on Etsy <span>$14</span>
           </a>
         </div>
-        <p class="cta-close-note">digital files delivered after purchase · Compass · Wallpapers · Anchor Deck</p>
+        <p class="cta-close-note">Compass-led digital download · companion wallpapers and Anchor Deck included</p>
       </div>
     </div>
   </div>

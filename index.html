@@ -266,6 +266,19 @@
 	    padding: 34px 0;
 	    border-bottom: 1px solid var(--border);
 	  }
+	  .way-row.primary-way {
+	    grid-template-columns: 260px minmax(0, 1fr) 150px;
+	    padding: 44px 0;
+	  }
+	  .primary-way .way-name { font-size: 36px; }
+	  .companion-row {
+	    align-items: start;
+	    padding: 28px 0;
+	    background: rgba(245,241,235,0.34);
+	  }
+	  .companion-row .way-name { font-size: 22px; color: var(--charcoal); }
+	  .companion-row .way-copy { font-size: 13px; }
+	  .companion-row .way-format { color: var(--mid); }
 	  .way-name {
 	    font-family: 'Playfair Display', serif;
 	    font-size: 28px;
@@ -428,6 +441,9 @@
 	    .editorial-header, .belief-copy { grid-template-columns: 1fr; gap: 24px; margin-bottom: 36px; }
 	    .section-headline { font-size: 32px; line-height: 1.22; }
 	    .way-row { grid-template-columns: 1fr; gap: 12px; padding: 30px 0; }
+	    .way-row.primary-way { grid-template-columns: 1fr; padding: 36px 0; }
+	    .primary-way .way-name { font-size: 31px; }
+	    .companion-row { padding: 24px 0; }
 	    .way-name { font-size: 25px; }
 	    .way-format { text-align: left; }
 	    .product-feature { grid-template-columns: 1fr; gap: 42px; }
@@ -482,33 +498,33 @@
 	      <p class="section-eyebrow reveal">ways in</p>
 	      <div>
 		        <h2 class="section-headline reveal" style="transition-delay:0.06s">One pattern, held over thirty days.</h2>
-		        <p class="section-intro reveal" style="transition-delay:0.12s">The Daily Anchor™ is the collection format currently available: a Compass to read, Wallpapers to keep close, and an Anchor Deck to return to when the pattern comes back.</p>
+		        <p class="section-intro reveal" style="transition-delay:0.12s">The Daily Anchor™ is a Compass-led collection. The Compass is the work: thirty days of language for seeing one pattern clearly. The Wallpapers and Anchor Deck are companion pieces that help the language stay close after reading.</p>
 	      </div>
 	    </div>
 	    <div class="ways-table reveal" style="transition-delay:0.16s">
-	      <div class="way-row">
+	      <div class="way-row primary-way">
 		        <p class="way-name">The Compass</p>
 		        <div>
-		          <p class="way-moment">the center</p>
-		          <p class="way-copy">Thirty days of language for seeing one emotional pattern from more than one angle.</p>
+		          <p class="way-moment">the product</p>
+		          <p class="way-copy">Thirty days of language for seeing one emotional pattern from more than one angle, without turning reflection into homework.</p>
 		        </div>
-		        <p class="way-format">read on any device</p>
+		        <p class="way-format">the main read</p>
 	      </div>
-	      <div class="way-row">
-		        <p class="way-name">The Wallpapers</p>
+	      <div class="way-row companion-row">
+		        <p class="way-name">Companion wallpapers</p>
 		        <div>
-		          <p class="way-moment">kept close</p>
+		          <p class="way-moment">included support</p>
 		          <p class="way-copy">Thirty phone wallpapers that carry the anchor line from each day back into view.</p>
 		        </div>
-		        <p class="way-format">PNG files<br>set manually</p>
+		        <p class="way-format">not the main product</p>
 	      </div>
-	      <div class="way-row">
-		        <p class="way-name">The Anchor Deck</p>
+	      <div class="way-row companion-row">
+		        <p class="way-name">Companion Anchor Deck</p>
 		        <div>
-		          <p class="way-moment">returned to</p>
+		          <p class="way-moment">included support</p>
 		          <p class="way-copy">A printable deck for bringing the words back without turning reflection into another assignment.</p>
 		        </div>
-		        <p class="way-format">printable PDF<br>box template</p>
+		        <p class="way-format">optional tactile layer</p>
 	      </div>
 	    </div>
 	  </div>
@@ -520,10 +536,10 @@
 	      <p class="section-eyebrow reveal">currently available</p>
 	      <h2 class="product-title reveal" style="transition-delay:0.06s">The Cost of Kind</h2>
 	      <p class="product-sub reveal" style="transition-delay:0.10s">For seeing how kindness became a place to disappear.</p>
-	      <p class="product-body reveal" style="transition-delay:0.14s">The Cost of Kind helps you see how kindness became a place to disappear, what it has quietly cost, and what it could feel like to include yourself again. The Compass gives you the words; the Wallpapers and Anchor Deck keep them close after reading.</p>
+	      <p class="product-body reveal" style="transition-delay:0.14s">The Cost of Kind helps you see how kindness became a place to disappear, what it has quietly cost, and what it could feel like to include yourself again. The Compass is the center; the included Wallpapers and Anchor Deck help the language stay close after reading.</p>
 	      <div class="product-actions reveal" style="transition-delay:0.18s">
 	        <a class="quiet-button" href="/the-cost-of-kind/">view collection <span>$14</span></a>
-	        <span class="product-note">digital download · Compass · Wallpapers · Anchor Deck</span>
+	        <span class="product-note">Compass-led digital download · companion pieces included</span>
 	      </div>
 	    </div>
 	    <div class="feature-stack reveal" style="transition-delay:0.12s">
