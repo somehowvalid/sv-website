@@ -130,157 +130,7 @@
   .nav-submenu-title { display: block; font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--silhouette); }
   .nav-submenu-note { display: block; font-size: 10px; color: var(--mid); margin-top: 2px; }
 
-  /* HERO */
-  #hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    padding: 0 52px;
-    position: relative;
-    text-align: center;
-  }
-  .hero-line { display: none; }
-  .hero-inner { position: relative; padding-left: 0; display: flex; flex-direction: column; align-items: center; }
-  .hero-logo-large { display: block; width: min(480px, 68vw); height: auto; margin-bottom: 28px; }
-  .hero-tagline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(16px, 1.8vw, 21px);
-    font-weight: 400; font-style: italic;
-    color: var(--charcoal); letter-spacing: 0.02em;
-  }
-  .hero-bridge {
-    margin-top: 16px;
-    max-width: 440px;
-    font-size: 12px;
-    line-height: 1.8;
-    color: var(--mid);
-  }
-  .hero-route {
-    margin-top: 32px;
-    display: inline-flex; align-items: center; gap: 12px;
-    padding: 10px 0;
-    font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--mid); text-decoration: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .hero-route:hover { color: var(--charcoal); border-color: var(--taupe); }
-  .hero-route span {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px; font-style: italic;
-    letter-spacing: 0; text-transform: none;
-    color: var(--charcoal);
-  }
-  .hero-scroll {
-    position: absolute; bottom: 36px; right: 52px;
-    font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--border); writing-mode: vertical-rl;
-    display: flex; align-items: center; gap: 12px;
-    animation: drift 3.5s ease-in-out infinite;
-  }
-  .hero-scroll::after { content: ''; width: 1px; height: 36px; background: var(--border); }
-  @keyframes drift { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
-
-  /* STATEMENT */
-  #statement {
-    background: var(--white);
-    padding: 130px 52px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .statement-inner { display: grid; grid-template-columns: 130px 1fr; gap: 0 64px; max-width: 840px; }
-  .aside-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); line-height: 2.2; padding-top: 6px; }
-  .statement-text {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(21px, 2.6vw, 32px);
-    font-weight: 300; line-height: 1.55; color: var(--silhouette);
-  }
-  .statement-text em { font-style: italic; color: var(--taupe); }
-  .statement-body { margin-top: 30px; font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 420px; }
-
-  /* STORY */
-  #story {
-    background: var(--oat);
-    padding: 130px 52px;
-    border-top: 1px solid var(--border);
-  }
-  .story-inner { max-width: 840px; display: grid; grid-template-columns: 130px 1fr; gap: 0 64px; }
-  .story-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(22px, 2.8vw, 34px);
-    font-weight: 300; font-style: italic;
-    color: var(--silhouette); line-height: 1.35;
-    margin-bottom: 36px;
-  }
-  .story-body { font-size: 14px; color: var(--mid); line-height: 1.95; max-width: 480px; }
-  .story-body p { margin-bottom: 22px; }
-  .story-body p:last-child { margin-bottom: 0; }
-  .story-close {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px; font-weight: 300; font-style: italic;
-    color: var(--charcoal); line-height: 1.6;
-    margin-top: 32px; max-width: 420px;
-  }
-
-  /* THEMES */
-  #themes { background: var(--white); padding: 130px 52px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .themes-inner { max-width: 840px; }
-  .section-header {
-    display: flex; align-items: baseline; justify-content: space-between;
-    margin-bottom: 48px; padding-bottom: 16px; border-bottom: 1px solid var(--border);
-  }
-  .section-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--mid); }
-  .section-meta { font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); }
-
-  .themes-title-block { margin-bottom: 20px; }
-  .themes-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 38px); font-weight: 300; color: var(--silhouette); line-height: 1.2; }
-  .themes-title-sub { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--taupe); margin-top: 6px; }
-  .collection-intro { font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 560px; margin-bottom: 32px; }
-  .line-list { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .line-row {
-    display: grid; grid-template-columns: 180px 1fr auto; gap: 28px; align-items: center;
-    padding: 28px 0; border-bottom: 1px solid var(--border);
-  }
-  .line-row:last-child { border-bottom: none; }
-  .line-name { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--silhouette); line-height: 1.2; }
-  .line-moment { font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); margin-bottom: 7px; }
-  .line-body { font-size: 14px; color: var(--mid); line-height: 1.85; max-width: 430px; }
-  .line-format { font-size: 11px; color: var(--charcoal); margin-top: 8px; }
-  .line-link {
-    display: inline-flex; align-items: center; justify-content: center;
-    padding: 11px 19px; border: 1px solid var(--silhouette); border-radius: 1px;
-    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--silhouette); text-decoration: none; transition: all 0.2s; white-space: nowrap;
-  }
-  .line-link:hover { background: var(--silhouette); color: var(--oat); }
-  .line-link.inactive { border-color: var(--border); color: var(--mid); pointer-events: none; }
-  .theme-card { border: 1px solid var(--border); border-radius: 1px; background: var(--white); margin-bottom: 10px; overflow: hidden; transition: box-shadow 0.3s; }
-  .theme-card:hover { box-shadow: 0 2px 18px rgba(46,37,32,0.06); }
-  .theme-card-header { display: grid; grid-template-columns: 4px 1fr; cursor: pointer; user-select: none; min-height: 110px; align-items: center; }
-  .theme-card.open .theme-card-header { cursor: default; }
-  .theme-accent { width: 4px; align-self: stretch; }
-  .theme-card-main { padding: 22px 18px 22px 22px; }
-  .theme-cat { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 6px; }
-  .theme-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--silhouette); line-height: 1.15; margin-bottom: 4px; }
-  .theme-sub { font-family: 'Playfair Display', serif; font-size: 12px; font-style: italic; color: var(--charcoal); }
-  .theme-cover-container { padding: 10px 0; align-self: stretch; display: flex; align-items: center; overflow: hidden; color: inherit; text-decoration: none; }
-  .theme-cover-container img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; border-radius: 1px; }
-  .theme-toggle { font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); text-decoration: none; line-height: 1; display: flex; align-items: center; justify-content: center; padding: 0 12px 0 4px; }
-  .theme-toggle:hover { color: var(--charcoal); }
-  .theme-body { display: none; border-top: 1px solid var(--border); padding: 24px 24px 28px; background: var(--oat); }
-  .theme-card.open .theme-body { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: start; }
-  .theme-desc { font-size: 14px; color: var(--mid); line-height: 1.9; margin-bottom: 20px; max-width: 400px; }
-  .theme-arc-label { font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--charcoal); opacity: 0.55; margin-bottom: 9px; }
-  .theme-arc-item { font-size: 13px; color: var(--charcoal); margin-bottom: 6px; display: flex; align-items: baseline; gap: 10px; }
-  .theme-arc-item::before { content: ''; width: 14px; height: 1px; background: var(--taupe); flex-shrink: 0; position: relative; top: -3px; }
-  .theme-cta {
-    display: inline-flex; align-items: center; gap: 12px;
-    padding: 11px 22px; border: 1px solid var(--silhouette); border-radius: 1px;
-    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--silhouette); text-decoration: none; transition: all 0.2s; white-space: nowrap;
-  }
-  .theme-cta:hover { background: var(--silhouette); color: var(--oat); }
-  .theme-cta-price { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--taupe); font-weight: 300; letter-spacing: 0; text-transform: none; }
-  .theme-card.soon { opacity: 0.58; pointer-events: none; }
-  .soon-tag { padding: 20px 26px; font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--border); align-self: center; }
+	  .aside-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); line-height: 2.2; padding-top: 6px; }
 
   /* GRID */
   #grid { background: var(--silhouette); padding: 130px 52px; }
@@ -316,208 +166,558 @@
     .grid-note { display: none; }
   }
 
-  /* NOTIFY */
-  #notify {
-    background: var(--oat);
-    padding: 80px 52px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    text-align: center;
-  }
-  .notify-inner { max-width: 480px; margin: 0 auto; }
-  .notify-copy {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(15px, 1.6vw, 18px);
-    font-weight: 300; font-style: italic;
-    color: var(--charcoal); line-height: 1.65;
-    margin-bottom: 28px;
-  }
-  .notify-form { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 1px; overflow: hidden; }
-  .notify-input {
-    flex: 1; padding: 12px 16px;
-    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 300;
-    color: var(--charcoal); background: var(--white);
-    border: none; outline: none;
-  }
-  .notify-input::placeholder { color: var(--border); }
-  .notify-btn {
-    padding: 12px 20px;
-    font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--white); background: var(--silhouette);
-    border: none; cursor: pointer; transition: background 0.2s; white-space: nowrap;
-  }
-  .notify-btn:hover { background: var(--charcoal); }
-  .notify-msg { font-size: 12px; color: var(--mid); margin-top: 14px; font-style: italic; min-height: 18px; }
-  @media (max-width: 768px) {
-    #notify { padding: 60px 24px; }
-    .notify-form { flex-direction: column; }
-    .notify-btn { padding: 12px; }
-  }
+	  /* FOOTER */
+	  footer { background: var(--silhouette); border-top: 1px solid rgba(245,241,235,0.04); padding: 42px 52px; display: flex; align-items: center; justify-content: space-between; }
+	  .footer-logo-text { font-family: 'Cormorant', serif; font-size: 16px; font-weight: 300; color: rgba(245,241,235,0.45); letter-spacing: 0.04em; }
+	  .footer-tagline { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: rgba(245,241,235,0.45); }
+	  .footer-copy { font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,235,0.35); }
 
-  /* PREVIEW */
-  #preview { background: var(--white); padding: 130px 52px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .preview-inner { max-width: 840px; display: grid; grid-template-columns: 130px 1fr; gap: 0 64px; }
-  .preview-context { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 6px; }
-  .preview-context-sub { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--mid); margin-bottom: 28px; }
-  .preview-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 16px; }
-  .preview-heading { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.8vw, 34px); font-weight: 400; line-height: 1.35; color: var(--silhouette); margin-bottom: 24px; }
-  .preview-heading strong { font-weight: 700; color: var(--silhouette); }
-  .preview-body { font-size: 14px; color: var(--mid); line-height: 1.95; max-width: 480px; margin-bottom: 28px; }
-  .preview-prompt { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--charcoal); line-height: 1.6; margin-bottom: 24px; max-width: 420px; }
-  .preview-note { font-size: 9px; letter-spacing: 0.08em; color: var(--border); margin-top: 10px; }
+	  /* HOMEPAGE MAKEOVER */
+	  .home-shell { max-width: 1180px; margin: 0 auto; }
+	  #hero {
+	    min-height: calc(100vh - 72px);
+	    padding: 112px 52px 70px;
+	    display: flex;
+	    align-items: center;
+	    text-align: left;
+	    background: var(--oat);
+	    border-bottom: 1px solid var(--border);
+	  }
+	  .home-hero-grid {
+	    width: 100%;
+	    display: grid;
+	    grid-template-columns: minmax(0, 1fr) 430px;
+	    gap: 76px;
+	    align-items: center;
+	  }
+	  .home-kicker {
+	    font-size: 9px;
+	    letter-spacing: 0.16em;
+	    text-transform: uppercase;
+	    color: var(--mid);
+	    margin-bottom: 28px;
+	  }
+	  .home-title {
+	    font-family: 'Playfair Display', serif;
+	    font-size: 64px;
+	    font-weight: 400;
+	    line-height: 1.04;
+	    color: var(--silhouette);
+	    max-width: 680px;
+	    margin-bottom: 26px;
+	  }
+	  .home-title em { font-style: italic; color: var(--taupe); }
+	  .home-bridge {
+	    font-size: 16px;
+	    line-height: 1.9;
+	    color: var(--charcoal);
+	    max-width: 520px;
+	    margin-bottom: 42px;
+	  }
+	  .route-list {
+	    border-top: 1px solid var(--border);
+	    border-bottom: 1px solid var(--border);
+	    max-width: 610px;
+	  }
+	  .route-row {
+	    display: grid;
+	    grid-template-columns: 165px 1fr auto;
+	    gap: 24px;
+	    align-items: center;
+	    padding: 20px 0;
+	    border-bottom: 1px solid var(--border);
+	    color: inherit;
+	    text-decoration: none;
+	  }
+	  .route-row:last-child { border-bottom: none; }
+	  .route-moment {
+	    font-size: 8px;
+	    letter-spacing: 0.15em;
+	    text-transform: uppercase;
+	    color: var(--taupe);
+	  }
+	  .route-name {
+	    display: block;
+	    font-family: 'Playfair Display', serif;
+	    font-size: 20px;
+	    line-height: 1.25;
+	    color: var(--silhouette);
+	    margin-bottom: 4px;
+	  }
+	  .route-copy {
+	    display: block;
+	    font-size: 13px;
+	    line-height: 1.7;
+	    color: var(--mid);
+	    max-width: 340px;
+	  }
+	  .route-status {
+	    font-size: 8px;
+	    letter-spacing: 0.13em;
+	    text-transform: uppercase;
+	    color: var(--mid);
+	    white-space: nowrap;
+	  }
+	  .route-row.live .route-status { color: var(--charcoal); }
+	  .hero-object {
+	    align-self: stretch;
+	    display: grid;
+	    grid-template-rows: 1fr auto;
+	    min-height: 610px;
+	    background: var(--white);
+	    border-left: 1px solid var(--border);
+	  }
+	  .hero-object-image {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    padding: 54px 46px 28px;
+	  }
+	  .hero-object-image img {
+	    display: block;
+	    width: min(100%, 290px);
+	    height: auto;
+	    box-shadow: 0 22px 60px rgba(46,37,32,0.10);
+	  }
+	  .hero-object-copy {
+	    padding: 28px 0 0 34px;
+	    border-top: 1px solid var(--border);
+	  }
+	  .object-label {
+	    font-size: 8px;
+	    letter-spacing: 0.16em;
+	    text-transform: uppercase;
+	    color: var(--mid);
+	    margin-bottom: 12px;
+	  }
+	  .object-name {
+	    font-family: 'Playfair Display', serif;
+	    font-size: 26px;
+	    line-height: 1.16;
+	    color: var(--silhouette);
+	    margin-bottom: 10px;
+	  }
+	  .object-copy {
+	    font-size: 13px;
+	    line-height: 1.75;
+	    color: var(--mid);
+	    max-width: 310px;
+	    margin-bottom: 22px;
+	  }
+	  .text-link {
+	    display: inline-flex;
+	    padding-bottom: 8px;
+	    border-bottom: 1px solid var(--border);
+	    color: var(--silhouette);
+	    text-decoration: none;
+	    font-size: 9px;
+	    letter-spacing: 0.13em;
+	    text-transform: uppercase;
+	  }
+	  .text-link:hover { border-color: var(--charcoal); }
+	  #ways {
+	    background: var(--white);
+	    padding: 112px 52px;
+	    border-bottom: 1px solid var(--border);
+	  }
+	  .editorial-header {
+	    display: grid;
+	    grid-template-columns: 160px minmax(0, 1fr);
+	    gap: 56px;
+	    align-items: start;
+	    margin-bottom: 54px;
+	  }
+	  .section-eyebrow {
+	    font-size: 8px;
+	    letter-spacing: 0.17em;
+	    text-transform: uppercase;
+	    color: var(--taupe);
+	    line-height: 2.1;
+	  }
+	  .section-headline {
+	    font-family: 'Playfair Display', serif;
+	    font-size: 42px;
+	    font-weight: 400;
+	    line-height: 1.18;
+	    color: var(--silhouette);
+	    max-width: 720px;
+	  }
+	  .section-intro {
+	    margin-top: 24px;
+	    max-width: 560px;
+	    font-size: 14px;
+	    line-height: 1.9;
+	    color: var(--mid);
+	  }
+	  .ways-table { border-top: 1px solid var(--border); }
+	  .way-row {
+	    display: grid;
+	    grid-template-columns: 220px minmax(0, 1fr) 170px;
+	    gap: 44px;
+	    align-items: center;
+	    padding: 34px 0;
+	    border-bottom: 1px solid var(--border);
+	  }
+	  .way-name {
+	    font-family: 'Playfair Display', serif;
+	    font-size: 28px;
+	    line-height: 1.15;
+	    color: var(--silhouette);
+	  }
+	  .way-moment {
+	    font-size: 8px;
+	    letter-spacing: 0.16em;
+	    text-transform: uppercase;
+	    color: var(--taupe);
+	    margin-bottom: 10px;
+	  }
+	  .way-copy {
+	    font-size: 14px;
+	    line-height: 1.85;
+	    color: var(--mid);
+	    max-width: 540px;
+	  }
+	  .way-format {
+	    font-size: 11px;
+	    line-height: 1.7;
+	    color: var(--charcoal);
+	    text-align: right;
+	  }
+	  #available {
+	    background: var(--oat);
+	    padding: 112px 52px;
+	    border-bottom: 1px solid var(--border);
+	  }
+	  .product-feature {
+	    display: grid;
+	    grid-template-columns: minmax(0, 1fr) 420px;
+	    gap: 76px;
+	    align-items: center;
+	  }
+	  .product-title {
+	    font-family: 'Playfair Display', serif;
+	    font-size: 54px;
+	    font-weight: 400;
+	    line-height: 1.06;
+	    color: var(--silhouette);
+	    margin-bottom: 18px;
+	  }
+	  .product-sub {
+	    font-family: 'Playfair Display', serif;
+	    font-size: 22px;
+	    font-style: italic;
+	    line-height: 1.45;
+	    color: var(--charcoal);
+	    max-width: 620px;
+	    margin-bottom: 26px;
+	  }
+	  .product-body {
+	    font-size: 14px;
+	    line-height: 1.95;
+	    color: var(--mid);
+	    max-width: 540px;
+	    margin-bottom: 34px;
+	  }
+	  .product-actions {
+	    display: flex;
+	    flex-wrap: wrap;
+	    align-items: center;
+	    gap: 18px;
+	  }
+	  .quiet-button {
+	    display: inline-flex;
+	    align-items: baseline;
+	    gap: 12px;
+	    padding: 13px 24px;
+	    border: 1px solid var(--silhouette);
+	    color: var(--silhouette);
+	    text-decoration: none;
+	    font-size: 9px;
+	    letter-spacing: 0.13em;
+	    text-transform: uppercase;
+	  }
+	  .quiet-button:hover { background: var(--silhouette); color: var(--oat); }
+	  .quiet-button span {
+	    font-family: 'Playfair Display', serif;
+	    font-size: 15px;
+	    font-style: italic;
+	    letter-spacing: 0;
+	    text-transform: none;
+	  }
+	  .product-note { font-size: 11px; color: var(--mid); }
+	  .feature-stack {
+	    display: grid;
+	    grid-template-columns: 1fr 0.72fr;
+	    gap: 16px;
+	    align-items: end;
+	  }
+	  .feature-stack img {
+	    display: block;
+	    width: 100%;
+	    height: auto;
+	    box-shadow: 0 18px 52px rgba(46,37,32,0.11);
+	  }
+	  .feature-stack img:last-child { margin-bottom: 52px; }
+	  #belief {
+	    background: var(--white);
+	    padding: 112px 52px;
+	    border-bottom: 1px solid var(--border);
+	  }
+	  .belief-copy {
+	    display: grid;
+	    grid-template-columns: 160px minmax(0, 680px);
+	    gap: 56px;
+	    align-items: start;
+	  }
+	  .belief-line {
+	    font-family: 'Playfair Display', serif;
+	    font-size: 36px;
+	    line-height: 1.32;
+	    color: var(--silhouette);
+	    margin-bottom: 28px;
+	  }
+	  .belief-body {
+	    font-size: 14px;
+	    line-height: 1.95;
+	    color: var(--mid);
+	    max-width: 520px;
+	  }
+	  .belief-close {
+	    margin-top: 26px;
+	    font-family: 'Playfair Display', serif;
+	    font-size: 17px;
+	    font-style: italic;
+	    color: var(--charcoal);
+	  }
+	  #library {
+	    background: var(--silhouette);
+	    color: var(--oat);
+	    padding: 100px 52px;
+	    border-bottom: 1px solid rgba(245,241,235,0.05);
+	  }
+	  .library-grid {
+	    display: grid;
+	    grid-template-columns: 360px minmax(0, 1fr);
+	    gap: 76px;
+	    align-items: center;
+	  }
+	  .library-art {
+	    display: block;
+	    width: 100%;
+	    box-shadow: 0 22px 70px rgba(0,0,0,0.24);
+	  }
+	  .library-eyebrow {
+	    font-size: 8px;
+	    letter-spacing: 0.17em;
+	    text-transform: uppercase;
+	    color: rgba(245,241,235,0.42);
+	    margin-bottom: 22px;
+	  }
+	  .library-title {
+	    font-family: 'Playfair Display', serif;
+	    font-size: 39px;
+	    font-weight: 400;
+	    line-height: 1.18;
+	    color: rgba(245,241,235,0.9);
+	    max-width: 560px;
+	    margin-bottom: 24px;
+	  }
+	  .library-copy {
+	    font-size: 14px;
+	    line-height: 1.9;
+	    color: rgba(245,241,235,0.56);
+	    max-width: 520px;
+	  }
 
-  /* FOOTER */
-  footer { background: var(--silhouette); border-top: 1px solid rgba(245,241,235,0.04); padding: 42px 52px; display: flex; align-items: center; justify-content: space-between; }
-  .footer-logo-text { font-family: 'Cormorant', serif; font-size: 16px; font-weight: 300; color: rgba(245,241,235,0.45); letter-spacing: 0.04em; }
-  .footer-tagline { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: rgba(245,241,235,0.45); }
-  .footer-copy { font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,235,0.35); }
+	  @media (max-width: 768px) {
+	    nav { padding: 18px 24px; }
+	    .nav-links { display: none; }
+	    .mobile-route { display: inline-block; }
+	    .nav-logo { height: 60px; }
 
-  @media (max-width: 768px) {
-    nav { padding: 18px 24px; }
-    .nav-links { display: none; }
-    .mobile-route { display: inline-block; }
-    .nav-logo { height: 60px; }
+	    #hero { min-height: auto; padding: 116px 24px 64px; }
+	    .home-hero-grid { grid-template-columns: 1fr; gap: 42px; }
+	    .home-title { font-size: 42px; line-height: 1.08; margin-bottom: 22px; }
+	    .home-bridge { font-size: 14px; line-height: 1.85; margin-bottom: 34px; }
+	    .route-row { grid-template-columns: 1fr; gap: 7px; padding: 20px 0; }
+	    .route-copy { max-width: none; }
+	    .route-status { white-space: normal; }
+	    .hero-object { min-height: auto; border-left: none; border-top: 1px solid var(--border); }
+	    .hero-object-image { padding: 34px 28px 22px; justify-content: flex-start; }
+	    .hero-object-image img { width: 190px; }
+	    .hero-object-copy { padding: 24px 0 0; }
+	    .hero-scroll { display: none; }
 
-    #hero { padding: 0 24px; }
-    .hero-logo-large { width: min(260px, 72vw); margin-bottom: 20px; }
-    .hero-tagline { font-size: clamp(14px, 4vw, 17px); }
-    .hero-bridge { max-width: 300px; font-size: 12px; line-height: 1.75; }
-    .hero-scroll { display: none; }
-
-    #statement { padding: 72px 24px; }
-    .statement-inner { grid-template-columns: 1fr; }
-    .aside-label { display: none; }
-    #story { padding: 72px 24px; }
-    .story-inner { grid-template-columns: 1fr; }
-    #themes { padding: 72px 24px; }
-    .theme-card.open .theme-body { grid-template-columns: 1fr; }
-    .line-row { grid-template-columns: 1fr; gap: 14px; }
-    .theme-cover-container { width: 68px; }
-    .theme-card-header { grid-template-columns: 4px 1fr; min-height: 100px; }
-    .soon-tag { font-size: 7px; padding: 20px 10px; }
-    #grid { padding: 72px 24px; }
-    footer { padding: 36px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
-    #preview { padding: 72px 24px; }
-    .preview-inner { grid-template-columns: 1fr; }
-  }
+		    .aside-label { display: none; }
+		    #ways, #available, #belief, #library { padding: 72px 24px; }
+	    .editorial-header, .belief-copy { grid-template-columns: 1fr; gap: 24px; margin-bottom: 36px; }
+	    .section-headline { font-size: 32px; line-height: 1.22; }
+	    .way-row { grid-template-columns: 1fr; gap: 12px; padding: 30px 0; }
+	    .way-name { font-size: 25px; }
+	    .way-format { text-align: left; }
+	    .product-feature { grid-template-columns: 1fr; gap: 42px; }
+	    .product-title { font-size: 40px; }
+	    .product-sub { font-size: 20px; }
+	    .product-actions { align-items: stretch; flex-direction: column; max-width: 280px; }
+	    .quiet-button { justify-content: center; }
+		    .feature-stack { max-width: 320px; }
+		    .belief-line { font-size: 29px; line-height: 1.32; }
+		    .library-grid { grid-template-columns: 1fr; gap: 34px; }
+		    .library-art { max-width: 260px; }
+		    .library-title { font-size: 31px; }
+		    #grid { padding: 72px 24px; }
+		    footer { padding: 36px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
+	  }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="#"><img class="nav-logo" src="somehow-valid-logo.svg" alt="somehow valid."></a>
-  <a class="mobile-route" href="/the-daily-anchor/">collections</a>
-  <ul class="nav-links">
-    <li><a href="#statement">about</a></li>
-    <li><a href="#story">why this exists</a></li>
-    <li class="nav-menu">
-      <span class="nav-menu-label">collections</span>
-      <div class="nav-submenu">
-        <a href="/the-daily-anchor/">
-          <span class="nav-submenu-line">collections</span>
-          <span class="nav-submenu-title">The Daily Anchor™</span>
-          <span class="nav-submenu-note">30-day self-reflection</span>
-        </a>
-      </div>
-    </li>
-    <li><a href="#grid">notes</a></li>
-  </ul>
-</nav>
+	<nav>
+	  <a href="#"><img class="nav-logo" src="somehow-valid-logo.svg" alt="somehow valid."></a>
+	  <a class="mobile-route" href="#ways">tools</a>
+	  <ul class="nav-links">
+	    <li><a href="#ways">tools</a></li>
+	    <li><a href="/the-daily-anchor/">daily anchor</a></li>
+	    <li class="nav-menu">
+	      <span class="nav-menu-label">available</span>
+	      <div class="nav-submenu">
+	        <a href="/the-cost-of-kind/">
+	          <span class="nav-submenu-line">The Daily Anchor™</span>
+	          <span class="nav-submenu-title">The Cost of Kind</span>
+	          <span class="nav-submenu-note">30-day collection · $14</span>
+	        </a>
+	      </div>
+	    </li>
+	    <li><a href="#belief">about</a></li>
+	    <li><a href="#grid">notes</a></li>
+	  </ul>
+	</nav>
 
-<section id="hero">
-  <div class="hero-line"></div>
-  <div class="hero-inner">
-    <img class="hero-logo-large reveal" src="somehow-valid-logo.svg" alt="somehow valid. — emotional tools for what you can't quite name.">
-    <h1 class="hero-tagline reveal" style="transition-delay:0.15s">emotional tools for what you can't quite name.</h1>
-    <p class="hero-bridge reveal" style="transition-delay:0.20s">language, structure, and perspective for patterns that are hard to see from the inside.</p>
-    <a class="hero-route reveal" style="transition-delay:0.25s" href="/the-daily-anchor/">
-      collections <span>The Daily Anchor™</span>
-    </a>
-  </div>
-  <div class="hero-scroll">scroll</div>
-</section>
+	<section id="hero">
+	  <div class="home-shell home-hero-grid">
+	    <div>
+	      <p class="home-kicker reveal">somehow valid. · emotional clarity studio</p>
+	      <h1 class="home-title reveal" style="transition-delay:0.08s">emotional tools for what you <em>can't quite name.</em></h1>
+	      <p class="home-bridge reveal" style="transition-delay:0.14s">Language, structure, and perspective for the patterns that are hard to see from the inside.</p>
+	      <div class="route-list reveal" style="transition-delay:0.20s" aria-label="Choose your way in">
+	        <a class="route-row" href="#ways">
+	          <span class="route-moment">words now</span>
+	          <span>
+	            <span class="route-name">The Field Guide™</span>
+	            <span class="route-copy">Quick-use maps for the emotional moment you are already in.</span>
+	          </span>
+	          <span class="route-status">coming later</span>
+	        </a>
+	        <a class="route-row live" href="/the-daily-anchor/">
+	          <span class="route-moment">a slower look</span>
+	          <span>
+	            <span class="route-name">The Daily Anchor™</span>
+	            <span class="route-copy">30-day collections for understanding one pattern with care.</span>
+	          </span>
+	          <span class="route-status">available</span>
+	        </a>
+	        <a class="route-row" href="#ways">
+	          <span class="route-moment">the full shape</span>
+	          <span>
+	            <span class="route-name">The Aperture™</span>
+	            <span class="route-copy">Long-form books for the hidden mechanism behind an emotional pattern.</span>
+	          </span>
+	          <span class="route-status">coming later</span>
+	        </a>
+	      </div>
+	    </div>
+	    <aside class="hero-object reveal" style="transition-delay:0.18s" aria-label="Currently available collection">
+	      <a class="hero-object-image" href="/the-cost-of-kind/">
+	        <img src="/the-cost-of-kind-compass.png" alt="The Cost of Kind Compass cover">
+	      </a>
+	      <div class="hero-object-copy">
+	        <p class="object-label">available now · The Daily Anchor™</p>
+	        <h2 class="object-name">The Cost of Kind</h2>
+	        <p class="object-copy">A 30-day collection for people who became easy to love by leaving themselves out.</p>
+	        <a class="text-link" href="/the-cost-of-kind/">view collection</a>
+	      </div>
+	    </aside>
+	  </div>
+	</section>
 
-<section id="statement">
-  <div class="statement-inner">
-    <div class="reveal"><div class="aside-label">the<br>space</div></div>
-    <div>
-      <h2 class="statement-text reveal" style="transition-delay:0.08s">
-        a space that asks <em>nothing</em> of you.<br>
-        no fixing. no optimising. no becoming.<br>
-        only seeing — clearly, and without<br>the weight of what you were told to be.
-      </h2>
-      <p class="statement-body reveal" style="transition-delay:0.18s">
-        there are moments when you know something is happening inside you before you have language for it. you can feel the pattern. you can feel the cost. but the words arrive late, or too sharp, or not at all.
-      </p>
-    </div>
-  </div>
-</section>
+	<section id="ways">
+	  <div class="home-shell">
+	    <div class="editorial-header">
+	      <p class="section-eyebrow reveal">ways in</p>
+	      <div>
+	        <h2 class="section-headline reveal" style="transition-delay:0.06s">Choose the form by the moment you are in.</h2>
+	        <p class="section-intro reveal" style="transition-delay:0.12s">The brand promise stays the same. The shape changes: words for the immediate moment, a slower collection for a pattern, or a fuller book when you want the mechanism underneath it.</p>
+	      </div>
+	    </div>
+	    <div class="ways-table reveal" style="transition-delay:0.16s">
+	      <div class="way-row">
+	        <p class="way-name">The Field Guide™</p>
+	        <div>
+	          <p class="way-moment">when something is happening now</p>
+	          <p class="way-copy">Quick-use maps and words for the emotional moment you are already in, so you can name what is happening before the old response takes over.</p>
+	        </div>
+	        <p class="way-format">Map · Decoder · Words<br>coming later</p>
+	      </div>
+	      <div class="way-row">
+	        <p class="way-name">The Daily Anchor™</p>
+	        <div>
+	          <p class="way-moment">when one pattern has followed you</p>
+	          <p class="way-copy">30-day collections for seeing what a pattern has cost, where it began, and what becomes possible when it is no longer invisible.</p>
+	        </div>
+	        <p class="way-format">Compass · Wallpapers · Anchor Deck<br><a class="text-link" href="/the-daily-anchor/">view line</a></p>
+	      </div>
+	      <div class="way-row">
+	        <p class="way-name">The Aperture™</p>
+	        <div>
+	          <p class="way-moment">when you want the full shape</p>
+	          <p class="way-copy">Long-form books for the hidden mechanism behind an emotional pattern, with enough context to stop mistaking it for who you are.</p>
+	        </div>
+	        <p class="way-format">ebook · paperback<br>coming later</p>
+	      </div>
+	    </div>
+	  </div>
+	</section>
 
-<section id="story">
-  <div class="story-inner">
-    <div class="reveal"><div class="aside-label">why this<br>exists</div></div>
-    <div>
-      <h2 class="story-heading reveal" style="transition-delay:0.08s">for the part<br>you keep trying<br>to explain.</h2>
-      <div class="story-body">
-        <p class="reveal" style="transition-delay:0.12s">somehow valid. exists for that gap. not to diagnose it. not to turn it into a project. to give it shape enough that you can recognize it, return to it, and decide from a place that feels more like your own.</p>
-        <p class="reveal" style="transition-delay:0.16s">the work is quiet on purpose. it leaves room around the sentence, so the sentence can do what it came to do.</p>
-        <p class="story-close reveal" style="transition-delay:0.24s">nothing to fix.<br>everything to see.</p>
-      </div>
-    </div>
-  </div>
-</section>
+	<section id="available">
+	  <div class="home-shell product-feature">
+	    <div>
+	      <p class="section-eyebrow reveal">currently available</p>
+	      <h2 class="product-title reveal" style="transition-delay:0.06s">The Cost of Kind</h2>
+	      <p class="product-sub reveal" style="transition-delay:0.10s">A 30-day collection for people who became easy to love by leaving themselves out.</p>
+	      <p class="product-body reveal" style="transition-delay:0.14s">At the center is the Compass: thirty days for seeing how kindness became a place to disappear, what it has quietly cost, and what it could feel like to include yourself again. The Wallpapers and Anchor Deck keep the language close after reading.</p>
+	      <div class="product-actions reveal" style="transition-delay:0.18s">
+	        <a class="quiet-button" href="/the-cost-of-kind/">view collection <span>$14</span></a>
+	        <span class="product-note">digital download · Compass · Wallpapers · Anchor Deck</span>
+	      </div>
+	    </div>
+	    <div class="feature-stack reveal" style="transition-delay:0.12s">
+	      <img src="/tcok-listing-03-self-reflection-journal-ipad.png" alt="The Cost of Kind Compass preview on tablet">
+	      <img src="/tcok-listing-05-anchor-deck-box.png" alt="The Cost of Kind printable Anchor Deck preview">
+	    </div>
+	  </div>
+	</section>
 
-<section id="themes">
-  <div class="themes-inner">
-    <div class="section-header reveal">
-      <span class="section-title">ways in</span>
-      <span class="section-meta">Field Guide · Daily Anchor · Aperture</span>
-    </div>
+	<section id="belief">
+	  <div class="home-shell belief-copy">
+	    <p class="section-eyebrow reveal">why this exists</p>
+	    <div>
+	      <p class="belief-line reveal" style="transition-delay:0.06s">A space that asks nothing of you before you are allowed to understand yourself.</p>
+	      <p class="belief-body reveal" style="transition-delay:0.12s">somehow valid. does not diagnose, treat, prescribe, or tell you what to choose. It gives shape, language, and a way back to what you have been carrying, so the next choice can belong more fully to you.</p>
+	      <p class="belief-close reveal" style="transition-delay:0.18s">nothing to fix. everything to see.</p>
+	    </div>
+	  </div>
+	</section>
 
-    <div class="themes-title-block reveal" style="transition-delay:0.04s">
-      <p class="themes-title">choose the shape that fits the moment.</p>
-      <p class="themes-title-sub">one brand promise, three ways to return to it.</p>
-    </div>
-
-    <p class="collection-intro reveal" style="transition-delay:0.08s">somehow valid. is not one product format. It is a house for emotional tools: quick language when something is happening now, slower collections when a pattern has followed you for a while, and books when you want the full exploration.</p>
-
-    <div class="line-list reveal" style="transition-delay:0.1s">
-      <div class="line-row">
-        <div>
-          <p class="line-name">The Field Guide™</p>
-        </div>
-        <div>
-          <p class="line-moment">when you need language now</p>
-          <p class="line-body">Quick-use maps and words for the emotional moment you are already in.</p>
-          <p class="line-format">Map · Decoder · Words</p>
-        </div>
-        <span class="line-link inactive">coming later</span>
-      </div>
-      <div class="line-row">
-        <div>
-          <p class="line-name">The Daily Anchor™</p>
-        </div>
-        <div>
-          <p class="line-moment">when one pattern deserves a slower look</p>
-          <p class="line-body">30-day self-reflection collections for understanding the emotional patterns you have been carrying as if they were just who you are.</p>
-          <p class="line-format">Compass · Wallpapers · Anchor Deck</p>
-        </div>
-        <a class="line-link" href="/the-daily-anchor/">view collections</a>
-      </div>
-      <div class="line-row">
-        <div>
-          <p class="line-name">The Aperture™</p>
-        </div>
-        <div>
-          <p class="line-moment">when you want the full shape</p>
-          <p class="line-body">Long-form editorial books for understanding the hidden mechanism behind an emotional pattern.</p>
-          <p class="line-format">ebook · paperback</p>
-        </div>
-        <span class="line-link inactive">coming later</span>
-      </div>
-    </div>
-  </div>
-</section>
+	<section id="library">
+	  <div class="home-shell library-grid">
+	    <img class="library-art reveal" src="/the-cost-of-kind-frames.png" alt="The Cost of Kind Day 01 frame: Kindness becomes a cage when it never includes you.">
+	    <div>
+	      <p class="library-eyebrow reveal">from the library</p>
+	      <h2 class="library-title reveal" style="transition-delay:0.06s">why kindness can start to feel expensive.</h2>
+	      <p class="library-copy reveal" style="transition-delay:0.12s">Some patterns do not announce themselves as harm. They arrive as usefulness, patience, ease. The work of somehow valid. is to make that mechanism visible without turning it into another assignment.</p>
+	    </div>
+	  </div>
+	</section>
 
 <section id="grid">
   <div class="grid-inner">
@@ -546,12 +746,10 @@
   <span class="footer-copy">© 2026 somehow valid.</span>
 </footer>
 
-<script>
-const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-document.querySelectorAll('#hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 300 + i * 150));
-function toggleCard(id) { document.getElementById(id).classList.toggle('open'); }
-
-</script>
+	<script>
+		const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.1 });
+		document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+		document.querySelectorAll('#hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 300 + i * 150));
+		</script>
 </body>
 </html>
