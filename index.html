@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>somehow valid. — emotional tools for what you can't quite name.</title>
-<meta name="description" content="somehow valid. is an emotional clarity studio making editorial tools for what you can't quite name yet.">
+<meta name="description" content="somehow valid. is an emotional clarity studio for the feelings and patterns that arrive before language.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" href="/favicon-32x32.png">
@@ -14,14 +14,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://somehowvalid.com/">
 <meta property="og:title" content="somehow valid. — emotional tools for what you can't quite name.">
-<meta property="og:description" content="Language, structure, and perspective for patterns that are hard to see from the inside.">
+<meta property="og:description" content="An emotional clarity studio for the feelings and patterns that arrive before language.">
 <meta property="og:image" content="https://somehowvalid.com/og-image.png">
 <meta property="og:site_name" content="somehow valid.">
 
 <!-- Twitter/X Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="somehow valid. — emotional tools for what you can't quite name.">
-<meta name="twitter:description" content="Language, structure, and perspective for patterns that are hard to see from the inside.">
+<meta name="twitter:description" content="An emotional clarity studio for the feelings and patterns that arrive before language.">
 <meta name="twitter:image" content="https://somehowvalid.com/og-image.png">
 
 <!-- Schema: Organization -->
@@ -31,7 +31,7 @@
   "@type": "Organization",
   "name": "somehow valid.",
   "url": "https://somehowvalid.com",
-  "description": "An emotional clarity studio making editorial tools for what the reader can't quite name yet.",
+  "description": "An emotional clarity studio for the feelings and patterns that arrive before language.",
   "sameAs": ["https://instagram.com/somehow.valid", "https://pinterest.com/somehowvalid"]
 }
 </script>
@@ -58,15 +58,7 @@
       "name": "What is somehow valid.?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "somehow valid. is an emotional clarity studio making editorial tools for what the reader can't quite name yet."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What series lines does somehow valid. make?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "somehow valid. has three series lines: The Field Guide™ for quick-use emotional clarity tools, The Daily Anchor™ for 30-day self-reflection releases, and The Aperture™ for long-form editorial books."
+        "text": "somehow valid. is an emotional clarity studio for the feelings and patterns that arrive before language."
       }
     },
     {
@@ -74,7 +66,7 @@
       "name": "Is somehow valid. a mental health resource?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "somehow valid. is not a clinical resource and is not a substitute for therapy or professional mental health support. It is an emotional clarity studio. We do not diagnose, treat, advise, prescribe, or decide for the reader. Our work offers language, structure, and perspective for emotional patterns that are hard to name from the inside."
+        "text": "somehow valid. is not a clinical resource and is not a substitute for therapy or professional mental health support. It does not diagnose, treat, advise, prescribe, or decide for the reader. The work offers language, structure, and perspective for the feelings and patterns that arrive before language."
       }
     }
   ]
@@ -122,6 +114,7 @@
   .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
   .nav-links a, .nav-menu-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover, .nav-menu:hover .nav-menu-label, .nav-menu:focus-within .nav-menu-label { color: var(--charcoal); }
+  .mobile-route { display: none; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; }
   .nav-menu { position: relative; padding: 8px 0; }
   .nav-menu-label { display: inline-block; cursor: default; }
   .nav-submenu {
@@ -236,7 +229,7 @@
   .collection-intro { font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 520px; margin-bottom: 32px; }
   .theme-card { border: 1px solid var(--border); border-radius: 1px; background: var(--white); margin-bottom: 10px; overflow: hidden; transition: box-shadow 0.3s; }
   .theme-card:hover { box-shadow: 0 2px 18px rgba(46,37,32,0.06); }
-  .theme-card-header { display: grid; grid-template-columns: 4px 1fr 92px 54px; cursor: pointer; user-select: none; min-height: 110px; align-items: center; }
+  .theme-card-header { display: grid; grid-template-columns: 4px 1fr 54px; cursor: pointer; user-select: none; min-height: 110px; align-items: center; }
   .theme-card.open .theme-card-header { cursor: default; }
   .theme-accent { width: 4px; align-self: stretch; }
   .theme-card-main { padding: 22px 18px 22px 22px; }
@@ -357,6 +350,7 @@
   @media (max-width: 768px) {
     nav { padding: 18px 24px; }
     .nav-links { display: none; }
+    .mobile-route { display: inline-block; }
     .nav-logo { height: 60px; }
 
     #hero { padding: 0 24px; }
@@ -372,7 +366,7 @@
     #themes { padding: 72px 24px; }
     .theme-card.open .theme-body { grid-template-columns: 1fr; }
     .theme-cover-container { width: 68px; }
-    .theme-card-header { grid-template-columns: 4px 1fr 68px 46px; min-height: 100px; }
+    .theme-card-header { grid-template-columns: 4px 1fr 46px; min-height: 100px; }
     .soon-tag { font-size: 7px; padding: 20px 10px; }
     #grid { padding: 72px 24px; }
     footer { padding: 36px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
@@ -385,6 +379,7 @@
 
 <nav>
   <a href="#"><img class="nav-logo" src="somehow-valid-logo.svg" alt="somehow valid."></a>
+  <a class="mobile-route" href="/the-daily-anchor/">collections</a>
   <ul class="nav-links">
     <li><a href="#statement">about</a></li>
     <li><a href="#story">why this exists</a></li>
@@ -399,7 +394,6 @@
       </div>
     </li>
     <li><a href="#grid">notes</a></li>
-    <li><a href="/the-cost-of-kind/">shop</a></li>
   </ul>
 </nav>
 
@@ -409,7 +403,7 @@
     <img class="hero-logo-large reveal" src="somehow-valid-logo.svg" alt="somehow valid. — emotional tools for what you can't quite name">
     <h1 class="hero-tagline reveal" style="transition-delay:0.15s">emotional tools for what you can't quite name.</h1>
     <a class="hero-route reveal" style="transition-delay:0.25s" href="/the-daily-anchor/">
-      now open <span>The Daily Anchor™</span>
+      collections <span>The Daily Anchor™</span>
     </a>
   </div>
   <div class="hero-scroll">scroll</div>
@@ -417,16 +411,15 @@
 
 <section id="statement">
   <div class="statement-inner">
-    <div class="reveal"><div class="aside-label">emotional<br>clarity</div></div>
+    <div class="reveal"><div class="aside-label">nothing<br>to fix</div></div>
     <div>
       <h2 class="statement-text reveal" style="transition-delay:0.08s">
-        for the feeling you can sense<br>
-        before you can explain it.<br>
-        a map when it is tangled.<br>
-        words when they are hard to find.
+        for the part that knows<br>
+        something is happening<br>
+        before the words arrive.
       </h2>
       <p class="statement-body reveal" style="transition-delay:0.18s">
-        somehow valid. is an emotional clarity studio. we make language, structure, and perspective for patterns that are hard to see from the inside — the ones that start to feel like personality, failure, or fate when nobody has given them a better name. The Field Guide™ helps when the moment is already happening. The Daily Anchor™ helps when a pattern has followed you long enough to deserve more careful attention. The Aperture™ opens the fuller mechanism underneath it.
+        somehow valid. exists for the space before explanation. when something in you already knows, but the language has not arrived yet. not to diagnose it. not to turn it into a project. to give the shape back slowly enough that it can feel like yours.
       </p>
     </div>
   </div>
@@ -440,8 +433,8 @@
       <div class="story-body">
         <p class="reveal" style="transition-delay:0.12s">there are moments when you know something is happening inside you before you have language for it. you can feel the pattern. you can feel the cost. but the words arrive late, or too sharp, or not at all.</p>
         <p class="reveal" style="transition-delay:0.16s">somehow valid. exists for that gap. not to diagnose it. not to turn it into a project. to give it shape enough that you can recognize it, return to it, and decide from a place that feels more like your own.</p>
-        <p class="reveal" style="transition-delay:0.20s">that is why the work takes more than one form. sometimes you need The Field Guide™ because the moment is already happening. sometimes you need The Daily Anchor™ because one pattern has stayed long enough to deserve a slower, more careful look. sometimes you need The Aperture™ — the full exploration, with every layer in view.</p>
-        <p class="story-close reveal" style="transition-delay:0.24s">language, structure, and perspective.<br>at whatever pace is yours.</p>
+        <p class="reveal" style="transition-delay:0.20s">the work is quiet on purpose. it leaves room around the sentence, so the sentence can do what it came to do.</p>
+        <p class="story-close reveal" style="transition-delay:0.24s">nothing to fix.<br>everything to see.</p>
       </div>
     </div>
   </div>
@@ -451,40 +444,32 @@
   <div class="themes-inner">
     <div class="section-header reveal">
       <span class="section-title">collections</span>
-      <span class="section-meta">03 ways in</span>
+      <span class="section-meta">The Daily Anchor™</span>
     </div>
 
     <div class="themes-title-block reveal" style="transition-delay:0.04s">
-      <p class="themes-title">three ways in. one is open now.</p>
-      <p class="themes-title-sub">words for now. patterns held with care. mechanisms made clear.</p>
+      <p class="themes-title">one pattern, held long enough to be seen.</p>
+      <p class="themes-title-sub">read. notice. return.</p>
     </div>
 
-    <p class="collection-intro reveal" style="transition-delay:0.08s">The Daily Anchor™ is open now: a slower format for one pattern held over time. The Cost of Kind is the first release inside it. The Field Guide™ and The Aperture™ will arrive when their forms are ready.</p>
+    <p class="collection-intro reveal" style="transition-delay:0.08s">The Daily Anchor™ is where a single pattern is given time, language, and a way back. The Cost of Kind is the first collection inside it.</p>
 
     <div class="theme-card open reveal" id="card-tcok" style="transition-delay:0.1s">
       <div class="theme-card-header">
         <div class="theme-accent" style="background:#C2B4A3"></div>
         <div class="theme-card-main">
-          <div class="theme-cat">The Daily Anchor™</div>
-          <h3 class="theme-name">one pattern, held for thirty days.</h3>
-          <div class="theme-sub">available now: The Cost of Kind</div>
+          <div class="theme-cat">series</div>
+          <h3 class="theme-name">The Daily Anchor™</h3>
+          <div class="theme-sub">begin with The Cost of Kind.</div>
         </div>
-        <a class="theme-cover-container" href="/the-daily-anchor/" onclick="event.stopPropagation()" aria-label="Open The Daily Anchor series page">
-          <img src="the-cost-of-kind-compass.png" alt="The Cost of Kind cover">
-        </a>
         <a class="theme-toggle" href="/the-daily-anchor/">open</a>
       </div>
       <div class="theme-body">
         <div>
-          <p class="theme-desc">The Daily Anchor™ is for patterns that need more than a single sentence. Each release gives one pattern a Compass, Wallpapers, and an Anchor Deck so the language can stay close after reading.</p>
-          <div class="theme-arc-label">the arc</div>
-          <div class="theme-arc-item">The Weight — days 1–10</div>
-          <div class="theme-arc-item">The Seeing — days 11–20</div>
-          <div class="theme-arc-item">The Return — days 21–30</div>
-          <div class="theme-arc-label" style="margin-top:16px">available now</div>
-          <div class="theme-arc-item">The Cost of Kind — theme 01 · held vol. 01</div>
-          <div class="theme-arc-item">Compass · Wallpapers · Anchor Deck</div>
-          <div class="theme-arc-item">30-day self-reflection collection · $14</div>
+          <p class="theme-desc">For the pattern that keeps returning after the conversation ends. The Daily Anchor™ is a place for language that may need to be read, kept close, and found again.</p>
+          <div class="theme-arc-label">begin here</div>
+          <div class="theme-arc-item">The Cost of Kind</div>
+          <div class="theme-arc-item">the first collection inside The Daily Anchor™</div>
         </div>
         <div>
           <a class="theme-cta" href="/the-daily-anchor/">
@@ -494,58 +479,6 @@
       </div>
     </div>
 
-    <div class="theme-card soon reveal" style="transition-delay:0.15s">
-      <div class="theme-card-header">
-        <div class="theme-accent" style="background:#B7BFC2"></div>
-        <div class="theme-card-main">
-          <div class="theme-cat">The Field Guide™ · quick-use clarity</div>
-          <h3 class="theme-name">for the moment you need words</h3>
-          <div class="theme-sub">maps and words for the moment you are already inside</div>
-        </div>
-        <div class="soon-tag">not yet released</div>
-      </div>
-    </div>
-
-    <div class="theme-card soon reveal" style="transition-delay:0.18s">
-      <div class="theme-card-header">
-        <div class="theme-accent" style="background:#F0EAE0"></div>
-        <div class="theme-card-main">
-          <div class="theme-cat">The Aperture™ · long-form editorial</div>
-          <h3 class="theme-name">for the deeper mechanism</h3>
-          <div class="theme-sub">books for the pattern beneath the pattern</div>
-        </div>
-        <div class="soon-tag">not yet released</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="notify">
-  <div class="notify-inner reveal">
-    <p class="notify-copy">something is coming.<br>leave your email and we will send a note when it arrives.</p>
-    <form class="notify-form" id="notify-form">
-      <input type="email" class="notify-input" placeholder="email address" required autocomplete="email">
-      <button type="submit" class="notify-btn">keep me informed</button>
-    </form>
-    <p class="notify-msg" id="notify-msg"></p>
-  </div>
-</section>
-
-<section id="preview">
-  <div class="preview-inner">
-    <div class="reveal"><div class="aside-label">a day from<br>the compass</div></div>
-    <div>
-      <p class="preview-context reveal" style="transition-delay:0.05s">The Cost of Kind · theme 01 · held vol. 01 — the compass</p>
-      <p class="preview-context-sub reveal" style="transition-delay:0.08s">this is what it feels like inside.</p>
-      <p class="preview-label reveal" style="transition-delay:0.12s">day 01 — the weight</p>
-      <p class="preview-heading reveal" style="transition-delay:0.16s"><strong>Kindness</strong> becomes a cage<br>when it never includes you.</p>
-      <p class="preview-body reveal" style="transition-delay:0.20s">there is a kind of giving that looks generous from the outside and costs everything from the inside. you have been doing it for so long that it no longer feels like a choice — it feels like who you are. but kindness that never turns inward is not a virtue. it is a pattern. and patterns carry a particular weight, even long before they have been seen clearly enough to name.</p>
-      <p class="preview-prompt reveal" style="transition-delay:0.24s">where has your kindness been most consistently directed away from yourself?</p>
-      <p class="preview-note reveal" style="transition-delay:0.28s">a question to sit with, not a task to complete.</p>
-      <a class="theme-cta reveal" href="/the-cost-of-kind/" style="transition-delay:0.32s; margin-top:28px; display:inline-flex;">
-        view the collection <span class="theme-cta-price">$14</span>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -582,29 +515,6 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 document.querySelectorAll('#hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 300 + i * 150));
 function toggleCard(id) { document.getElementById(id).classList.toggle('open'); }
 
-// Email capture
-document.getElementById('notify-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const email = this.querySelector('input[type=email]').value;
-  const msg = document.getElementById('notify-msg');
-  const btn = this.querySelector('button');
-  btn.disabled = true;
-  btn.textContent = '...';
-  const url = 'https://us16.list-manage.com/subscribe/post-json?u=dc9aed9483c690c8eae48b725&id=ac9e7ec38d&EMAIL=' + encodeURIComponent(email) + '&c=notifyCallback';
-  window.notifyCallback = function(data) {
-    if (data.result === 'success') {
-      msg.textContent = 'noted.';
-      document.getElementById('notify-form').style.display = 'none';
-    } else {
-      msg.textContent = data.msg.replace(/<[^>]*>/g, '').split('.')[0].toLowerCase() + '.';
-      btn.disabled = false;
-      btn.textContent = 'keep me informed';
-    }
-  };
-  const s = document.createElement('script');
-  s.src = url;
-  document.head.appendChild(s);
-});
 </script>
 </body>
 </html>
