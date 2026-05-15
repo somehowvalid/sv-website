@@ -63,10 +63,10 @@
     },
     {
       "@type": "Question",
-      "name": "What product lines does somehow valid. make?",
+      "name": "What collection lines does somehow valid. make?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "somehow valid. has three product lines: The Field Guide™ for quick-use emotional clarity tools, The Daily Anchor™ for 30-day self-reflection collections, and The Aperture™ for long-form editorial books."
+        "text": "somehow valid. has three collection lines: The Field Guide™ for quick-use emotional clarity tools, The Daily Anchor™ for 30-day self-reflection collections, and The Aperture™ for long-form editorial books."
       }
     },
     {
@@ -119,9 +119,23 @@
   .nav-logo-link:hover { opacity: 1; }
   .nav-logo { display: block; height: 60px; width: auto; opacity: 0.8; transition: opacity 0.2s; }
   .nav-logo:hover { opacity: 1; }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--charcoal); }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a, .nav-menu-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-menu:hover .nav-menu-label, .nav-menu:focus-within .nav-menu-label { color: var(--charcoal); }
+  .nav-menu { position: relative; padding: 8px 0; }
+  .nav-menu-label { display: inline-block; cursor: default; }
+  .nav-submenu {
+    position: absolute; top: 100%; right: 0; width: 260px;
+    padding: 18px 18px 16px; background: rgba(255,255,255,0.96);
+    border: 1px solid var(--border); box-shadow: 0 12px 36px rgba(46,37,32,0.08);
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  }
+  .nav-menu:hover .nav-submenu, .nav-menu:focus-within .nav-submenu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-submenu a { display: block; letter-spacing: 0; text-transform: none; color: var(--charcoal); padding: 10px 0; }
+  .nav-submenu-line { display: block; font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-bottom: 3px; }
+  .nav-submenu-title { display: block; font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--silhouette); }
+  .nav-submenu-note { display: block; font-size: 10px; color: var(--mid); margin-top: 2px; }
 
   /* HERO */
   #hero {
@@ -223,6 +237,7 @@
   .theme-card { border: 1px solid var(--border); border-radius: 1px; background: var(--white); margin-bottom: 10px; overflow: hidden; transition: box-shadow 0.3s; }
   .theme-card:hover { box-shadow: 0 2px 18px rgba(46,37,32,0.06); }
   .theme-card-header { display: grid; grid-template-columns: 4px 1fr 92px 54px; cursor: pointer; user-select: none; min-height: 110px; align-items: center; }
+  .theme-card.open .theme-card-header { cursor: default; }
   .theme-accent { width: 4px; align-self: stretch; }
   .theme-card-main { padding: 22px 18px 22px 22px; }
   .theme-cat { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 6px; }
@@ -279,7 +294,7 @@
   .ig-dot.ready  { background: rgba(245,241,235,0.12); }
   .grid-note { margin-top: 14px; font-size: 8px; letter-spacing: 0.1em; color: rgba(245,241,235,0.45); }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .grid-note { display: none; }
   }
 
@@ -373,7 +388,24 @@
   <ul class="nav-links">
     <li><a href="#statement">about</a></li>
     <li><a href="#story">why this exists</a></li>
-    <li><a href="#themes">products</a></li>
+    <li class="nav-menu">
+      <span class="nav-menu-label">collections</span>
+      <div class="nav-submenu">
+        <a href="/the-cost-of-kind/">
+          <span class="nav-submenu-line">The Daily Anchor™</span>
+          <span class="nav-submenu-title">The Cost of Kind</span>
+          <span class="nav-submenu-note">current collection · $14</span>
+        </a>
+        <a href="#themes">
+          <span class="nav-submenu-line">The Field Guide™</span>
+          <span class="nav-submenu-title">not yet released</span>
+        </a>
+        <a href="#themes">
+          <span class="nav-submenu-line">The Aperture™</span>
+          <span class="nav-submenu-title">not yet released</span>
+        </a>
+      </div>
+    </li>
     <li><a href="#grid">notes</a></li>
     <li><a href="/the-cost-of-kind/">shop</a></li>
   </ul>
@@ -402,7 +434,7 @@
         words when they are hard to find.
       </h2>
       <p class="statement-body reveal" style="transition-delay:0.18s">
-        somehow valid. is an emotional clarity studio. we make language, structure, and perspective for patterns that are hard to see from the inside — the ones that start to feel like personality, failure, or fate when nobody has given them a better name. field guides help when the moment is already happening. daily anchors help when a pattern has followed you long enough to deserve more careful attention. aperture books go all the way into the mechanism underneath it.
+        somehow valid. is an emotional clarity studio. we make language, structure, and perspective for patterns that are hard to see from the inside — the ones that start to feel like personality, failure, or fate when nobody has given them a better name. The Field Guide™ helps when the moment is already happening. The Daily Anchor™ helps when a pattern has followed you long enough to deserve more careful attention. The Aperture™ opens the fuller mechanism underneath it.
       </p>
     </div>
   </div>
@@ -426,45 +458,45 @@
 <section id="themes">
   <div class="themes-inner">
     <div class="section-header reveal">
-      <span class="section-title">product lines</span>
-      <span class="section-meta">03 ways in</span>
+      <span class="section-title">collection lines</span>
+      <span class="section-meta">series map</span>
     </div>
 
     <div class="themes-title-block reveal" style="transition-delay:0.04s">
-      <p class="themes-title">choose the format for the moment you're in.</p>
+      <p class="themes-title">three collection lines. one is open now.</p>
       <p class="themes-title-sub">words for now. patterns held with care. mechanisms made clear.</p>
     </div>
 
-    <p class="collection-intro reveal" style="transition-delay:0.08s">use a field guide when you need words for the moment you are already in. choose a daily anchor when one pattern has followed you long enough to deserve a more careful look. read an aperture when you want the hidden mechanism underneath it.</p>
+    <p class="collection-intro reveal" style="transition-delay:0.08s">The Daily Anchor™ is the first active line: a slower format for one pattern held over time. Its first collection is The Cost of Kind. The Field Guide™ and The Aperture™ will arrive when their forms are ready.</p>
 
-    <div class="theme-card reveal" id="card-tcok" style="transition-delay:0.1s">
-      <div class="theme-card-header" onclick="toggleCard('card-tcok')">
+    <div class="theme-card open reveal" id="card-tcok" style="transition-delay:0.1s">
+      <div class="theme-card-header">
         <div class="theme-accent" style="background:#C2B4A3"></div>
         <div class="theme-card-main">
-          <div class="theme-cat">the daily anchor™ · held · vol. 01</div>
+          <div class="theme-cat">The Daily Anchor™ · series 01 · HELD</div>
           <h3 class="theme-name">The Cost of Kind</h3>
-          <div class="theme-sub">A 30-Day Self-Reflection Collection</div>
+          <div class="theme-sub">current collection · 30-day self-reflection</div>
         </div>
         <a class="theme-cover-container" href="/the-cost-of-kind/" onclick="event.stopPropagation()" aria-label="Open The Cost of Kind page">
           <img src="the-cost-of-kind-compass.png" alt="The Cost of Kind cover">
         </a>
-        <a class="theme-toggle" href="/the-cost-of-kind/" onclick="event.stopPropagation()">view</a>
+        <a class="theme-toggle" href="/the-cost-of-kind/">open</a>
       </div>
       <div class="theme-body">
         <div>
-          <p class="theme-desc">for the one who has been kind to everyone. everyone except themselves. The Cost of Kind gives language to the quiet place where kindness became a way to disappear — and to what might still be yours underneath it. the collection includes a 39-page compass, thirty wallpapers to keep close, and a printable anchor deck with a box template.</p>
+          <p class="theme-desc">for the one who has been kind to everyone. everyone except themselves. The Cost of Kind gives language to the quiet place where kindness became a way to disappear — and to what might still be yours underneath it. The collection includes a 39-page Compass, thirty Wallpapers to keep close, and a printable Anchor Deck with a cardstock box template.</p>
           <div class="theme-arc-label">the arc</div>
           <div class="theme-arc-item">The Weight — days 1–10</div>
           <div class="theme-arc-item">The Seeing — days 11–20</div>
           <div class="theme-arc-item">The Return — days 21–30</div>
           <div class="theme-arc-label" style="margin-top:16px">the collection</div>
-          <div class="theme-arc-item">the compass — 39-page perspective guide, read on any device</div>
-          <div class="theme-arc-item">the wallpapers — 30 images for your phone lock screen</div>
-          <div class="theme-arc-item">the anchor deck — 30 printable cards and a box template</div>
+          <div class="theme-arc-item">The Compass — 39-page perspective guide, read on any device</div>
+          <div class="theme-arc-item">The Wallpapers — 30 images for your phone lock screen</div>
+          <div class="theme-arc-item">The Anchor Deck — 30 printable cards and a cardstock box template</div>
         </div>
         <div>
           <a class="theme-cta" href="/the-cost-of-kind/">
-            view the collection <span class="theme-cta-price">$14</span>
+            open The Cost of Kind <span class="theme-cta-price">$14</span>
           </a>
         </div>
       </div>
@@ -474,7 +506,7 @@
       <div class="theme-card-header">
         <div class="theme-accent" style="background:#B7BFC2"></div>
         <div class="theme-card-main">
-          <div class="theme-cat">the field guide™ · quick-use clarity</div>
+          <div class="theme-cat">The Field Guide™ · quick-use clarity</div>
           <h3 class="theme-name">for the moment you need words</h3>
           <div class="theme-sub">maps and words for the moment you are already inside</div>
         </div>
@@ -486,7 +518,7 @@
       <div class="theme-card-header">
         <div class="theme-accent" style="background:#F0EAE0"></div>
         <div class="theme-card-main">
-          <div class="theme-cat">the aperture™ · long-form editorial</div>
+          <div class="theme-cat">The Aperture™ · long-form editorial</div>
           <h3 class="theme-name">for the deeper mechanism</h3>
           <div class="theme-sub">books for the pattern beneath the pattern</div>
         </div>
@@ -498,9 +530,9 @@
 
 <section id="notify">
   <div class="notify-inner reveal">
-    <p class="notify-copy">something is coming.<br>leave your address here and we will tell you when it arrives.</p>
+    <p class="notify-copy">something is coming.<br>leave your email and we will send a note when it arrives.</p>
     <form class="notify-form" id="notify-form">
-      <input type="email" class="notify-input" placeholder="your address" required autocomplete="email">
+      <input type="email" class="notify-input" placeholder="email address" required autocomplete="email">
       <button type="submit" class="notify-btn">keep me informed</button>
     </form>
     <p class="notify-msg" id="notify-msg"></p>

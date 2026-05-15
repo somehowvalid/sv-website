@@ -28,7 +28,7 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "The Cost of Kind — 30-Day Self-Reflection Collection",
-  "description": "A 30-day self-reflection collection that gives language to the quiet place where kindness became a way to disappear — and to what might still be yours underneath it. Includes a 39-page Compass, 30 phone Wallpapers, and a printable Anchor Deck with a cardstock box template.",
+  "description": "The Cost of Kind is a 30-day self-reflection collection built around a 39-page Compass. Wallpapers and a printable Anchor Deck with a cardstock box template keep the language close after reading.",
   "brand": { "@type": "Brand", "name": "somehow valid." },
   "offers": [
     {
@@ -70,7 +70,7 @@
       "name": "What is included in The Cost of Kind?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Cost of Kind includes three parts: a 39-page Compass, 30 phone Wallpapers, and a printable Anchor Deck of 30 cards with a cardstock box template. All three are delivered as digital downloads after purchase."
+        "text": "The Cost of Kind centers on a 39-page Compass, with 30 phone Wallpapers and a printable Anchor Deck of 30 cards with a cardstock box template as return surfaces. All three are delivered as digital downloads after purchase."
       }
     },
     {
@@ -78,7 +78,7 @@
       "name": "Who is The Cost of Kind for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Cost of Kind is for people who have learned to put everyone else first — the ones who apologize early, keep the peace, and arrive already tired. It is for anyone who has been so focused on being good that they forgot to include themselves in their own kindness."
+        "text": "The Cost of Kind is for people who learned to put everyone else first — the ones who apologize early, keep the peace, and arrive already tired. It is for anyone who has been so focused on being good that they forgot to include themselves in their own kindness."
       }
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "@type": "Question",
-      "name": "Is The Cost of Kind a physical product?",
+      "name": "Is The Cost of Kind a physical book or a digital download?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "No. Everything is delivered digitally after purchase. The Compass is a PDF file, the Wallpapers are a ZIP folder of 30 PNG images for phone lock screens, and the Anchor Deck ZIP includes a printable 30-card PDF plus a cardstock box template. No app required. Read, keep close digitally, or print."
@@ -102,7 +102,7 @@
       "name": "Is The Cost of Kind therapy or mental health treatment?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. The Cost of Kind is an editorial self-reflection collection, not therapy, diagnosis, medical advice, or mental health treatment. It gives language, structure, and perspective for a pattern you may want to see more clearly."
+        "text": "No. somehow valid. is a reflective space, not a substitute for professional care. The Cost of Kind is educational and reflective only. It does not diagnose, treat, or offer medical advice."
       }
     },
     {
@@ -110,7 +110,7 @@
       "name": "Is this a journal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. The Cost of Kind is a reading and reflection collection, not a journal or workbook. Each day gives you a Compass entry and one question. Writing is optional. The purpose is not to complete pages; it is to give language to a pattern you may have been carrying as if it were simply who you are."
+        "text": "No. The Cost of Kind is a reading and reflection collection, not a journal or workbook. Each day gives you a Compass entry and one question. Writing is optional. The purpose is not to complete pages; it is to give language to a pattern you may have been carrying as if it had always been yours."
       }
     },
     {
@@ -134,7 +134,7 @@
       "name": "What makes somehow valid. different?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "somehow valid. is an emotional clarity studio making tools for what you can't quite name. The Cost of Kind does not advise, instruct, diagnose, prescribe, or tell you what to do next. It gives language, structure, and perspective so the pattern can feel less like who you are and more like something that can finally be seen with care."
+        "text": "somehow valid. is an emotional clarity studio making editorial tools for what you can't quite name. The Cost of Kind does not advise, instruct, diagnose, prescribe, or tell you what to do next. It gives language, structure, and perspective so the pattern can feel less like identity and more like something that can finally be seen with care."
       }
     },
     {
@@ -210,9 +210,23 @@
   .nav-logo-link { display: block; opacity: 0.8; transition: opacity 0.2s; }
   .nav-logo-link:hover { opacity: 1; }
   .nav-logo { display: block; height: 60px; width: auto; }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--charcoal); }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a, .nav-menu-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-menu:hover .nav-menu-label, .nav-menu:focus-within .nav-menu-label { color: var(--charcoal); }
+  .nav-menu { position: relative; padding: 8px 0; }
+  .nav-menu-label { display: inline-block; cursor: default; }
+  .nav-submenu {
+    position: absolute; top: 100%; right: 0; width: 260px;
+    padding: 18px 18px 16px; background: rgba(255,255,255,0.96);
+    border: 1px solid var(--border); box-shadow: 0 12px 36px rgba(46,37,32,0.08);
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  }
+  .nav-menu:hover .nav-submenu, .nav-menu:focus-within .nav-submenu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-submenu a { display: block; letter-spacing: 0; text-transform: none; color: var(--charcoal); padding: 10px 0; }
+  .nav-submenu-line { display: block; font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-bottom: 3px; }
+  .nav-submenu-title { display: block; font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--silhouette); }
+  .nav-submenu-note { display: block; font-size: 10px; color: var(--mid); margin-top: 2px; }
 
   /* ── BREADCRUMB ──────────────────────────────────── */
   .breadcrumb-wrap {
@@ -588,7 +602,7 @@
     .strip-inner { grid-template-columns: 1fr; }
     .strip-item { padding: 24px 32px; }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     nav { padding: 18px 24px; }
     .nav-links { display: none; }
     .breadcrumb-wrap { padding: 100px 24px 0; }
@@ -624,7 +638,24 @@
   <ul class="nav-links">
     <li><a href="/#statement">about</a></li>
     <li><a href="/#story">why this exists</a></li>
-    <li><a href="/#themes">products</a></li>
+    <li class="nav-menu">
+      <span class="nav-menu-label">collections</span>
+      <div class="nav-submenu">
+        <a href="/the-cost-of-kind/">
+          <span class="nav-submenu-line">The Daily Anchor™</span>
+          <span class="nav-submenu-title">The Cost of Kind</span>
+          <span class="nav-submenu-note">current collection · $14</span>
+        </a>
+        <a href="/#themes">
+          <span class="nav-submenu-line">The Field Guide™</span>
+          <span class="nav-submenu-title">not yet released</span>
+        </a>
+        <a href="/#themes">
+          <span class="nav-submenu-line">The Aperture™</span>
+          <span class="nav-submenu-title">not yet released</span>
+        </a>
+      </div>
+    </li>
     <li><a href="#buy">shop</a></li>
   </ul>
 </nav>
@@ -644,7 +675,7 @@
     <div>
       <p class="hero-cat reveal" style="transition-delay:0.04s">the daily anchor™</p>
       <h1 class="hero-title reveal" style="transition-delay:0.08s">The Cost of Kind</h1>
-      <p class="hero-sub reveal" style="transition-delay:0.12s">A 30-day self-reflection collection for people who became easy to love by leaving themselves out.</p>
+      <p class="hero-sub reveal" style="transition-delay:0.12s">A 30-day self-reflection collection for people who learned to be easy by leaving themselves out.</p>
       <p class="hero-intro reveal" style="transition-delay:0.16s">There is something you have been carrying quietly — the weight of every yes that cost you more than it gave. The Cost of Kind gives language to the quiet place where kindness became a way to disappear, and to what might still be yours underneath it. Not advice. Not affirmation. Perspective you can return to.</p>
       <img class="hero-mobile-cover reveal" style="transition-delay:0.18s" src="/the-cost-of-kind-compass.png" alt="The Cost of Kind — compass cover">
       <div class="cta-row reveal" style="transition-delay:0.20s">
@@ -699,7 +730,7 @@
         <div>
           <p class="component-name">The Compass</p>
           <p class="component-detail">Thirty days. At whatever pace is yours.</p>
-          <p class="component-body">Each page opens with a quote, a paragraph that names what you have been carrying, and one question that does not rush you toward an answer. Read on any device. Move through it at whatever pace is yours. The Compass lets the pattern become visible without turning it into a verdict on who you are.</p>
+          <p class="component-body">Each page opens with a quote, a paragraph that names what you have been carrying, and one question that does not rush you toward an answer. Read on any device. Move through it at whatever pace is yours. The Compass lets the pattern become visible without turning it into a verdict.</p>
         </div>
         <img class="component-preview" src="/tcok-component-compass-device.png" alt="The Cost of Kind Compass device preview">
       </div>
@@ -717,7 +748,7 @@
         <div>
           <p class="component-name">The Anchor Deck</p>
           <p class="component-detail">Thirty words to return to.</p>
-          <p class="component-body">Each card carries the full quote from that day's Compass entry. The Anchor Deck ZIP includes a printable 30-card PDF and a cardstock box template, so the language can live somewhere your eye naturally returns.</p>
+          <p class="component-body">Each card carries the full quote from that day's Compass entry. The Anchor Deck ZIP includes a printable 30-card PDF and a cardstock box template, so the language can live somewhere close.</p>
         </div>
         <img class="component-preview" src="/tcok-component-anchor-cards.png" alt="The Cost of Kind Anchor Deck card stack preview">
       </div>
@@ -742,14 +773,14 @@
           <p class="arc-days">days 11–20</p>
           <div>
             <p class="arc-phase-name">The Seeing</p>
-            <p class="arc-phase-body">The lens shifts. Where did this pattern begin? What has it actually cost? Not a diagnosis — a clearer look. The kind that only becomes possible once you have stopped carrying the weight long enough to see it.</p>
+            <p class="arc-phase-body">The lens shifts. Where did this pattern begin? What has it actually cost? A clearer look becomes possible while the weight is still here, because naming it changes how it has to be carried.</p>
           </div>
         </div>
         <div class="arc-phase reveal" style="transition-delay:0.18s">
           <p class="arc-days">days 21–30</p>
           <div>
             <p class="arc-phase-name">The Return</p>
-            <p class="arc-phase-body">Not a transformation. Not an arrival. A slow reclamation of what was always yours — the permission to include yourself in your own kindness. The arc does not end with answers. It ends with clearer ground.</p>
+            <p class="arc-phase-body">A slow reclamation of what was always yours: the permission to include yourself in your own kindness. The arc does not end with answers. It ends with clearer ground.</p>
           </div>
         </div>
       </div>
@@ -763,7 +794,7 @@
     <div>
       <h2 class="section-heading reveal" style="transition-delay:0.06s">for the one<br>who has given<br>too much<br>for too long.</h2>
       <div class="for-body">
-        <p class="reveal" style="transition-delay:0.10s">This is for the person who has spent so long being what everyone else needed that they have lost track of what they actually feel. The one who apologizes before they have done anything wrong. Who keeps the peace at the cost of their own.</p>
+        <p class="reveal" style="transition-delay:0.10s">This is for the person who has spent so long being what everyone else needed that they have lost track of what they actually feel. The one who apologizes before they have done anything wrong. The one who keeps the peace at the cost of their own.</p>
         <p class="reveal" style="transition-delay:0.14s">For the one who has been praised for being easy, generous, flexible, understanding — and quietly paid for it. For anyone who has been so focused on being good that they forgot to include themselves in their own kindness.</p>
         <p class="for-close reveal" style="transition-delay:0.18s">this is not a fix. it is thirty days of language for a pattern that was never meant to become your whole self.</p>
       </div>
@@ -797,7 +828,7 @@
           <span class="faq-q-text">Is this a journal?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <p class="faq-a">No. The Cost of Kind is a reading and reflection collection, not a journal or workbook. Each day gives you a Compass entry and one question. Writing is optional. The purpose is not to complete pages; it is to give language to a pattern you may have been carrying as if it were simply who you are.</p>
+        <p class="faq-a">No. The Cost of Kind is a reading and reflection collection, not a journal or workbook. Each day gives you a Compass entry and one question. Writing is optional. The purpose is not to complete pages; it is to give language to a pattern you may have been carrying as if it had always been yours.</p>
       </div>
 
       <div class="faq-item reveal" style="transition-delay:0.10s">
@@ -813,7 +844,7 @@
           <span class="faq-q-text">What makes somehow valid. different?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <p class="faq-a">somehow valid. is an emotional clarity studio making tools for what you can't quite name. The Cost of Kind gives language, structure, and perspective so this pattern can feel less like who you are and more like something that can finally be seen with care.</p>
+        <p class="faq-a">somehow valid. is an emotional clarity studio making editorial tools for what you can't quite name. The Cost of Kind gives language, structure, and perspective so this pattern can feel less like identity and more like something that can finally be seen with care.</p>
       </div>
 
       <div class="faq-item reveal" style="transition-delay:0.14s">
@@ -870,7 +901,7 @@
     <div class="section-label reveal">stay<br>close</div>
     <div class="notify-inner">
       <p class="notify-eyebrow reveal">somehow valid. · new collections</p>
-      <p class="notify-copy reveal" style="transition-delay:0.06s">for the next collection.<br>leave your address and we will send a note when it arrives.</p>
+      <p class="notify-copy reveal" style="transition-delay:0.06s">for the next collection.<br>leave your email and we will send a note when it arrives.</p>
       <form class="notify-form reveal" id="ck-notify-form" style="transition-delay:0.12s">
         <input type="email" class="notify-input" placeholder="email address" required autocomplete="email">
         <button type="submit" class="notify-btn">keep me informed</button>
