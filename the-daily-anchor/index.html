@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Daily Anchor™ — 30-day self-reflection series | somehow valid.</title>
+<meta name="description" content="The Daily Anchor™ is a somehow valid. series for one emotional pattern held over time. Each theme gives language through a Compass, Wallpapers, and an Anchor Deck.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/favicon-32x32.png">
+<link rel="canonical" href="https://somehowvalid.com/the-daily-anchor/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://somehowvalid.com/the-daily-anchor/">
+<meta property="og:title" content="The Daily Anchor™ — somehow valid.">
+<meta property="og:description" content="A 30-day series for one emotional pattern held over time. The current theme is The Cost of Kind.">
+<meta property="og:image" content="https://somehowvalid.com/the-cost-of-kind-compass.png">
+<meta property="og:site_name" content="somehow valid.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "The Daily Anchor™",
+  "url": "https://somehowvalid.com/the-daily-anchor/",
+  "description": "The Daily Anchor™ is a somehow valid. series for one emotional pattern held over time. Each theme gives language through a Compass, Wallpapers, and an Anchor Deck.",
+  "isPartOf": { "@type": "WebSite", "name": "somehow valid.", "url": "https://somehowvalid.com" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "The Daily Anchor™ themes",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "The Cost of Kind",
+        "url": "https://somehowvalid.com/the-cost-of-kind/"
+      }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "somehow valid.", "item": "https://somehowvalid.com" },
+    { "@type": "ListItem", "position": 2, "name": "The Daily Anchor™", "item": "https://somehowvalid.com/the-daily-anchor/" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --oat: #F5F1EB;
+    --linen: #F0EAE0;
+    --taupe: #C2B4A3;
+    --sage: #5F6654;
+    --charcoal: #4A463F;
+    --silhouette: #2E2520;
+    --white: #FFFFFF;
+    --mid: #8C8880;
+    --border: #DDD8D0;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 112px; }
+  body {
+    background: var(--oat);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 22px 52px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo-link { display: block; opacity: 0.8; transition: opacity 0.2s; }
+  .nav-logo-link:hover { opacity: 1; }
+  .nav-logo { display: block; height: 60px; width: auto; }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a, .nav-menu-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-menu:hover .nav-menu-label, .nav-menu:focus-within .nav-menu-label { color: var(--charcoal); }
+  .nav-menu { position: relative; padding: 8px 0; }
+  .nav-menu-label { display: inline-block; cursor: default; }
+  .nav-submenu {
+    position: absolute; top: 100%; right: 0; width: 260px;
+    padding: 18px 18px 16px; background: rgba(255,255,255,0.96);
+    border: 1px solid var(--border); box-shadow: 0 12px 36px rgba(46,37,32,0.08);
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  }
+  .nav-menu:hover .nav-submenu, .nav-menu:focus-within .nav-submenu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-submenu a { display: block; letter-spacing: 0; text-transform: none; color: var(--charcoal); padding: 10px 0; }
+  .nav-submenu-line { display: block; font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-bottom: 3px; }
+  .nav-submenu-title { display: block; font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--silhouette); }
+  .nav-submenu-note { display: block; font-size: 10px; color: var(--mid); margin-top: 2px; }
+
+  .breadcrumb-wrap { padding: 112px 52px 0; }
+  .breadcrumb { max-width: 1040px; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); }
+  .breadcrumb a { color: var(--charcoal); text-decoration: none; }
+  .breadcrumb span { margin: 0 10px; color: var(--taupe); }
+
+  #hero { padding: 70px 52px 120px; min-height: 760px; display: flex; align-items: center; }
+  .hero-wrap { width: 100%; max-width: 1040px; display: grid; grid-template-columns: 130px 1fr 340px; gap: 64px; align-items: center; }
+  .hero-aside { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); line-height: 2.3; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+  .hero-aside-rule { width: 1px; height: 68px; background: var(--taupe); opacity: 0.45; margin-bottom: 24px; display: block; }
+  .hero-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 20px; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 6vw, 92px); font-weight: 400; line-height: 0.95; color: var(--silhouette); margin-bottom: 28px; }
+  .hero-sub { font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.1vw, 31px); font-style: italic; color: var(--charcoal); line-height: 1.35; max-width: 560px; margin-bottom: 32px; }
+  .hero-intro { font-size: 15px; color: var(--mid); max-width: 500px; line-height: 1.95; }
+  .hero-cover { justify-self: end; width: min(100%, 310px); }
+  .hero-cover img { width: 100%; display: block; box-shadow: 0 24px 70px rgba(46,37,32,0.13); }
+  .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 38px; }
+  .cta-primary {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 14px 24px; border: 1px solid var(--silhouette); border-radius: 1px;
+    color: var(--silhouette); text-decoration: none;
+    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .cta-primary:hover { background: var(--silhouette); color: var(--oat); }
+  .cta-note { font-size: 11px; color: var(--mid); }
+
+  .section-wrap { padding: 110px 52px; display: grid; grid-template-columns: 130px 1fr; gap: 64px; max-width: 1040px; }
+  .section-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); line-height: 2.2; padding-top: 6px; }
+  .section-heading { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.7vw, 54px); font-weight: 400; line-height: 1.18; color: var(--silhouette); margin-bottom: 34px; }
+  .copy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .copy-panel { background: var(--white); padding: 34px 32px 36px; min-height: 260px; }
+  .copy-kicker { font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); margin-bottom: 18px; }
+  .copy-title { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--silhouette); line-height: 1.25; margin-bottom: 18px; }
+  .copy-body { font-size: 14px; color: var(--mid); line-height: 1.9; }
+
+  #themes { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .theme-card { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: center; padding: 38px; background: var(--oat); border: 1px solid var(--border); }
+  .theme-cat { font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .theme-name { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4vw, 58px); color: var(--silhouette); line-height: 1.05; margin-bottom: 14px; }
+  .theme-sub { font-family: 'Playfair Display', serif; font-size: 17px; font-style: italic; color: var(--charcoal); margin-bottom: 24px; }
+  .theme-body { font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 480px; margin-bottom: 28px; }
+  .theme-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+  .theme-meta span { font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--charcoal); border: 1px solid var(--border); padding: 7px 10px; background: var(--white); }
+  .theme-cover img { width: 100%; display: block; box-shadow: 0 18px 48px rgba(46,37,32,0.12); }
+  .theme-link { display: inline-flex; align-items: center; gap: 12px; padding: 13px 23px; border: 1px solid var(--silhouette); color: var(--silhouette); text-decoration: none; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .theme-link:hover { background: var(--silhouette); color: var(--oat); }
+  .theme-price { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--taupe); letter-spacing: 0; text-transform: none; }
+  .theme-empty { margin-top: 16px; font-size: 13px; color: var(--mid); font-style: italic; }
+
+  #why { background: var(--oat); }
+  .why-copy { max-width: 560px; font-size: 15px; color: var(--mid); line-height: 1.95; }
+  .why-copy p { margin-bottom: 22px; }
+  .why-close { font-family: 'Playfair Display', serif; font-size: 18px; font-style: italic; color: var(--charcoal); }
+
+  footer { background: var(--silhouette); border-top: 1px solid rgba(245,241,235,0.04); padding: 42px 52px; display: flex; align-items: center; justify-content: space-between; }
+  .footer-logo-text { font-family: 'Cormorant', serif; font-size: 16px; font-weight: 300; color: rgba(245,241,235,0.45); letter-spacing: 0.04em; }
+  .footer-tagline { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: rgba(245,241,235,0.45); }
+  .footer-copy { font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,241,235,0.35); }
+
+  @media (max-width: 900px) {
+    nav { padding: 18px 24px; }
+    .nav-links { display: none; }
+    .breadcrumb-wrap { padding: 100px 24px 0; }
+    #hero { padding: 56px 24px 80px; min-height: auto; }
+    .hero-wrap { grid-template-columns: 1fr; gap: 36px; }
+    .hero-aside { display: none; }
+    .hero-cover { justify-self: start; width: min(210px, 60vw); }
+    .section-wrap { padding: 72px 24px; grid-template-columns: 1fr; }
+    .section-label { display: none; }
+    .copy-grid { grid-template-columns: 1fr; }
+    .theme-card { grid-template-columns: 1fr; padding: 28px 22px; }
+    .theme-cover { max-width: 230px; }
+    footer { padding: 36px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo-link"><img class="nav-logo" src="/somehow-valid-logo.svg" alt="somehow valid."></a>
+  <ul class="nav-links">
+    <li><a href="/#statement">about</a></li>
+    <li><a href="/#story">why this exists</a></li>
+    <li class="nav-menu">
+      <span class="nav-menu-label">collections</span>
+      <div class="nav-submenu">
+        <a href="/the-daily-anchor/">
+          <span class="nav-submenu-line">active series</span>
+          <span class="nav-submenu-title">The Daily Anchor™</span>
+          <span class="nav-submenu-note">30-day self-reflection themes</span>
+        </a>
+      </div>
+    </li>
+    <li><a href="/#grid">notes</a></li>
+    <li><a href="/the-cost-of-kind/">shop</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb-wrap reveal">
+  <div class="breadcrumb">
+    <a href="/">somehow valid.</a><span>·</span>The Daily Anchor™
+  </div>
+</div>
+
+<section id="hero">
+  <div class="hero-wrap">
+    <div class="hero-aside reveal">
+      <span class="hero-aside-rule"></span>
+      active<br>series<br><br>30-day<br>themes
+    </div>
+    <div>
+      <p class="hero-cat reveal" style="transition-delay:0.04s">somehow valid. · series</p>
+      <h1 class="hero-title reveal" style="transition-delay:0.08s">The Daily Anchor™</h1>
+      <p class="hero-sub reveal" style="transition-delay:0.12s">one emotional pattern, held long enough to become visible.</p>
+      <p class="hero-intro reveal" style="transition-delay:0.16s">The Daily Anchor™ is the series for patterns that do not leave after one good sentence. Each theme gives the pattern a full thirty-day world: a Compass to read, Wallpapers to keep close, and an Anchor Deck to return to when the old shape starts to feel familiar again.</p>
+      <div class="cta-row reveal" style="transition-delay:0.20s">
+        <a class="cta-primary" href="#themes">view current theme</a>
+      <span class="cta-note">current theme · The Cost of Kind</span>
+      </div>
+    </div>
+    <div class="hero-cover reveal" style="transition-delay:0.10s">
+      <img src="/the-cost-of-kind-compass.png" alt="The Cost of Kind cover">
+    </div>
+  </div>
+</section>
+
+<section id="concept">
+  <div class="section-wrap">
+    <div class="section-label reveal">series<br>logic</div>
+    <div>
+      <h2 class="section-heading reveal" style="transition-delay:0.04s">what this line is here to hold.</h2>
+      <div class="copy-grid">
+        <div class="copy-panel reveal" style="transition-delay:0.08s">
+          <p class="copy-kicker">what it is</p>
+          <p class="copy-title">a returnable world for one pattern.</p>
+          <p class="copy-body">Each Daily Anchor theme stays with one emotional pattern across thirty days. It does not ask you to solve it quickly. It gives the pattern enough language, repetition, and structure to be seen from more than one angle.</p>
+        </div>
+        <div class="copy-panel reveal" style="transition-delay:0.12s">
+          <p class="copy-kicker">who it is for</p>
+          <p class="copy-title">the person still carrying it.</p>
+          <p class="copy-body">For the pattern that keeps returning after the conversation ends. For the sentence you understand once, then need again. For the part of you that does not need a plan yet. It needs language close enough to come back to.</p>
+        </div>
+        <div class="copy-panel reveal" style="transition-delay:0.16s">
+          <p class="copy-kicker">why it exists</p>
+          <p class="copy-title">because some clarity needs a place to live.</p>
+          <p class="copy-body">A single page can name something. A Daily Anchor theme lets the name stay near you: in a Compass, on your lock screen, and in a deck of words your eye can return to when the shape starts to blur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="themes">
+  <div class="section-wrap">
+    <div class="section-label reveal">current<br>theme</div>
+    <div>
+      <h2 class="section-heading reveal" style="transition-delay:0.04s">the first theme in The Daily Anchor™.</h2>
+      <div class="theme-card reveal" style="transition-delay:0.10s">
+        <div>
+          <p class="theme-cat">HELD · theme 01</p>
+          <h3 class="theme-name">The Cost of Kind</h3>
+          <p class="theme-sub">for the quiet place where kindness became a way to disappear.</p>
+          <p class="theme-body">A 30-day self-reflection theme for people who learned to put everyone else first. The Compass is the center. The Wallpapers and Anchor Deck keep the language close after reading.</p>
+          <div class="theme-meta">
+            <span>39-page Compass</span>
+            <span>30 Wallpapers</span>
+            <span>Anchor Deck</span>
+            <span>$14</span>
+          </div>
+          <a class="theme-link" href="/the-cost-of-kind/">open theme page <span class="theme-price">$14</span></a>
+          <p class="theme-empty">future Daily Anchor themes will live here when they are ready.</p>
+        </div>
+        <a class="theme-cover" href="/the-cost-of-kind/" aria-label="Open The Cost of Kind theme page">
+          <img src="/the-cost-of-kind-compass.png" alt="The Cost of Kind cover">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-wrap">
+    <div class="section-label reveal">why this<br>format</div>
+    <div class="why-copy">
+      <p class="reveal" style="transition-delay:0.06s">The Daily Anchor™ is not a challenge, a course, or a practice plan. It is the slower shelf inside somehow valid. It gives certain themes a place to be returned to more than once.</p>
+      <p class="reveal" style="transition-delay:0.10s">The Compass names the pattern. The Wallpapers keep one line close. The Anchor Deck gives the language somewhere physical to live if you choose to print it.</p>
+      <p class="why-close reveal" style="transition-delay:0.14s">Read. Notice. Return. Decide only when the shape is clearer.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo-text">somehow valid.</span>
+  <span class="footer-tagline">emotional tools for what you can't quite name.</span>
+  <span class="footer-copy">© 2026 somehow valid.</span>
+</footer>
+
+<script>
+const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); } }), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.querySelectorAll('.breadcrumb-wrap, #hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 200 + i * 120));
+</script>
+</body>
+</html>
