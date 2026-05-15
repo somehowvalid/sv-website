@@ -112,7 +112,7 @@
   .breadcrumb span { margin: 0 10px; color: var(--taupe); }
 
   #hero { padding: 70px 52px 120px; min-height: 760px; display: flex; align-items: center; }
-  .hero-wrap { width: 100%; max-width: 1040px; display: grid; grid-template-columns: 130px minmax(0, 680px); gap: 64px; align-items: center; }
+  .hero-wrap { width: 100%; max-width: 1120px; display: grid; grid-template-columns: 130px minmax(0, 620px) 210px; gap: 56px; align-items: center; }
   .hero-aside { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); line-height: 2.3; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
   .hero-aside-rule { width: 1px; height: 68px; background: var(--taupe); opacity: 0.45; margin-bottom: 24px; display: block; }
   .hero-cat { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 20px; }
@@ -128,15 +128,40 @@
   }
   .cta-primary:hover { background: var(--silhouette); color: var(--oat); }
   .cta-note { font-size: 11px; color: var(--mid); }
+  .hero-feature { align-self: end; justify-self: end; width: 190px; color: inherit; text-decoration: none; }
+  .hero-feature img {
+    display: block; width: 100%; border-radius: 1px;
+    box-shadow: 0 16px 44px rgba(46,37,32,0.10);
+  }
+  .hero-feature-meta {
+    margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border);
+    font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--taupe); line-height: 1.9;
+  }
+  .hero-feature-name {
+    display: block; margin-top: 4px;
+    font-family: 'Playfair Display', serif; font-size: 17px;
+    letter-spacing: 0; text-transform: none; color: var(--silhouette);
+  }
 
   .section-wrap { padding: 110px 52px; display: grid; grid-template-columns: 130px 1fr; gap: 64px; max-width: 1040px; }
   .section-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); line-height: 2.2; padding-top: 6px; }
   .section-heading { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.7vw, 54px); font-weight: 400; line-height: 1.18; color: var(--silhouette); margin-bottom: 34px; }
-  .copy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-  .copy-panel { background: var(--white); padding: 34px 32px 36px; min-height: 260px; }
-  .copy-kicker { font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); margin-bottom: 18px; }
-  .copy-title { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--silhouette); line-height: 1.25; margin-bottom: 18px; }
-  .copy-body { font-size: 14px; color: var(--mid); line-height: 1.9; }
+  .detail-list { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .detail-row {
+    display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 34px;
+    padding: 30px 0; border-bottom: 1px solid var(--border);
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-kicker {
+    font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--taupe); padding-top: 8px;
+  }
+  .detail-title {
+    font-family: 'Playfair Display', serif; font-size: 24px;
+    color: var(--silhouette); line-height: 1.25; margin-bottom: 12px;
+  }
+  .detail-body { font-size: 14px; color: var(--mid); line-height: 1.9; max-width: 520px; }
 
   #available { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .theme-card { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: center; padding: 38px; background: var(--oat); border: 1px solid var(--border); }
@@ -170,9 +195,12 @@
     #hero { padding: 56px 24px 80px; min-height: auto; }
     .hero-wrap { grid-template-columns: 1fr; gap: 36px; }
     .hero-aside { display: none; }
+    .hero-feature { justify-self: start; width: 148px; margin-top: -10px; }
+    .hero-feature-meta { font-size: 7px; line-height: 1.8; }
     .section-wrap { padding: 72px 24px; grid-template-columns: 1fr; }
     .section-label { display: none; }
-    .copy-grid { grid-template-columns: 1fr; }
+    .detail-row { grid-template-columns: 1fr; gap: 10px; padding: 26px 0; }
+    .detail-kicker { padding-top: 0; }
     .theme-card { grid-template-columns: 1fr; padding: 28px 22px; }
     .theme-cover { max-width: 230px; }
     footer { padding: 36px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
@@ -223,6 +251,10 @@
         <span class="cta-note">Compass · Wallpapers · Anchor Deck</span>
       </div>
     </div>
+    <a class="hero-feature reveal" style="transition-delay:0.24s" href="/the-cost-of-kind/" aria-label="Open The Cost of Kind">
+      <img src="/the-cost-of-kind-compass.png" alt="The Cost of Kind cover">
+      <span class="hero-feature-meta">available now<span class="hero-feature-name">The Cost of Kind</span></span>
+    </a>
   </div>
 </section>
 
@@ -231,21 +263,27 @@
     <div class="section-label reveal">the<br>form</div>
     <div>
       <h2 class="section-heading reveal" style="transition-delay:0.04s">how the collection works.</h2>
-      <div class="copy-grid">
-        <div class="copy-panel reveal" style="transition-delay:0.08s">
-          <p class="copy-kicker">what it is</p>
-          <p class="copy-title">one pattern, seen over thirty days.</p>
-          <p class="copy-body">Each collection stays with one emotional pattern long enough to show its shape: what it has cost, where it may have started, and what it has made hard to name.</p>
+      <div class="detail-list">
+        <div class="detail-row reveal" style="transition-delay:0.08s">
+          <p class="detail-kicker">structure</p>
+          <div>
+            <p class="detail-title">one pattern, seen over thirty days.</p>
+            <p class="detail-body">Each collection stays with one emotional pattern long enough to show its shape: what it has cost, where it may have started, and what it has made hard to name.</p>
+          </div>
         </div>
-        <div class="copy-panel reveal" style="transition-delay:0.12s">
-          <p class="copy-kicker">who it is for</p>
-          <p class="copy-title">the person who keeps meeting the same thing.</p>
-          <p class="copy-body">For the pattern that returns after the moment has passed. For the feeling you can almost name, then lose. For when you need language before deciding what comes next.</p>
+        <div class="detail-row reveal" style="transition-delay:0.12s">
+          <p class="detail-kicker">reader</p>
+          <div>
+            <p class="detail-title">the person who keeps meeting the same thing.</p>
+            <p class="detail-body">For the pattern that returns after the moment has passed. For the feeling you can almost name, then lose. For when you need language before deciding what comes next.</p>
+          </div>
         </div>
-        <div class="copy-panel reveal" style="transition-delay:0.16s">
-          <p class="copy-kicker">why it exists</p>
-          <p class="copy-title">because return is part of seeing.</p>
-          <p class="copy-body">The Compass gives you the words. The Wallpapers keep them close. The Anchor Deck brings them back. Three parts. One collection.</p>
+        <div class="detail-row reveal" style="transition-delay:0.16s">
+          <p class="detail-kicker">components</p>
+          <div>
+            <p class="detail-title">because return is part of seeing.</p>
+            <p class="detail-body">The Compass gives you the words. The Wallpapers keep them close. The Anchor Deck brings them back. Three parts. One collection.</p>
+          </div>
         </div>
       </div>
     </div>

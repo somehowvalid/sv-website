@@ -275,7 +275,7 @@
     max-width: 460px; margin-bottom: 36px;
   }
   .hero-mobile-cover { display: none; }
-  .cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-bottom: 60px; }
+  .cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-bottom: 28px; }
   .cta-primary {
     display: inline-flex; align-items: center; gap: 12px;
     padding: 13px 26px; border: 1px solid var(--silhouette); border-radius: 1px;
@@ -293,6 +293,24 @@
     color: var(--silhouette); text-decoration: none; transition: all 0.2s; white-space: nowrap;
   }
   .purchase-secondary:hover { border-color: var(--silhouette); }
+  .hero-details {
+    max-width: 520px; margin-bottom: 58px;
+    border-top: 1px solid var(--ck-border);
+    border-bottom: 1px solid var(--ck-border);
+  }
+  .hero-detail-row {
+    display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 26px;
+    padding: 15px 0; border-bottom: 1px solid var(--ck-border);
+  }
+  .hero-detail-row:last-child { border-bottom: none; }
+  .hero-detail-label {
+    font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ck-deep); padding-top: 3px;
+  }
+  .hero-detail-copy {
+    font-size: 12px; color: var(--charcoal);
+    line-height: 1.75; letter-spacing: 0.01em;
+  }
 
   /* Hero cover — image column */
   .hero-cover {
@@ -608,6 +626,9 @@
       box-shadow: 0 8px 24px rgba(46,37,32,0.10);
     }
     .cta-row { padding-bottom: 40px; }
+    .hero-details { margin-bottom: 42px; }
+    .hero-detail-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
+    .hero-detail-label { padding-top: 0; }
     .purchase-options { flex-direction: column; align-items: stretch; max-width: 280px; }
     .purchase-secondary, .cta-primary { justify-content: center; }
     #collection-strip { padding: 0 24px; }
@@ -664,10 +685,25 @@
       <p class="hero-intro reveal" style="transition-delay:0.16s">At the center is the Compass: thirty days for seeing how kindness became a place to disappear, what it has quietly cost, and what it could feel like to include yourself again. The Wallpapers and Anchor Deck keep the language close after reading.</p>
       <img class="hero-mobile-cover reveal" style="transition-delay:0.18s" src="/the-cost-of-kind-compass.png" alt="The Cost of Kind — compass cover">
       <div class="cta-row reveal" style="transition-delay:0.20s">
-        <a class="cta-primary" href="#buy">
-          begin the collection <span class="cta-price">$14</span>
+        <a class="cta-primary" href="https://somehowvalid.gumroad.com/l/the-cost-of-kind-30-day-self-reflection" target="_blank">
+          purchase on Gumroad <span class="cta-price">$14</span>
         </a>
+        <a class="purchase-secondary" href="https://www.etsy.com/listing/4472664835" target="_blank">purchase on Etsy</a>
         <span class="cta-note">digital files delivered after purchase</span>
+      </div>
+      <div class="hero-details reveal" style="transition-delay:0.24s" aria-label="Collection details">
+        <div class="hero-detail-row">
+          <span class="hero-detail-label">format</span>
+          <p class="hero-detail-copy">39-page Compass PDF · 30 phone wallpaper PNGs · printable Anchor Deck ZIP</p>
+        </div>
+        <div class="hero-detail-row">
+          <span class="hero-detail-label">use</span>
+          <p class="hero-detail-copy">Read in order or at your own pace. Save wallpapers manually. Print the deck if you want something tactile.</p>
+        </div>
+        <div class="hero-detail-row">
+          <span class="hero-detail-label">boundary</span>
+          <p class="hero-detail-copy">Reflective only. Not therapy, diagnosis, treatment, or medical advice.</p>
+        </div>
       </div>
     </div>
     <div class="hero-cover reveal" style="transition-delay:0.10s">
@@ -724,7 +760,7 @@
         <div>
           <p class="component-name">The Wallpapers</p>
           <p class="component-detail">Thirty anchors. Always within reach.</p>
-          <p class="component-body">Thirty standard phone wallpaper PNGs, one for each day of the arc. Save them manually to your phone and set the one you want on your lock screen. No app required. The language stays close for the moments when the old pattern starts to feel familiar again.</p>
+          <p class="component-body">Thirty anchors, one for each day of the arc. Save the one you want to your phone and set it on your lock screen. The language stays close for the moments when the old pattern starts to feel familiar again.</p>
         </div>
         <img class="component-preview" src="/tcok-component-wallpaper-phone.png" alt="The Cost of Kind wallpaper phone preview">
       </div>
@@ -733,7 +769,7 @@
         <div>
           <p class="component-name">The Anchor Deck</p>
           <p class="component-detail">Thirty words to return to.</p>
-          <p class="component-body">Each card carries the anchor word and quote from that day's Compass entry. The Anchor Deck ZIP includes a printable 30-card PDF and a cardstock box template, so the language can live somewhere close.</p>
+          <p class="component-body">Each card carries the anchor word and quote from that day's Compass entry. Print the thirty-card deck and fold the box template if you want the language to live somewhere close.</p>
         </div>
         <img class="component-preview" src="/tcok-component-anchor-cards.png" alt="The Cost of Kind Anchor Deck card stack preview">
       </div>
@@ -834,7 +870,7 @@
 
       <div class="faq-item reveal" style="transition-delay:0.14s">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Is this for people-pleasing or overgiving?</span>
+          <span class="faq-q-text">Who is this for?</span>
           <span class="faq-toggle">+</span>
         </div>
         <p class="faq-a">It is for people who recognize themselves in overgiving, people-pleasing, quiet resentment, emotional exhaustion, or the feeling of being valued most when they are useful. It gives language and perspective before deciding what comes next.</p>
