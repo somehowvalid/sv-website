@@ -475,14 +475,15 @@
 	    left: 50%;
 	    top: 50%;
 	    transform: translate(-50%, -50%);
-	    font-family: 'Cormorant', serif;
-	    font-size: clamp(34px, 4.2vw, 58px);
-	    font-weight: 400;
-	    line-height: 1;
-	    letter-spacing: 0;
-	    color: var(--silhouette);
+	    display: block;
+	    width: clamp(260px, 25vw, 360px);
+	    line-height: 0;
 	    text-decoration: none;
-	    white-space: nowrap;
+	  }
+	  .nav-wordmark img {
+	    display: block;
+	    width: 100%;
+	    height: auto;
 	  }
 	  .brand-entry #hero {
 	    min-height: 100vh;
@@ -674,7 +675,9 @@
 	    .brand-entry nav { min-height: 96px; padding: 18px 24px; }
 	    .brand-entry .nav-emblem { width: 48px; }
 	    .brand-entry .nav-logo { height: 48px; }
-	    .nav-wordmark { font-size: 34px; }
+	    .nav-wordmark {
+	      width: min(240px, calc(100% - 130px));
+	    }
 	    .hero-statement {
 	      top: 55%;
 	      width: min(380px, calc(100% - 40px));
@@ -694,7 +697,7 @@
 
 	<nav>
 	  <a class="nav-emblem" href="#" aria-hidden="true" tabindex="-1"><img class="nav-logo" src="somehow-valid-logo.svg" alt=""></a>
-	  <a class="nav-wordmark" href="#">somehow valid.</a>
+	  <a class="nav-wordmark" href="#"><img src="somehow-valid-wordmark.svg" alt="somehow valid."></a>
 	  <a class="mobile-route" href="#brand">about</a>
 	  <ul class="nav-links">
 	    <li><a href="#brand">about</a></li>
